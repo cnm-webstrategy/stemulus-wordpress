@@ -36,7 +36,7 @@ wp-content/*
 # unless explicitly whitelisted at the end of this file
 wp-content/mu-plugins/*
 wp-content/plugins/*
-wp-content/themes/*
+wp-content/themes/twenty*
 
 # ignore all files starting with . or ~
 .*
