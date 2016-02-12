@@ -1,12 +1,4 @@
 <?php
-add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
-function theme_enqueue_styles() {
-    wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
-
-}
-?>
-
-<?php /*
 function theme_enqueue_styles() {
 
     $parent_style = 'parent-style';
@@ -17,5 +9,5 @@ function theme_enqueue_styles() {
         array( $parent_style )
     );
 }
-add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' ); */
+add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 ?>
