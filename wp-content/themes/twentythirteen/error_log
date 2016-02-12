@@ -1,2 +1,0 @@
-[04-Jan-2016 14:10:07 America/Detroit] PHP Fatal error:  Call to undefined function get_header() in /home/stemulus/public_html/wp-content/themes/twentythirteen/404.php on line 10
-[04-Jan-2016 21:59:15 America/Detroit] PHP Fatal error:  Call to undefined function get_header() in /home/stemulus/public_html/wp-content/themes/twentythirteen/404.php on line 10
