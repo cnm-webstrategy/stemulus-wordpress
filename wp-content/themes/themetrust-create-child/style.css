@@ -13,3 +13,10 @@ Domain Path: /languages/
 Tags:
 
 */
+
+.split-header #logo {
+    margin: 0 auto !important;
+    float: none;
+    position: absolute;
+    width: 100%;
+}
