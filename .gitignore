@@ -92,4 +92,6 @@ Thumbs.db
 # add your own entries here
 #!wp-content/mu-plugins/example-mu-plugin/
 !wp-content/plugins/*
-!wp-content/themes/*
+!wp-content/themes/themetrust-create*
+!wp-content/themes/makerspace*
+!wp-content/themes/awaken-theme*
