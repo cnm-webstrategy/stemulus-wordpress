@@ -26,7 +26,7 @@ if ( ! class_exists( 'facebook_module' ) ) {
 		 */
 		 function facebook_module(){
 				$widget_ops = array('classname' => 'facebok_widget', 'description' => 'Facebook widget like box total customized with theme.' );
-				$this->WP_Widget('facebook_module', 'CS : Facebook', $widget_ops);
+				parent::__construct('facebook_module', 'CS : Facebook', $widget_ops);
 		  }
 	  	  
 		/**
@@ -180,7 +180,7 @@ if ( ! class_exists( 'cs_social_network_widget' ) ) {
 	 */
 	function cs_social_network_widget(){
 		$widget_ops = array('classname' => 'widget-socialnetwork', 'description' => 'Social Newtork widget.' );
-		$this->WP_Widget('cs_social_network_widget', 'CS : Social Newtork', $widget_ops);
+		parent::__construct('cs_social_network_widget', 'CS : Social Newtork', $widget_ops);
   	}
   	
 	/**
@@ -259,7 +259,7 @@ if ( ! class_exists( 'cs_flickr' ) ) {
 		 */
 		function cs_flickr() {
 			$widget_ops = array('classname' => 'widget-flickr widget-gallery', 'description' => 'Type a user name to show photos in widget.');
-			$this->WP_Widget('cs_flickr', 'CS : Flickr Gallery', $widget_ops);
+			parent::__construct('cs_flickr', 'CS : Flickr Gallery', $widget_ops);
 		}
 		 
 		 /**
@@ -488,7 +488,7 @@ if ( ! class_exists( 'recentposts' ) ) {
 	 */
 	 function recentposts(){
 		$widget_ops = array('classname' => 'widget-recent-blog widget_latest_post', 'description' => 'Recent Posts from category.' );
-		$this->WP_Widget('recentposts', 'CS : Recent Posts', $widget_ops);
+		parent::__construct('recentposts', 'CS : Recent Posts', $widget_ops);
 	 }
 	 
 	 /**
@@ -685,7 +685,7 @@ if ( ! class_exists( 'cs_twitter_widget' ) ) {
 		 */
 		function cs_twitter_widget() {
 			$widget_ops = array('classname' => 'twitter_widget', 'description' => 'Twitter Widget');
-			$this->WP_Widget('cs_twitter_widget', 'CS : Twitter Widget', $widget_ops);
+			parent::__construct('cs_twitter_widget', 'CS : Twitter Widget', $widget_ops);
 		}
 		
 		
@@ -861,7 +861,7 @@ if ( ! class_exists( 'upcoming_events' ) ) {
 		 */
 		function upcoming_events(){
 			$widget_ops = array('classname' => 'widget-topevent', 'description' => 'Select Event to show its countdown.' );
-			$this->WP_Widget('upcoming_events', 'CS : Upcoming Events', $widget_ops);
+			parent::__construct('upcoming_events', 'CS : Upcoming Events', $widget_ops);
 		}
 		 
 		
@@ -1028,7 +1028,7 @@ if ( ! class_exists( 'events_map' ) ) {
 	 */
 	 function events_map(){
 		$widget_ops = array('classname' => 'widget-events-map fullwidth', 'description' => 'Select Event to show its countdown.' );
-		$this->WP_Widget('events_map', 'CS : Events Map', $widget_ops);	
+		parent::__construct('events_map', 'CS : Events Map', $widget_ops);
 	 }
 	 
 	 /**
@@ -1282,7 +1282,7 @@ if ( ! class_exists( 'upcoming_events_calander' ) ) {
 	 */
 	 function upcoming_events_calander(){
 		$widget_ops = array('classname' => 'event-calendar', 'description' => 'Select Event to show its Calendar.' );
-		$this->WP_Widget('upcoming_events_calander', 'CS :Events Calander', $widget_ops);
+		parent::__construct('upcoming_events_calander', 'CS :Events Calander', $widget_ops);
 	 }
 	 
 	 
@@ -1452,7 +1452,7 @@ if ( ! class_exists( 'cs_userlist' ) ) {
 	 */
 	 function cs_userlist() {
 		$widget_ops = array('classname' => 'widget_userlist', 'description' => 'Select user list to show in widget.');
-		$this->WP_Widget('cs_userlist', 'CS : User List', $widget_ops);
+		parent::__construct('cs_userlist', 'CS : User List', $widget_ops);
 	 }
 	
 	/**
@@ -1607,7 +1607,7 @@ class contactinfo extends WP_Widget{
 	 
 	function contactinfo()	{
 		$widget_ops = array('classname' => 'widget_text', 'description' => 'Fotter Contact Information.' );
-		$this->WP_Widget('contactinfo', 'CS : Contact info', $widget_ops);
+		parent::__construct('contactinfo', 'CS : Contact info', $widget_ops);
 	}
 	
 	/**
@@ -1753,7 +1753,7 @@ if ( ! class_exists( 'cs_recent_projects' ) ) {
 	 */
 	 function cs_recent_projects() {
 		$widget_ops = array('classname' => 'widget-projects', 'description' => 'Select a category to show Projects in widget.');
-		$this->WP_Widget('cs_recent_projects', 'CS : Projects', $widget_ops);
+		parent::__construct('cs_recent_projects', 'CS : Projects', $widget_ops);
 	 }
 	 
 	 /**
@@ -1939,7 +1939,7 @@ if ( ! class_exists( 'cs_sermons' ) ) {
 	 */
 	 function cs_sermons() {
 		$widget_ops = array('classname' => 'widget-sermon cs-sermons', 'description' => 'Select a category to show in widget.');
-		$this->WP_Widget('cs_sermons', 'CS : Sermons', $widget_ops);
+		parent::__construct('cs_sermons', 'CS : Sermons', $widget_ops);
 	 }
 	 
 	 /**
@@ -2155,7 +2155,7 @@ if ( ! class_exists( 'cs_causes' ) ) {
 	 */
 	 function cs_causes() {
 		$widget_ops = array('classname' => 'widget-causes', 'description' => 'Select a category to show in widget.');
-		$this->WP_Widget('cs_causes', 'CS : Causes', $widget_ops);
+		parent::__construct('cs_causes', 'CS : Causes', $widget_ops);
 	 }
 	 
 	 /**
@@ -2367,7 +2367,7 @@ if ( ! class_exists( 'cs_contact_msg' ) ) {
 	 */
 	 function cs_contact_msg() {
 		$widget_ops = array('classname' => 'widget-form', 'description' => 'Select contact form to show in widget.');
-		$this->WP_Widget('cs_contact_msg', 'CS : Contact Form', $widget_ops);
+		parent::__construct('cs_contact_msg', 'CS : Contact Form', $widget_ops);
 	 }
 	 
 	 /**

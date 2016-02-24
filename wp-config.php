@@ -62,6 +62,7 @@ if ( file_exists( dirname( __FILE__ ) . '/local-config.php' ) ) {
      * prefix. Only numbers, letters, and underscores please!
      */
     $table_prefix  = 'wp_';
+
     /**
      * For developers: WordPress debugging mode.
      *
@@ -70,6 +71,7 @@ if ( file_exists( dirname( __FILE__ ) . '/local-config.php' ) ) {
      * in their development environments.
      */
     define('WP_DEBUG', false);
+
     /* Multisite */
     define( 'WP_ALLOW_MULTISITE', true );
     define('MULTISITE', true);
