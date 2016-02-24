@@ -8,7 +8,7 @@ class SimpleRssWidget extends WP_Widget
     /** constructor */
     function SimpleRssWidget()
     {
-        parent::WP_Widget(false, $name = 'Simple RSS Feed');
+        parent::__construct(false, $name = 'Simple RSS Feed');
     }
 
     /** @see WP_Widget::widget */

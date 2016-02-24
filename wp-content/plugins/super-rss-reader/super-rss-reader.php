@@ -244,7 +244,7 @@ class super_rss_reader_widget extends WP_Widget{
 		);
 		
 		$control_ops = array('width' => 430, 'height' => 500);
-		parent::WP_Widget('super_rss_reader', 'Super RSS Reader', $widget_ops, $control_ops);
+		parent::__construct('super_rss_reader', 'Super RSS Reader', $widget_ops, $control_ops);
 	}
 	
 	## Display the Widget
