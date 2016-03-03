@@ -18,6 +18,10 @@
  * @package WordPress
  */
 
+define('WP_ALLOW_REPAIR', true);
+define('WP_HOME','http://cnm-ingenuity.net');
+define('WP_SITEURL','http://cnm-ingenuity.net');
+
 // load local dev config file if it exists. This file should not exist in production
 if ( file_exists( dirname( __FILE__ ) . '/local-config.php' ) ) {
   require_once( dirname( __FILE__ ) . '/local-config.php' );
@@ -26,11 +30,11 @@ if ( file_exists( dirname( __FILE__ ) . '/local-config.php' ) ) {
 
     // ** MySQL settings - You can get this info from your web host ** //
     /** The name of the database for WordPress */
-    define('DB_NAME', 'stemulus_wordpress');
+    define('DB_NAME', 'fusemake_wordpress');
     /** MySQL database username */
-    define('DB_USER', 'stemulus_admin');
+    define('DB_USER', 'fusemake_admin');
     /** MySQL database password */
-    define('DB_PASSWORD', 'm4rbleBeer*3');
+    define('DB_PASSWORD', '7RW~D7;6$ODe');
     /** MySQL hostname */
     define('DB_HOST', 'localhost');
     /** Database Charset to use in creating database tables. */
@@ -74,21 +78,22 @@ if ( file_exists( dirname( __FILE__ ) . '/local-config.php' ) ) {
 
     /* Multisite */
     define( 'WP_ALLOW_MULTISITE', true );
-    define('MULTISITE', true);
+    define('MULTISITE', true );
     define('SUBDOMAIN_INSTALL', false);
-    define('DOMAIN_CURRENT_SITE', 'cnmingenuity.org');
+    define('DOMAIN_CURRENT_SITE', 'cnm-ingenuity.net');
     define('PATH_CURRENT_SITE', '/');
     define('SITE_ID_CURRENT_SITE', 1);
     define('BLOG_ID_CURRENT_SITE', 1);
 }
 
+define( 'SUNRISE', 'on' );
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
 
-define( 'SUNRISE', 'on' );
+
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');

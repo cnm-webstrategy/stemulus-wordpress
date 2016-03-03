@@ -93,6 +93,7 @@ Thumbs.db
 # track these mu-plugins, plugins, and themes
 # add your own entries here
 #!wp-content/mu-plugins/example-mu-plugin/
+.htaccess
 !wp-content/plugins/*
 !wp-content/themes/themetrust-create*
 !wp-content/themes/makerspace*
