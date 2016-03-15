@@ -5,5 +5,9 @@
  Template:     awaken-theme
  Text Domain:  awaken-child
 */
-.someClass .someOtherClass {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+.someClass {
+    .someOtherClass {
+        font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+}
