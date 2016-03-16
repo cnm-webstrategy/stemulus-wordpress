@@ -1,0 +1,4 @@
+[07-Oct-2015 01:39:44 America/Detroit] PHP Fatal error:  Call to undefined function add_action() in /home/fusemake/public_html/wp-content/plugins/hello.php on line 60
+[10-Oct-2015 11:42:26 America/Detroit] PHP Fatal error:  Call to undefined function add_action() in /home/fusemake/public_html/wp-content/plugins/hello.php on line 60
+[23-Oct-2015 01:12:58 America/Detroit] PHP Fatal error:  Call to undefined function add_action() in /home/fusemake/public_html/wp-content/plugins/hello.php on line 60
+[23-Oct-2015 17:01:30 America/Detroit] PHP Fatal error:  Call to undefined function add_action() in /home/fusemake/public_html/wp-content/plugins/hello.php on line 60
