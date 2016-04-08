@@ -30,7 +30,6 @@
 <header>
 	<div class="container">
 		<section class="row custom-header">
-			<a class="mobile-show" href="<?php echo home_url(); ?>"><?php if ( $option['custom_logo'] !='' ) { echo '<img class="scale-with-grid-logo-small" src="' . $option['custom_logo_small'] . '" alt="Logo" />'; } ?></a>
 
 			<div class="four columns">
 				<a href="<?php echo home_url(); ?>"><?php if ( $option['custom_logo'] !='' ) { echo '<img class="scale-with-grid-logo" src="' . $option['custom_logo'] . '" alt="Logo" /><img class="scale-with-grid-logo-small" src="' . $option['custom_logo_small'] . '" alt="Logo" />'; } else { echo bloginfo('name'); } ?></a>
@@ -46,4 +45,8 @@
 		
 		</section>
 	</div>
+<<<<<<< HEAD
 </header>
+=======
+</header>
+>>>>>>> 2ba7345f79b9345e5110c07e9563734f7a051ae9
