@@ -45,8 +45,4 @@
 		
 		</section>
 	</div>
-<<<<<<< HEAD
 </header>
-=======
-</header>
->>>>>>> 2ba7345f79b9345e5110c07e9563734f7a051ae9
