@@ -14,7 +14,7 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<meta name="google-site-verification" content="QQMau7gl337LiK8R7qRKgjvbLdndwCUCaaK9-gjrNvM" />
 		
-	<link rel="stylesheet" type="text/css" href="//cloud.typography.com/6007112/641408/css/fonts.css" />
+	<link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6007112/785104/css/fonts.css" />
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
