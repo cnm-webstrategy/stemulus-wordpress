@@ -98,3 +98,4 @@ Thumbs.db
 !wp-content/themes/themetrust-create*
 !wp-content/themes/makerspace*
 !wp-content/themes/awaken-theme*
+!.htaccess
