@@ -13,11 +13,21 @@
 	<?php endif; ?>
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<meta name="google-site-verification" content="QQMau7gl337LiK8R7qRKgjvbLdndwCUCaaK9-gjrNvM" />
-		
-	<link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6007112/785104/css/fonts.css" />
+	
+	<?php			
+		//pull in the code that determines if this is production or dev,
+		//and echo the correct url for typography.com fonts
+		include $_SERVER['DOCUMENT_ROOT'] . '/wp-content/themes/fonts-include.php';
+
+	?>
+
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+
+	<?php 
+		echo $_SERVER['HTTP_HOST'];
+	?>
 <!-- Google Tag Manager -->
  <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-K634WS"
  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>

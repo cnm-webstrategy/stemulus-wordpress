@@ -29,7 +29,14 @@ $header_class .= $header_color_scheme;
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6007112/785104/css/fonts.css" />
+
+	<?php			
+		//pull in the code that determines if this is production or dev,
+		//and echo the correct url for typography.com fonts
+		include $_SERVER['DOCUMENT_ROOT'] . '/wp-content/themes/fonts-include.php';
+
+	?>
+
 	<?php wp_head(); ?>
 </head>
 
