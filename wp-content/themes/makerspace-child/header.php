@@ -25,9 +25,6 @@
 </head>
 <body <?php body_class(); ?>>
 
-	<?php 
-		echo $_SERVER['HTTP_HOST'];
-	?>
 <!-- Google Tag Manager -->
  <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-K634WS"
  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
