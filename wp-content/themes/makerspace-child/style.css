@@ -10,3 +10,11 @@
 h1 {
 font-size: 50px;
 }
+
+.sidebar .internal {
+    position: absolute !important;
+    top: 130px;
+    width: 100% !important;
+    max-width: 255px;
+    z-index: 2500;
+}

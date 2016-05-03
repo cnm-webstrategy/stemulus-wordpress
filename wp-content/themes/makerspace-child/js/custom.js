@@ -11,7 +11,7 @@ jQuery(document).ready(function(){
   }
   */
 
-  /* For the sidebar contents */
+  /* For the sidebar contents 
   if(window.matchMedia("(min-width: 768px)").matches) {
     var scrollTimer;
 
@@ -43,7 +43,7 @@ jQuery(document).ready(function(){
         
       }, 100);
     });
-  }  // min-width: 768px
+  } */ // min-width: 768px
 });
 
 // Mozilla cookie framework. Making life easier.
