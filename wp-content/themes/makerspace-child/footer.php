@@ -42,6 +42,6 @@
 	wp_footer();
 ?>
 <script type="text/javascript" src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/featherlight.min.js"></script>
-<script type="text/javascript" src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/custom.min.js"></script>
+<script type="text/javascript" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/js/custom.min.js"></script>
 </body>
 </html>
