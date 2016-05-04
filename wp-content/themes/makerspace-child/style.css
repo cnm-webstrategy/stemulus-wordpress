@@ -10,6 +10,10 @@ h1 {
 font-size: 50px;
 }
 
+.the-content h2 {
+	font-family:'Vitesse A','Vitesse B' ;
+}
+
 /*.sidebar .internal {
     position: absolute !important;
     top: 130px;
