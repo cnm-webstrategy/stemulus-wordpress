@@ -1,0 +1,37 @@
+RewriteCond %{HTTP_HOST} ^deepdivecoding\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.deepdivecoding\.com$
+RewriteRule ^/?$ "http\:\/\/stemuluscenter\.org\/deep\-dive\-coding\-bootcamp\/" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^stimuluscenter\.org$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.stimuluscenter\.org$
+RewriteRule ^/?$ "http\:\/\/stemuluscenter\.org\/" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^abqmindset\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.abqmindset\.com$
+RewriteRule ^/?$ "http\:\/\/stemuluscenter\.org\/entrepreneurial\-mindset\-program\/" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^abqmindset\.org$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.abqmindset\.org$
+RewriteRule ^/?$ "http\:\/\/stemuluscenter\.org\/entrepreneurial\-mindset\-program\/" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^fusemakerspace\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.fusemakerspace\.com$
+RewriteRule ^/?$ "http\:\/\/fusemakerspace\.org\/" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^fusemakerspace\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.fusemakerspace\.com$
+RewriteRule ^/?$ "http\:\/\/ingenuity\.wpengine\.com\/makerspace\/" [R=301,L]
+
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+
+# add a trailing slash to /wp-admin
+RewriteRule ^([_0-9a-zA-Z-]+/)?wp-admin$ $1wp-admin/ [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+RewriteRule ^([_0-9a-zA-Z-]+/)?(wp-(content|admin|includes).*) $2 [L]
+RewriteRule ^([_0-9a-zA-Z-]+/)?(.*\.php)$ $2 [L]
+RewriteRule . index.php [L]
