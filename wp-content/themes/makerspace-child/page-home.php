@@ -158,7 +158,7 @@
 		</section>
 		
 		<?php 
-			$home_blog = new WP_Query('category_name=event&posts_per_page=3'); 
+			$home_blog = new WP_Query('category_name=event&posts_per_page=5'); 
 
 			if( $home_blog->have_posts() ) : while( $home_blog->have_posts() ) : $home_blog->the_post(); 
 		?>

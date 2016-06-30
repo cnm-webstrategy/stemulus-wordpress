@@ -29,6 +29,7 @@ _wpeprivate
 wp-content/object-cache.php
 wp-content/mu-plugins/
 wp-content/mysql.sql
+wp-content/index.php
 
 # wp core (as of 3.4.1)
 /db-config.php
