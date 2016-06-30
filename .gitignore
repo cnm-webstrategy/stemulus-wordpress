@@ -5,6 +5,7 @@
 *.bak
 *.swp
 *.zip
+*.sql
 Thumbs.db
 
 node-modules/
