@@ -8,7 +8,7 @@
 Thumbs.db
 
 node-modules/
-wp-content/themes/**/node-modules/
+/wp-content/themes/**/node-modules/
 
 # wordpress specific
 wp-config.php
@@ -63,6 +63,9 @@ wp-content/mysql.sql
 /wp-includes
 /wp-content/index.php
 /wp-content/themes/twentyten
+/wp-content/themes/twentysixteen/
+/wp-content/themes/twentyfourteen/
+/wp-content/themes/twentyfifteen/
 /wp-content/themes/index.php
 /wp-content/plugins/index.php
 
