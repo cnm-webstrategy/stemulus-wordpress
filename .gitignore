@@ -61,7 +61,6 @@ wp-content/index.php
 /wp-admin
 /wp-includes
 /wp-content/index.php
-/wp-content/themes/twentyten
 /wp-content/themes/twenty*
 /wp-content/themes/index.php
 /wp-content/plugins/index.php
@@ -102,4 +101,7 @@ wp-content/index.php
 *.avi
 
 old.gitignore
+.htaccess
 .htaccess*
+.idea/
+**/error_log/

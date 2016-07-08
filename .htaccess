@@ -1,27 +1,3 @@
-RewriteCond %{HTTP_HOST} ^deepdivecoding\.com$ [OR]
-RewriteCond %{HTTP_HOST} ^www\.deepdivecoding\.com$
-RewriteRule ^/?$ "http\:\/\/stemuluscenter\.org\/deep\-dive\-coding\-bootcamp\/" [R=301,L]
-
-RewriteCond %{HTTP_HOST} ^stimuluscenter\.org$ [OR]
-RewriteCond %{HTTP_HOST} ^www\.stimuluscenter\.org$
-RewriteRule ^/?$ "http\:\/\/stemuluscenter\.org\/" [R=301,L]
-
-RewriteCond %{HTTP_HOST} ^abqmindset\.com$ [OR]
-RewriteCond %{HTTP_HOST} ^www\.abqmindset\.com$
-RewriteRule ^/?$ "http\:\/\/stemuluscenter\.org\/entrepreneurial\-mindset\-program\/" [R=301,L]
-
-RewriteCond %{HTTP_HOST} ^abqmindset\.org$ [OR]
-RewriteCond %{HTTP_HOST} ^www\.abqmindset\.org$
-RewriteRule ^/?$ "http\:\/\/stemuluscenter\.org\/entrepreneurial\-mindset\-program\/" [R=301,L]
-
-RewriteCond %{HTTP_HOST} ^fusemakerspace\.com$ [OR]
-RewriteCond %{HTTP_HOST} ^www\.fusemakerspace\.com$
-RewriteRule ^/?$ "http\:\/\/fusemakerspace\.org\/" [R=301,L]
-
-RewriteCond %{HTTP_HOST} ^fusemakerspace\.com$ [OR]
-RewriteCond %{HTTP_HOST} ^www\.fusemakerspace\.com$
-RewriteRule ^/?$ "http\:\/\/ingenuity\.wpengine\.com\/makerspace\/" [R=301,L]
-
 RewriteEngine On
 RewriteBase /
 RewriteRule ^index\.php$ - [L]

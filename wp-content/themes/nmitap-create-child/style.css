@@ -1,5 +1,5 @@
 /*
-Theme Name: NMITAP 
+Theme Name: NMITAP
 Theme Description: Child theme of Themetrust Create for CNMIngenuity landing page
 Author: CNM Web Strategy
 Template: themetrust-create
@@ -12,3 +12,7 @@ Domain Path: /languages/
 Tags:
 
 */
+
+/*h1, h2, h3, h4, h5, h6 { */
+	/*font-family: 'Oswald', sans-serif; font-weight: 400; */
+/*}*/
