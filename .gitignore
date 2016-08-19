@@ -70,3 +70,4 @@ wp-content/mysql.sql
 **/*.zip
 .htaccess*
 /**/node_modules/
+*_log
