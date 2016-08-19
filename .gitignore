@@ -71,3 +71,4 @@ wp-content/mysql.sql
 .htaccess*
 /**/node_modules/
 *_log
+/*.png
