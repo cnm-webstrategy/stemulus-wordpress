@@ -14,6 +14,7 @@ Thumbs.db
 #### but whitelist...
 !wp-content
 !fonts
+!.gitignore
 
 # wordpress specific
 wp-content/uploads/
