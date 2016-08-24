@@ -28,6 +28,7 @@ wp-content/cache/supercache/*
 wp-content/themes/twenty*
 wp-content/plugins/
 !wp-content/plugins/custom-admin-theme
+!wp-content/themes
 
 # wpengine specific
 .smushit-status
