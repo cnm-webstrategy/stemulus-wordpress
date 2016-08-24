@@ -18,6 +18,10 @@ Thumbs.db
 
 # wordpress specific
 wp-activate.php
+license.txt
+readme.html
+wp-*.php
+!wp-config.php
 wp-content/uploads/
 wp-content/blogs.dir/
 wp-content/upgrade/*
