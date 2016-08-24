@@ -17,6 +17,7 @@ Thumbs.db
 !.gitignore
 
 # wordpress specific
+wp-activate.php
 wp-content/uploads/
 wp-content/blogs.dir/
 wp-content/upgrade/*
