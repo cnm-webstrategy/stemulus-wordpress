@@ -12,15 +12,28 @@ Thumbs.db
 *
 
 #### but whitelist...
-!wp-content/
-!fonts/
+!wp-content
+!fonts
 !.gitignore
+!favicon.ico
 
 # wordpress specific
 wp-activate.php
+index.php
 license.txt
 readme.html
-wp-*.php
+wp-blog-header.php
+wp-comments-post.php
+wp-cron.php
+wp-links-opml.php
+wp-load.php
+wp-login.php
+wp-mail.php
+wp-settings.php
+wp-signup.php
+wp-trackback.php
+xmlrpc.php
+wp-content/index.php
 wp-content/uploads/
 wp-content/blogs.dir/
 wp-content/upgrade/*
@@ -32,7 +45,7 @@ wp-content/cache/supercache/*
 wp-content/themes/twenty*
 wp-content/plugins/
 !wp-content/plugins/custom-admin-theme
-!wp-content/themes/*
+!wp-content/themes
 
 # wpengine specific
 .smushit-status
