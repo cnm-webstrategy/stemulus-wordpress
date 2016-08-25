@@ -18,6 +18,7 @@ Thumbs.db
 !favicon.ico
 
 # wordpress specific
+wp-activate.php
 index.php
 license.txt
 readme.html
