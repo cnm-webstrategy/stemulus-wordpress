@@ -40,12 +40,6 @@ genesis_markup( array(
 
 do_action( 'genesis_before' );
 
-add_action( 'genesis_before', 'add_GTM_code' );
-function add_GTM_code () {
-	if ( current_filter() == 'genesis_before' ) {
-		echo '<div class="gene">hello gene</div>';
-	}
-}
 
 genesis_markup( array(
 	'html5'   => '<div %s>',
