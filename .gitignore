@@ -17,6 +17,7 @@ Thumbs.db
 !.gitignore
 !favicon.ico
 
+
 # wordpress specific
 wp-activate.php
 index.php
