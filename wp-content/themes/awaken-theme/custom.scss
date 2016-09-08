@@ -1,0 +1,100 @@
+// Fonts
+@mixin sans-serif($size: 1em, $weight: normal) {
+  font-family: 'Tungsten A', 'Tungsten B';
+  font-size: $size;
+  font-weight: $weight;
+}
+
+@mixin serif($size: 1em, $weight: normal) {
+  font-family: 'Vitesse A', 'Vitesse B';
+  font-size: $size;
+  font-weight: $weight;
+}
+.pageinfo .page-title-align-left {
+  vertical-align: bottom;
+  padding: 25px;
+}
+strong {
+    float: none;
+    font-size: inherit;
+    color: inherit;
+}
+
+.rich_editor_text strong {
+    float: none;
+}
+
+label {
+text-transform: none;
+}
+
+.rich_editor_text ul li {
+    color: #777;
+    padding: 0px 12px 0 5px;
+    position: outside;
+    list-style-type: disc;
+}
+ul {
+    margin: 15px 0 15px 0;
+}
+
+li {
+    line-height: 22px;
+}
+
+// Icon Styles
+@mixin center-icon($width) {
+  display: inline-block;
+  width: $width;
+  text-align: center;
+}
+
+h1, .pageinfo h1 {
+  @include serif(2.0em);
+}
+
+h2, .cs-section-title h2 {
+  @include serif(1.5em);
+    text-transform: none;
+    padding-top: 25px;
+}
+h3 {
+  margin: 15px 0 4px 0;
+}
+
+h4 {
+  margin: 15px 0 4px 0;
+}
+
+
+// Navigation
+div  {
+  .navbar-default {
+    background-color: transparent;
+  }
+}
+
+.main-navbar {
+  .left-side {
+    width: auto;
+  }
+}
+
+@media all and(max-width: 767px) {
+  .navigation ul li {
+    float: none;
+  }
+  div { &.rich_editor_text {
+    padding: 10px;
+  }
+  .pageinfo {
+width: 100%;
+}
+}
+}
+//Icons
+div {
+  &.product-icon {
+    a { @include center-icon(100%); }
+  }
+}

@@ -1,0 +1,24 @@
+/*
+ Theme Name:   Makerspace Child Theme
+ Description:  Theme for Fuse Makerspace originally based on Montreal
+ Author:       Gene Higgins
+ Template:     makerspace
+ Text Domain:  makerspace-child
+*/
+
+h1 {
+font-size: 50px;
+}
+
+.the-content h2,
+.intro h2 {
+	font-family:'Vitesse A','Vitesse B' ;
+}
+
+/*.sidebar .internal {
+    position: absolute !important;
+    top: 130px;
+    width: 100% !important;
+    max-width: 255px;
+    z-index: 2500;
+}*/
