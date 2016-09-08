@@ -51,7 +51,25 @@
 
 <?php endif; ?>
 
-		<div style="width:100%;height:100%;background-image:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('http://isl2.nicklopezcodes.com/wp/wp-content/uploads/2015/08/honeycomb-bgimage.jpg'); background-size:2500px auto; position:fixed; z-index:-1;"></div>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MNHMS2"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MNHMS2');</script>
+<!-- End Google Tag Manager -->
+
+<?php 
+$upload_dir = wp_upload_dir();
+$uploads_url = $upload_dir['baseurl'];
+//print_r (wp_upload_dir());
+echo ($upload_dir['baseurl']);
+
+echo '<div style="width:100%;height:100%;background-image:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(\'' . $uploads_url . '/2015/08/honeycomb-bgimage.jpg\'); background-size:2500px auto; position:fixed; z-index:-1;"></div>';
+?>
+		
 
 
 <!-- =========================
