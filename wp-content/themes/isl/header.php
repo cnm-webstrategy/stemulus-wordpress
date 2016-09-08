@@ -64,8 +64,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <?php 
 $upload_dir = wp_upload_dir();
 $uploads_url = $upload_dir['baseurl'];
-//print_r (wp_upload_dir());
-echo ($upload_dir['baseurl']);
 
 echo '<div style="width:100%;height:100%;background-image:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(\'' . $uploads_url . '/2015/08/honeycomb-bgimage.jpg\'); background-size:2500px auto; position:fixed; z-index:-1;"></div>';
 ?>
