@@ -1,0 +1,17 @@
+/*
+ Theme Name:   Awaken Child STEMulus
+ Description:  Theme for STEMulus Center based on Awaken
+ Author:       Gene Higgins
+ Template:     awaken-theme
+ Text Domain:  awaken-child
+*/
+
+.someClass {
+    .someOtherClass {
+        font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+}
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,700,500|Roboto+Condensed:400,300italic,700);
+/*noinspection CssUnknownTarget*/
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic&subset=latin,cyrillic-ext,greek-ext,greek,vietnamese,latin-ext,cyrillic);
