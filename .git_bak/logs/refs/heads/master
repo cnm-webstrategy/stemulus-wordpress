@@ -1,0 +1,7 @@
+0000000000000000000000000000000000000000 f562682fbc91acfd7b89196007a3b21fa124d695 HIGGINS <ehigginsiii@m766181.admin.ad.cnm.edu> 1473364434 -0600	commit (initial): first commit after using wpengine's recommended .gitignore
+f562682fbc91acfd7b89196007a3b21fa124d695 60482690801f13d99e28ff982480b9cfc6d0b580 HIGGINS <ehigginsiii@m766181.admin.ad.cnm.edu> 1473365062 -0600	commit: mmm
+60482690801f13d99e28ff982480b9cfc6d0b580 4d4b28c1b045f31ade52fd405402db587e27e5a4 HIGGINS <ehigginsiii@m766181.admin.ad.cnm.edu> 1473365317 -0600	commit: pruning repo
+4d4b28c1b045f31ade52fd405402db587e27e5a4 9ecfe73b1060a8bbe6a6ac1be5ce783a3d230448 Gene Higins <ehigginsiii@cnm.edu> 1473368161 -0600	commit: using .gitignore that doesn't version wp core
+9ecfe73b1060a8bbe6a6ac1be5ce783a3d230448 bc0ffa08e5fa49c225b9c919d15447894d6c6a81 Gene Higins <ehigginsiii@cnm.edu> 1473375134 -0600	commit: added GTM code, fixed hardcoded link to developers external site
+bc0ffa08e5fa49c225b9c919d15447894d6c6a81 665dbcbdf8735cf68c5f2ed521dbd3601d09f243 Gene Higins <ehigginsiii@cnm.edu> 1473375250 -0600	commit: had extraneous debug echo
+665dbcbdf8735cf68c5f2ed521dbd3601d09f243 07f738c8d3ef9d1beb846cbcf4ed516d1fadbb12 Gene Higgins <ehigginsiii@cnm.edu> 1474050460 -0600	commit: removed occurrences of "http://" from code, changed to https
