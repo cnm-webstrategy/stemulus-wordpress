@@ -1,0 +1,16 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = true
+[remote "origin"]
+	url = git@github.com:cnm-webstrategy/stemulus-wordpress
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[remote "staging"]
+	url = git@git.wpengine.com:staging/ingenuity.git
+	fetch = +refs/heads/*:refs/remotes/staging/*
+[remote "production"]
+	url = git@git.wpengine.com:production/ingenuity.git
+	fetch = +refs/heads/*:refs/remotes/production/*
