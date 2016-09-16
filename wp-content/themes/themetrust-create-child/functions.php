@@ -1,8 +1,5 @@
 <?php
 
-//update_option( 'siteurl', 'http://cnmingenuity.local.com' );
-//update_option( 'home', 'http://cnmingenuity.local.com' );
-
 function theme_enqueue_styles() {
 
     $parent_style = 'parent-style';
