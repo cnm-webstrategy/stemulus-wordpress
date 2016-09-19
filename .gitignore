@@ -9,6 +9,7 @@ Thumbs.db
 *.old
 *.zip
 *_log
+.ftpquota
 
 # wordpress specific
 wp-config.php
