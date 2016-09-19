@@ -31,4 +31,5 @@ if ( ! function_exists( 'cs_get_font_family' ) ) {
 		return $html;
 	}
 }
+
 ?>
