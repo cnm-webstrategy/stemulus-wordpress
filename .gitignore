@@ -11,6 +11,7 @@ Thumbs.db
 **/*_log
 .ftpquota
 *_log
+.ftpquota
 
 # wordpress specific
 wp-config.php
