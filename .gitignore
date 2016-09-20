@@ -8,7 +8,7 @@ Thumbs.db
 *.sql
 *.old
 *.zip
-*_log
+**/*_log
 .ftpquota
 
 # wordpress specific
