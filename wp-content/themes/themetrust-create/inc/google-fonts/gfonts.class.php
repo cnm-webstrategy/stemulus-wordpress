@@ -243,7 +243,7 @@ if (!class_exists('create_gfonts')) {
 			$font_css_register = array(); // Prevent loading the same stylesheet multiple times
 
 			foreach($tags_local as $key => $value) {
-			
+
 				$key_name = strtr($key, array('.' => '', '#' => '', ' ' => '', ',' => ''));
 				
 				$font_family_temp = get_theme_mod("tt_gfp_" . $key_name . "_font_family");
@@ -273,10 +273,9 @@ if (!class_exists('create_gfonts')) {
 				$font_string = $font_weight != '400' ? $font_family .':'. $requested_font_weight : $font_family;
 
 				if($font_family != 'default' && !empty($font_family) ) {?>
-								<?php  ?>
 
 					<!-- ThemeTrust Google Font Picker -->
-					<?php if(!array_key_exists($font_family_temp, $font_css_register)){ ?><link href='https://fonts.googleapis.com/css?family=<?php
+					<?php if(!array_key_exists($font_family_temp, $font_css_register)){ ?><link href='//fonts.googleapis.com/css?family=<?php
 					if( substr($font_string, -1) == ":" ) {
 						echo $font_family;
 					} else {

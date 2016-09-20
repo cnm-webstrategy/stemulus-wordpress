@@ -993,6 +993,7 @@ function create_fonts_url() {
 } // create_fonts_url()
 
 function create_gfonts() {
+
     wp_enqueue_style( 'create-fonts', create_fonts_url(), array(), null );
 
 }

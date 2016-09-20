@@ -54,6 +54,7 @@ $header_style = '';
 		//and echo the correct url for typography.com fonts
 		//include $_SERVER['DOCUMENT_ROOT'] . '/wp-content/themes/fonts-include.php';
 
+
 	?>
 
   <?php 
