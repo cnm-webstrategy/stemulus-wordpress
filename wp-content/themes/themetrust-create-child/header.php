@@ -30,12 +30,6 @@ $header_class .= $header_color_scheme;
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-	<?php			
-		//pull in the code that determines if this is production or dev,
-		//and echo the correct url for typography.com fonts
-		include $_SERVER['DOCUMENT_ROOT'] . '/wp-content/themes/fonts-include.php';
-
-	?>
 
 	<?php wp_head(); ?>
 </head>
