@@ -12,6 +12,8 @@ Thumbs.db
 .ftpquota
 *_log
 .ftpquota
+.git_bak
+node_modules/
 
 # wordpress specific
 wp-config.php
