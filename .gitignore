@@ -15,6 +15,7 @@ Thumbs.db
 .git_bak
 node_modules/
 
+
 # wordpress specific
 wp-config.php
 wp-content/uploads/
