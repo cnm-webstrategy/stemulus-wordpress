@@ -30,6 +30,15 @@
 
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MNHMS2');</script>
+<!-- End Google Tag Manager -->
+
 <!--[if lt IE 9]>
 <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5.js"></script>
 <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/ie.css" type="text/css">
@@ -51,23 +60,13 @@
 
 <?php endif; ?>
 
-<!-- Google Tag Manager -->
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MNHMS2"
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MNHMS2"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MNHMS2');</script>
-<!-- End Google Tag Manager -->
+<!-- End Google Tag Manager (noscript) -->
 
-<?php 
-$upload_dir = wp_upload_dir();
-$uploads_url = $upload_dir['baseurl'];
 
-echo '<div style="width:100%;height:100%;background-image:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(\'' . $uploads_url . '/2015/08/honeycomb-bgimage.jpg\'); background-size:2500px auto; position:fixed; z-index:-1;"></div>';
-?>
-		
+		<div style="width:100%;height:100%;background-image:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('/isl/wp-content/uploads/2015/08/honeycomb-bgimage.jpg'); background-size:2500px auto; position:fixed; z-index:-1;"></div>
 
 
 <!-- =========================

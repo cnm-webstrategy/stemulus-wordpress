@@ -112,7 +112,8 @@
 
 		echo '<div class="col-md-4 company-details">';
 		echo '<div class="">';
-		echo '<img id=cnmIngenuityImage src="http://isl2.nicklopezcodes.com/wp/wp-content/uploads/2015/08/logo-CNM-ingenuity-whitetext.png" alt="Ingenuity Software Labs" height="300">';
+
+		echo '<img id=cnmIngenuityImage src="/isl/wp-content/uploads/2015/08/logo-CNM-ingenuity-whitetext.png" alt="Ingenuity Software Labs" height="300">';
 		echo '</div>';
 		echo '</div>';
 		?>

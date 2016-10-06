@@ -14,12 +14,6 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<meta name="google-site-verification" content="QQMau7gl337LiK8R7qRKgjvbLdndwCUCaaK9-gjrNvM" />
 	
-	<?php			
-		//pull in the code that determines if this is production or dev,
-		//and echo the correct url for typography.com fonts
-		include $_SERVER['DOCUMENT_ROOT'] . '/wp-content/themes/fonts-include.php';
-
-	?>
 
 	<?php wp_head(); ?>
 </head>

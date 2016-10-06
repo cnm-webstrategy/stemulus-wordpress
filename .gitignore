@@ -8,8 +8,11 @@ Thumbs.db
 *.sql
 *.old
 *.zip
-*_log
 **/node_modules/
+**/*_log
+.ftpquota
+.ftpquota
+.git_bak
 node_modules/
 
 # wordpress specific

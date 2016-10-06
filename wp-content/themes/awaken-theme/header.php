@@ -49,6 +49,7 @@ $header_style = '';
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<!--[if lt IE 9]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 	<link rel="stylesheet" type="text/css" href="//cloud.typography.com/6007112/785104/css/fonts.css" />
+
   <?php 
      if(isset($cs_theme_options['cs_custom_css']) and $cs_theme_options['cs_custom_css']<>''){
 		$cs_content = $cs_theme_options['cs_custom_css'];
