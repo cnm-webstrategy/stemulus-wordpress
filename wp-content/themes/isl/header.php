@@ -66,7 +66,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 
-		<div style="width:100%;height:100%;background-image:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('/isl/wp-content/uploads/2015/08/honeycomb-bgimage.jpg'); background-size:2500px auto; position:fixed; z-index:-1;"></div>
+		<div style="width:100%;height:100%;background-image:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(<?php echo get_template_directory_uri() . '/images/honeycomb-bgimage.jpg' ?>); background-size:2500px auto; position:fixed; z-index:-1;"></div>
 
 
 <!-- =========================
