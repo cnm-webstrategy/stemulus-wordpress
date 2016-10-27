@@ -33,7 +33,7 @@ $GTM = '
 
 genesis_markup( array(
 	'html5'   => '<body %s> '.$GTM,
-	'xhtml'   => sprintf( '<body class="%s" id="geneid2">', implode( ' ', get_body_class() ) ),
+	'xhtml'   => sprintf( '<body class="%s" >', implode( ' ', get_body_class() ) ),
 	'context' => 'body',
 ) );
 
