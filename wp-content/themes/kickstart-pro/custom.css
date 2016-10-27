@@ -1,3 +1,7 @@
-.site-header { 
-    border-bottom: 6px solid #f2f2f3; 
-    } 
+h1, h2, h3, h4 {
+	font-family: 'Tungsten A', 'Tungsten B', Open Sans, sans-serif;
+}
+
+h1 a, h2 a, h3 a, h4 a {
+	font-family: 'Tungsten A', 'Tungsten B', Open Sans, sans-serif;
+}
