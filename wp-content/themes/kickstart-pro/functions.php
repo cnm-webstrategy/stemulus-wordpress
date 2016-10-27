@@ -318,3 +318,20 @@ function kickstart_single_next_prev() {
 		next_post_link( '<div class="pagination-next alignright">%link</div>', $nextpost_text );
 	echo '</div>';
 }
+
+function my_theme_enqueue_styles() {
+
+    wp_enqueue_style( 'custom-style',
+        get_stylesheet_directory_uri() . '/custom.css',
+        get_stylesheet_directory_uri() . '/style.css'
+    );
+
+     // is this wpengine production?
+	if ( is_wpe() ) {  
+		wp_enqueue_style('typography-font', 'https://cloud.typography.com/6007112/641408/css/fonts.css');
+	} else  {
+	//development url
+		wp_enqueue_style('typography-font', 'https://cloud.typography.com/6007112/785104/css/fonts.css');
+	}
+}
+add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles', 20 );
