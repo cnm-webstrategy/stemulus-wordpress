@@ -1,4 +1,4 @@
-h1, h2, h3, h4 {
+h1, h2, h3, h4, .entry-header, .widgettitle, .widget-title {
 	font-family: 'Tungsten A', 'Tungsten B', Open Sans, sans-serif;
 }
 
