@@ -1,4 +1,5 @@
-_Store
+*_Store
+**/*_Store
 .svn
 .cvs
 *.bak
