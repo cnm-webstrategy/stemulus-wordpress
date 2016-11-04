@@ -44,7 +44,7 @@ function ebor_load_scripts_GH() {
 	wp_enqueue_script( 'ebor-modernizr', get_template_directory_uri() . '/js/libs/modernizr-2.0.6.min.js', array('jquery') );
 	wp_enqueue_script( 'ebor-mediaelement', get_template_directory_uri() . '/player/lib/mediaelement.js', array('jquery') );
 	wp_enqueue_script( 'ebor-mediaelementplayer', get_template_directory_uri() . '/player/lib/mediaelementplayer.js', array('jquery') );
-	wp_enqueue_script( 'ebor-maps', 'http://maps.google.com/maps/api/js?sensor=true', array('jquery'), false, true );
+	wp_enqueue_script( 'ebor-maps', '//maps.google.com/maps/api/js?sensor=true', array('jquery'), false, true );
 	wp_enqueue_script( 'ebor-gumby', get_template_directory_uri() . '/js/libs/gumby.min.js', array('jquery'), false, true );
 	wp_enqueue_script( 'ebor-gumby-tabs', get_template_directory_uri() . '/js/libs/gumby.tabs.js', array('jquery'), false, true );
 	wp_enqueue_script( 'ebor-gumby-toggle', get_template_directory_uri() . '/js/libs/gumby.toggleswitch.js', array('jquery'), false, true );

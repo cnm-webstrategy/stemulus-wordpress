@@ -1144,7 +1144,7 @@ if ( ! class_exists( 'events_map' ) ) {
                     <?php
 					if($map_list <> ''){
 					?>
-                    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script> 
+                    <script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=false"></script> 
                     <script type="text/javascript">
                         var map;
                         var markers = [];
