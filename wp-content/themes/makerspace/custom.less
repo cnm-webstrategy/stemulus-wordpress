@@ -1,0 +1,176 @@
+//  Colors
+@light-blue: #41b6e6;
+@yellow: #ffd006;
+@grey: #404041;
+
+@border-stripes: url(/wordpress/makerspace/wp-content/uploads/sites/2/2015/06/stripes-yellow-10px.png);
+@border-blue: 2px solid @light-blue;
+
+h1 {
+  .serif(7.0rem, bold);
+  color: white;
+
+  &.custom-page-title {
+    text-shadow: 2px 2px black;
+  }
+}
+
+h2 {
+  color: white;
+  text-align: left;
+}
+
+div.home-page-tiles {
+  padding: 20px;
+  border-image: @border-stripes;
+  border-width: 0px 15px;
+
+  img {
+
+  }
+  h2 {
+    background-color: @yellow;
+    text-shadow: 1px 1px 0px #fff;
+    .serif(2.0em, bold);
+    color: @grey;
+    padding: 15px 20px 10px 20px;
+    position: relative;
+    top: -67px;
+    background-image: @border-stripes;
+    background-position: 10px 52px;
+    background-repeat: repeat-x;
+  }
+}
+
+#navigationmain {
+  ul#menu {
+    padding: 30px 0;
+  }
+}
+
+.sidebar {
+  padding: 0 20px;
+  margin-top: -50px;
+  min-height: 300px;
+
+  &:before {
+    content: '';
+    background-color: #e6e6e6;
+  }
+
+  .internal {
+    position: fixed;
+    top: 130px;
+    width: 25%;
+    max-width: 255px;
+    z-index: 2500;
+  }
+}
+
+.scroll-hide {
+  display: none;
+}
+
+footer {
+  border-top: @border-blue;
+}
+
+.sans(@size: 1em; @weight: normal) {
+  font-family: 'Tungsten A', 'Tungsten B';
+  font-size: @size;
+  font-weight: @weight;
+}
+
+.serif(@size: 1em; @weight: normal) {
+  font-family: 'Vitesse A', 'Vitesse B';
+  font-size: @size;
+  font-weight: @weight;
+}
+
+.makerspace-product {
+  display: inline-block;
+  box-shadow: 2px 2px 6px grey;
+  border: 1px solid @light-blue;
+  padding: 0px 10px 10px 10px;
+  margin: 10px 10px 10px 0;
+
+  p {
+    text-align: inherit;
+  }
+
+  img {
+    border: none;
+  }
+
+  h2 {
+    &:before {
+      content: url(http://wp-dev.admin.ad.cnm.edu/wordpress/makerspace/wp-content/uploads/sites/2/2015/07/icon-racoon-64.jpg);
+      padding-right: 6px;
+      position: relative;
+      top: 20px;
+    }
+    text-align: inherit;
+    margin: 0;
+    .sans(31px);
+  }
+}
+
+header {
+  height: 92px;
+  border: none;
+  border-bottom: @border-blue;
+  z-index: 7500;
+
+  transition: top .5s, height .5s, padding .5s;
+}
+
+@media all and (min-width: 768px) {
+  header {
+    top: 15px;
+
+    img {
+      position: relative;
+      &.scale-with-grid-logo {
+        top: -13px;
+      }
+      &.scale-with-grid-logo-small {
+        top: 6px;
+        display: none;
+      }
+    }
+
+    &.stickied {
+      top: 0px;
+      height: 60px;
+
+      ul#menu {
+        padding: 15px 0 !important;
+      } 
+    }
+  }
+
+  .sidebar-bg {
+    background: url(/wordpress/makerspace/wp-content/uploads/sites/2/2015/07/sidebar-bg.png) repeat-y;
+  }
+}
+@media screen and(max-width: 767px) {
+  header {
+    top: 0px;
+
+    img {
+      &.scale-with-grid-logo {
+        display: none;
+      }
+      &.scale-with-grid-logo-small {
+        top: 6px;
+        display: inline;
+      }
+    }
+  }
+
+  .sidebar {
+    display: none;
+  }
+}
+
+@import (less) "./css/featherlight.min.css";
