@@ -74,7 +74,6 @@ wp-content/mysql.sql
 /wp-content/themes/index.php
 /wp-content/plugins/index.php
 
->>>>>>> 93f81f56518c3a172855f36c2383fd65ba33caed
 # large/disallowed file types
 # a CDN should be used for these
 *.hqx
