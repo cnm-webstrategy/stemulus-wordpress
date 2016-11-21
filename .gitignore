@@ -17,6 +17,7 @@ Thumbs.db
 node_modules/
 **/.git
 *_bak
+phpMyAdmin
 
 # wordpress specific
 wp-config.php
