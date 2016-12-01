@@ -32,7 +32,7 @@ $header_class .= $header_color_scheme;
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> >
     <!-- Google Tag Manager -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFVJGC"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
