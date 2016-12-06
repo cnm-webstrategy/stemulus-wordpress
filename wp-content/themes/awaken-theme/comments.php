@@ -18,15 +18,15 @@
         </ul>
         <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
             <div class="navigation">
-                <div class="nav-previous"><?php previous_comments_link( __( '<span class="meta-nav">&larr;</span> Older Comments', 'Awaken') ); ?></div>
-                <div class="nav-next"><?php next_comments_link( __( 'Newer Comments <span class="meta-nav">&rarr;</span>', 'Awaken') ); ?></div>
+                <div class="nav-previous"><?php previous_comments_link( __( ' Older Comments', 'Awaken') ); ?></div>
+                <div class="nav-next"><?php next_comments_link( __( 'Newer Comments', 'Awaken') ); ?></div>
             </div> <!-- .navigation -->
         <?php endif; // check for comment navigation ?>
         
         <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
             <div class="navigation">
-                <div class="nav-previous"><?php previous_comments_link( __( '<span class="meta-nav">&larr;</span> Older Comments', 'Awaken') ); ?></div>
-                <div class="nav-next"><?php next_comments_link( __( 'Newer Comments <span class="meta-nav">&rarr;</span>', 'Awaken') ); ?></div>
+                <div class="nav-previous"><?php previous_comments_link( __( 'Older Comments', 'Awaken') ); ?></div>
+                <div class="nav-next"><?php next_comments_link( __( 'Newer Comments ', 'Awaken') ); ?></div>
             </div><!-- .navigation -->
         <?php endif; ?>
     </div>
@@ -73,12 +73,12 @@
                 'logged_in_as' => '<p>' . sprintf( $logged_in_as, admin_url( 'profile.php' ), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ),
                 'comment_notes_before' => '',
                 'comment_notes_after' =>  '',
-                'class_form' => 'form-style',
+                'class_form' => 'comment-form',
                 'id_form' => 'form-style',
 				'class_submit' => 'form-style',
                 'id_submit' => 'cs-bg-color',
-                'title_reply' => __( '<h2 class="cs-section-title">Leave us a reply</h2>', 'Awaken' ),
-                'title_reply_to' => __( '<h2 class="cs-section-title">Leave a Reply to %s </h2>', 'Awaken' ),
+                'title_reply' => __( 'Leave us a reply', 'Awaken' ),
+                'title_reply_to' => __( 'Leave a Reply to %s ', 'Awaken' ),
                 'cancel_reply_link' => __( 'Cancel reply', 'Awaken' ),
                 'label_submit' => __( 'Submit', 'Awaken' ),); 
                 comment_form($defaults, $post_id); 

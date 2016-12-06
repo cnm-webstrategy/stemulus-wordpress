@@ -34,14 +34,14 @@
 	if ( ! function_exists( 'cs_csprojects_register' ) ) {
 		function cs_csprojects_register() {
 			$labels = array(
-				'name' => 'Projects',
+				'name' =>__('Projects','Awaken'),
 				'all_items' => __('Projects','Awaken'),
-				'add_new_item' => 'Add New Project',
+				'add_new_item' =>__('Add New Project','Awaken'),
 				'edit_item' => 'Edit Project',
 				'new_item' => 'New Project Item',
-				'add_new' => 'Add New Project',
+				'add_new' => __('Add New Project','Awaken'),
 				'view_item' => 'View Project Item',
-				'search_items' => 'Search Project',
+				'search_items' =>__('Search Project','Awaken'),
 				'not_found' =>  'Nothing found',
 				'not_found_in_trash' => 'Nothing found in Trash',
 				'parent_item_colon' => ''
@@ -72,7 +72,7 @@
 			'edit_item' => 'Edit Project Category',
 			'update_item' => 'Update Project Category',
 			'add_new_item' => 'Add New Category',
-			'menu_name' => 'Categories',
+			'menu_name' =>'Categories',
 		  ); 	
 		  register_taxonomy('project-category',array('project'), array(
 			'hierarchical' => true,
@@ -113,11 +113,11 @@
 	// adding Project meta info start
 	add_action( 'add_meta_boxes', 'cs_meta_project_add' );
 	function cs_meta_project_add(){
-		add_meta_box( 'cs_meta_project', 'Project Options', 'cs_meta_project', 'project', 'normal', 'high' );  
+		add_meta_box( 'cs_meta_project', __('Project Options','Awaken'), 'cs_meta_project', 'project', 'normal', 'high' );  
 	}
 	function cs_meta_project( $post ) {
-		global $post, $cs_xmlObject;
-		$cs_theme_options = get_option('cs_theme_options');
+		global $post, $cs_xmlObject, $cs_theme_options;
+		//$cs_theme_options = get_option('cs_theme_options');
 		$cs_builtin_seo_fields = $cs_theme_options['cs_builtin_seo_fields'];
 		$cs_header_position = $cs_theme_options['cs_header_position'];
 		$cs_project = get_post_meta($post->ID, "csprojects", true);
@@ -158,7 +158,7 @@
                  						<li><a href="#tab-header-position-settings" data-toggle="tab"><i class="fa fa-forward"></i><?php _e('Header Absolute','Awaken'); ?></a></li>
                  					<?php }?>
 									<?php if($cs_builtin_seo_fields == 'on'){?>
-									<li><a href="#tab-seo-advance-settings" data-toggle="tab"><i class="fa fa-dribbble"></i><?php _e('SEO Options','Awaken'); ?></a></li>
+									<li><a href="#tab-seo-advance-settings" data-toggle="tab"><i class="fa fa-dribbble"></i><?php _e('Seo Options','Awaken'); ?></a></li>
 									<?php }?>
                                     <li><a href="#tab-location-settings" data-toggle="tab"><i class="fa fa-globe"></i><?php _e('Location','Awaken'); ?></a></li>
                                     <li><a data-toggle="tab" href="#tab-projects-settings-cs-projects"><i class="fa fa-briefcase"></i><?php _e('Project Options','Awaken'); ?></a></li>
@@ -255,7 +255,7 @@
                                     <div class="input-sec">
                                       <input type="text" id="cs_project_style" name="cs_project_style" value="<?php if(isset($cs_project_style)){echo cs_allow_special_char($cs_project_style);}?>" class="bg_color" />
                                     </div>
-                                    <p><?php _e('This color will apply only in Projet Listing (Classic View)', 'Awaken'); ?></p>
+                                    <?php _e('This color will apply only in Project Listing in Classic View', 'Awaken'); ?>
                                   </li>
                                 </ul>
                             </div>

@@ -31,7 +31,7 @@ class CustomSidebars {
 	 * URL to the documentation/info page of the pro plugin
 	 * @var  string
 	 */
-	static public $pro_url = 'http://premium.wpmudev.org/project/custom-sidebars-pro/';
+	static public $pro_url = 'https://premium.wpmudev.org/project/custom-sidebars-pro/';
 
 	/**
 	 * Flag that specifies if the page is loaded in accessibility mode.
@@ -288,6 +288,32 @@ class CustomSidebars {
 			 * migrated in the following block:
 			 */
 
+			/**
+			 * set defaults
+			 */
+			$keys = array(
+				'authors',
+				'blog',
+				'category_archive',
+				'category_pages',
+				'category_posts',
+				'category_single',
+				'date',
+				'defaults',
+				'post_type_archive',
+				'post_type_pages',
+				'post_type_single',
+				'search',
+				'tags'
+			);
+
+			foreach ( $keys as $k ) {
+				if ( isset( $Options[ $k ] ) ) {
+					continue;
+				}
+				$Options[ $k ] = null;
+			}
+
 			// Single/Archive pages - new names
 			$Options['post_type_single'] = self::get_array(
 				@$Options['post_type_single'], // new name
@@ -513,7 +539,7 @@ class CustomSidebars {
 	 */
 	static public function get_sidebars( $type = 'theme' ) {
 		global $wp_registered_sidebars;
-		$allsidebars = $wp_registered_sidebars;
+		$allsidebars = CustomSidebars::sort_sidebars_by_name( $wp_registered_sidebars );
 		$result = array();
 
 		// Remove inactive sidebars.
@@ -678,7 +704,7 @@ class CustomSidebars {
 
 		if ( ! isset( $Sorted[ $post_id ] ) ) {
 			$Sorted[ $post_id ] = get_the_category( $post_id );
-			@usort( $Sorted[ $post_id ], array( self, 'cmp_cat_level' ) );
+			usort( $Sorted[ $post_id ], array( __CLASS__, 'cmp_cat_level' ) );
 		}
 		return $Sorted[ $post_id ];
 	}
@@ -845,4 +871,54 @@ class CustomSidebars {
 		 */
 		do_action( 'cs_ajax_request_get', $get_action );
 	}
+
+	/**
+	 * This function will sort an array by key 'name'.
+	 *
+	 * @since 2.1.1.2
+	 *
+	 * @param $a Mixed - first value to compare.
+	 * @param $b Mixed - secound  value to compare.
+	 * @return integer value of comparation.
+	 */
+	public static function sort_sidebars_cmp_function( $a, $b ) {
+		if ( ! isset( $a['name'] ) || ! isset( $b['name'] ) ) {
+			return 0;
+		}
+		if ( function_exists( 'mb_strtolower' ) ) {
+			$a_name = mb_strtolower($a['name']);
+			$b_name = mb_strtolower($b['name']);
+		} else {
+			$a_name = strtolower($a['name']);
+			$b_name = strtolower($b['name']);
+		}
+		if ( $a_name == $b_name ) {
+			return 0;
+		}
+		return ($a_name < $b_name ) ? -1 : 1;
+	}
+
+	/**
+	 * Returns sidebars sorted by name.
+	 *
+	 * @since 2.1.1.2
+	 *
+	 * @param array $available Array of sidebars.
+	 * @return  array Sorted array of sidebars.
+	 */
+	public static function sort_sidebars_by_name( $available ) {
+		if ( empty( $available ) ) {
+			return $available;
+		}
+		foreach( $available as $key => $data ) {
+			$available[$key]['cs-key'] = $key;
+		}
+		usort( $available, array( __CLASS__, 'sort_sidebars_cmp_function' ) );
+		$sorted = array();
+		foreach( $available as $data ) {
+			$sorted[$data['cs-key']] = $data;
+		}
+		return $sorted;
+	}
+
 };

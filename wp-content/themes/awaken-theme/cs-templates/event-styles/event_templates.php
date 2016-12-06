@@ -18,7 +18,7 @@ if ( !class_exists('EventTemplates') ) {
 		// Blog Listing View
 		//======================================================================
 		public function cs_listing_view( $cs_event_meta , $event_from_date, $category , $excerpt ) {
-			global $post;
+			global $post,$cs_theme_options;
 			$width	= '150';
 			$height	= '150';
 			$image_url = cs_get_post_img_src($post->ID, $width, $height);
@@ -30,6 +30,8 @@ if ( !class_exists('EventTemplates') ) {
 			$event_loc_long	= (string)$cs_event_meta->dynamic_post_location_longitude;
 			$event_loc_zoom =(int)$cs_event_meta->dynamic_post_location_zoom;
 			$event_loc_lat	= (string)$cs_event_meta->dynamic_post_location_latitude;
+			global $cs_theme_options;
+			$cs_time_formate=isset($cs_theme_options['cs_time_formate'])?$cs_theme_options['cs_time_formate']:'24 hour';
 		?>
             <div class="col-md-12">
                 <article class="cs-events events-listing post-<?php echo esc_attr( $post->ID );?>">
@@ -39,11 +41,23 @@ if ( !class_exists('EventTemplates') ) {
                             <span>
                             	<?php 
 									  if( isset( $cs_event_meta->dynamic_post_event_start_time ) && $cs_event_meta->dynamic_post_event_start_time <> ''){
+										if($cs_time_formate=='24 hour'){
 										echo esc_attr( $cs_event_meta->dynamic_post_event_start_time.' ' );
+										}
+										else{
+											$time_in_12_hour_format  = date("g:i a", strtotime($cs_event_meta->dynamic_post_event_start_time));
+										echo $time_in_12_hour_format;
+											}
 									  }
 									  if(isset($cs_event_meta->dynamic_post_event_end_time) && $cs_event_meta->dynamic_post_event_end_time <> ''){
-										_e('TO', 'Awaken');
+										_e(' TO ', 'Awaken');
+										if($cs_time_formate=='24 hour'){
 										echo esc_attr( ' '.$cs_event_meta->dynamic_post_event_end_time );
+										}
+										else{
+											$time_in_12_hour_format  = date("g:i a", strtotime($cs_event_meta->dynamic_post_event_end_time));
+										echo $time_in_12_hour_format;
+											}
 									  }
 								 ?>
                             </span>
@@ -107,6 +121,10 @@ if ( !class_exists('EventTemplates') ) {
 			$image_url = cs_get_post_img_src($post->ID, $width, $height);
 			$title_limit = 46;
 			$background	= '';
+			global $cs_theme_options;
+			$cs_time_formate=isset($cs_theme_options['cs_time_formate'])?$cs_theme_options['cs_time_formate']:'24 hour';
+				
+		
 		?>
 		<div class="col-md-12">
 			<article class="cs-events events-timeline">
@@ -116,11 +134,23 @@ if ( !class_exists('EventTemplates') ) {
 						<span>
 						<?php 
 							  if( isset( $cs_event_meta->dynamic_post_event_start_time ) && $cs_event_meta->dynamic_post_event_start_time <> ''){
+								if($cs_time_formate=='24 hour'){
 								echo esc_attr( $cs_event_meta->dynamic_post_event_start_time.' ' );
+								}
+								else{
+								$time_in_12_hour_format  = date("g:i a", strtotime($cs_event_meta->dynamic_post_event_start_time));
+								echo $time_in_12_hour_format;
+								}
 							  }
 							  if(isset($cs_event_meta->dynamic_post_event_end_time) && $cs_event_meta->dynamic_post_event_end_time <> ''){
-								_e('TO', 'Awaken');
+								_e(' TO ', 'Awaken');
+								if($cs_time_formate=='24 hour'){
 								echo esc_attr( ' '.$cs_event_meta->dynamic_post_event_end_time );
+								}
+								else{
+								$time_in_12_hour_format  = date("g:i a", strtotime($cs_event_meta->dynamic_post_event_end_time));
+								echo $time_in_12_hour_format;
+								}
 							  }
 						 ?>
                         </span>
@@ -157,6 +187,8 @@ if ( !class_exists('EventTemplates') ) {
 			$image_url = cs_get_post_img_src($post->ID, $width, $height);
 			$title_limit = 46;
 			$background	= '';
+			global $cs_theme_options;
+			$cs_time_formate=isset($cs_theme_options['cs_time_formate'])?$cs_theme_options['cs_time_formate']:'24 hour';
 		?>
             <div class="col-md-12">
                 <article class="cs-events events-minimal">
@@ -169,11 +201,24 @@ if ( !class_exists('EventTemplates') ) {
                                     <time datetime="<?php echo esc_attr( date_i18n('Y-m-d',strtotime( $event_from_date ) ) );?>"><i class="fa fa-clock-o"></i>
 									<?php 
 										  if( isset( $cs_event_meta->dynamic_post_event_start_time ) && $cs_event_meta->dynamic_post_event_start_time <> ''){
-											echo esc_attr( $cs_event_meta->dynamic_post_event_start_time.' ' );
+											if($cs_time_formate=='24 hour'){
+												echo esc_attr( $cs_event_meta->dynamic_post_event_start_time.' ' );
+											}
+											else{
+												$time_in_12_hour_format  = date("g:i a", strtotime($cs_event_meta->dynamic_post_event_start_time));
+												echo $time_in_12_hour_format;
+												}
 										  }
 										  if(isset($cs_event_meta->dynamic_post_event_end_time) && $cs_event_meta->dynamic_post_event_end_time <> ''){
-											_e('-', 'Awaken');
-											echo esc_attr( ' '.$cs_event_meta->dynamic_post_event_end_time );
+											_e(' - ', 'Awaken');
+											if($cs_time_formate=='24 hour'){
+												echo esc_attr( ' '.$cs_event_meta->dynamic_post_event_end_time );
+											}
+											else{
+												$time_in_12_hour_format  = date("g:i a", strtotime($cs_event_meta->dynamic_post_event_end_time));
+												echo $time_in_12_hour_format;
+												}
+											
 										  }
 									 ?>
                                    </time> 
@@ -200,6 +245,9 @@ if ( !class_exists('EventTemplates') ) {
 			$image_url = cs_get_post_img_src($post->ID, $width, $height);
 			$title_limit = 46;
 			$background	= '';
+			global $cs_theme_options;
+			$cs_time_formate=isset($cs_theme_options['cs_time_formate'])?$cs_theme_options['cs_time_formate']:'24 hour';
+			
 		?>
         <div class="col-md-12">
             <article class="cs-events events-classic">
@@ -215,11 +263,23 @@ if ( !class_exists('EventTemplates') ) {
                                <time datetime="<?php echo esc_attr( date_i18n('Y-m-d',strtotime( $event_from_date ) ) );?>"><i class="fa fa-clock-o"></i>
 								<?php 
 									  if( isset( $cs_event_meta->dynamic_post_event_start_time ) && $cs_event_meta->dynamic_post_event_start_time <> ''){
+										if($cs_time_formate=='24 hour'){
 										echo esc_attr( $cs_event_meta->dynamic_post_event_start_time.' ' );
+										}
+										else{
+											$time_in_12_hour_format  = date("g:i a", strtotime($cs_event_meta->dynamic_post_event_start_time));
+											echo $time_in_12_hour_format;
+											}
 									  }
 									  if(isset($cs_event_meta->dynamic_post_event_end_time) && $cs_event_meta->dynamic_post_event_end_time <> ''){
-										_e('-', 'Awaken');
+										_e(' - ', 'Awaken');
+										if($cs_time_formate=='24 hour'){
 										echo esc_attr( ' '.$cs_event_meta->dynamic_post_event_end_time );
+										}
+										else{
+											$time_in_12_hour_format  = date("g:i a", strtotime($cs_event_meta->dynamic_post_event_end_time));
+											echo $time_in_12_hour_format;
+											}
 									  }
 								 ?>
                                </time>

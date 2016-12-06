@@ -211,7 +211,7 @@
 }
 .mejs-controls div.mejs-time-rail {
 	direction:ltr;
-	width:200px;
+	width:78% !important;
 	padding-top:5px;
 }
 .mejs-controls .mejs-time-rail span {
@@ -227,7 +227,9 @@
 .mejs-controls .mejs-time-rail .mejs-time-total {
 	margin:5px;
 	background:#d9d9da;
+	width:76% !important;
 }
+.mejs-horizontal-volume-slider.mejs-mute{position:relative;float:left;}
 .mejs-controls .mejs-time-rail .mejs-time-buffering {
 	width:100%;
 	background-image:-o-linear-gradient(-45deg, rgba(255,255,255,0.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0.15) 75%, transparent 75%, transparent);

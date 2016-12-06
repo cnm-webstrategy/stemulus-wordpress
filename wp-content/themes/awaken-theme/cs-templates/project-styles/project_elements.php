@@ -48,79 +48,79 @@ if ( ! function_exists( 'cs_pb_project' ) ) {
       <?php cs_element_setting($name,$cs_counter,$project_element_size);?>
       <div class="cs-wrapp-class-<?php echo esc_attr($cs_counter); ?> <?php echo cs_allow_special_char($shortcode_element); ?>" id="<?php echo cs_allow_special_char($name.$cs_counter)?>" data-shortcode-template="[cs_project {{attributes}}]"  style="display: none;">
         <div class="cs-heading-area">
-          <h5>Edit Project Options</h5>
+          <h5><?php _e('Edit project Options','Awaken');?></h5>
           <a href="javascript:removeoverlay('<?php echo cs_allow_special_char($name.$cs_counter)?>','<?php echo cs_allow_special_char($filter_element);?>')" class="cs-btnclose"><i class="fa fa-times"></i></a> </div>
         <div class="cs-pbwp-content">
           <div class="cs-wrapp-clone cs-shortcode-wrapp">
             <?php
              if(isset($_POST['shortcode_element']) && $_POST['shortcode_element'] == 'shortcode'){cs_shortcode_element_size();}?>
             <ul class="form-elements">
-                <li class="to-label"><label>Project Title</label></li>
+                <li class="to-label"><label><?php _e('Project Title','Awaken');?></label></li>
                 <li class="to-field">
                     <input  name="cs_project_section_title[]" type="text"  value="<?php echo esc_attr($cs_project_section_title); ?>"   />
                 </li>                  
              </ul>
             <ul class="form-elements">
               <li class="to-label">
-                <label>Choose Category</label>
+                <label><?php _e('Choose Category','Awaken');?></label>
               </li>
               <li class="to-field">
                 <div class="input-sec">
                   <div class="select-style">
                     <select name="cs_project_cat[]" class="dropdown">
-                      <option value="0">-- Select Category --</option>
+                      <option value="0"><?php _e('--Select Category--','Awaken');?></option>
                       <?php show_all_cats('', '', $cs_project_cat, "project-category");?>
                     </select>
                   </div>
                 </div>
                 <div class="left-info">
-                  <p>Please select category to show posts. If you dont select category it will display all posts.</p>
+                  <p><?php _e('Please select category to show posts. If you dont select category it will display all posts','Awaken');?></p>
                 </div>
               </li>
             </ul>
             <ul class="form-elements">
               <li class="to-label">
-                <label>Project Design Views</label>
+                <label><?php _e('Project Design Views','Awaken');?></label>
               </li>
               <li class="to-field">
                 <div class="input-sec">
                   <div class="select-style">
 				    <select name="cs_project_view[]" class="dropdown">
-                      <option value="project-classic" <?php if($cs_project_view == 'project-classic'){echo 'selected="selected"';}?>>Projects Classic</option>
-                      <option value="project-medium" <?php if($cs_project_view == 'project-medium'){echo 'selected="selected"';}?>>Project Medium</option>
-                      <option value="project-small" <?php if($cs_project_view == 'project-small'){echo 'selected="selected"';}?>>Project Small</option>
-                      <option value="project-three-column" <?php if($cs_project_view == 'project-three-column'){echo 'selected="selected"';}?>>Project Grid 3 Column</option>
+                      <option value="project-classic" <?php if($cs_project_view == 'project-classic'){echo 'selected="selected"';}?>><?php _e('Projects Classic','Awaken');?></option>
+                      <option value="project-medium" <?php if($cs_project_view == 'project-medium'){echo 'selected="selected"';}?>><?php _e('Project Medium','Awaken');?></option>
+                      <option value="project-small" <?php if($cs_project_view == 'project-small'){echo 'selected="selected"';}?>><?php _e('Project Small','Awaken');?></option>
+                      <option value="project-three-column" <?php if($cs_project_view == 'project-three-column'){echo 'selected="selected"';}?>><?php _e('Project Grid 3 Column','Awaken');?></option>
                       
                     </select>
                   </div>
                 </div>
                 <div class="left-info">
-                  <p>Please select the View.</p>
+                  <p><?php _e('Please select the View','Awaken');?></p>
                 </div>
               </li>
             </ul>
             
             <ul class="form-elements">
               <li class="to-label">
-                <label>No. of Post Per Page</label>
+                <label><?php _e('No. of Post Per Page','Awaken');?></label>
               </li>
               <li class="to-field">
                 <div class="input-sec">
                   <input type="text" name="cs_project_num_post[]" class="txtfield" value="<?php echo esc_attr($cs_project_num_post); ?>" />
                 </div>
                 <div class="left-info">
-                  <p>To display all the records, leave this field blank.</p>
+                  <p><?php _e('To display all the records, leave this field blank','Awaken');?></p>
                 </div>
               </li>
             </ul>
             <ul class="form-elements">
               <li class="to-label">
-                <label>Pagination</label>
+                <label><?php _e('Pagination','Awaken');?></label>
               </li>
               <li class="to-field select-style">
                 <select name="cs_project_pagination[]" class="dropdown">
-                  <option <?php if($cs_project_pagination=="Show Pagination")echo "selected";?> >Show Pagination</option>
-                  <option <?php if($cs_project_pagination=="Single Page")echo "selected";?> >Single Page</option>
+                  <option <?php if($cs_project_pagination=="Show Pagination")echo "selected";?> ><?php _e('Show Pagination','Awaken');?></option>
+                  <option <?php if($cs_project_pagination=="Single Page")echo "selected";?> ><?php _e('Single Page','Awaken');?></option>
                 </select>
               </li>
             </ul>
@@ -131,7 +131,7 @@ if ( ! function_exists( 'cs_pb_project' ) ) {
             ?>
             <?php if(isset($_POST['shortcode_element']) && $_POST['shortcode_element'] == 'shortcode'){?>
             <ul class="form-elements insert-bg">
-              <li class="to-field"> <a class="insert-btn cs-main-btn" onclick="javascript:Shortcode_tab_insert_editor('<?php echo str_replace('cs_pb_','',$name);?>','<?php echo cs_allow_special_char($name.$cs_counter)?>','<?php echo cs_allow_special_char($filter_element);?>')" >Insert</a> </li>
+              <li class="to-field"> <a class="insert-btn cs-main-btn" onclick="javascript:Shortcode_tab_insert_editor('<?php echo str_replace('cs_pb_','',$name);?>','<?php echo cs_allow_special_char($name.$cs_counter)?>','<?php echo cs_allow_special_char($filter_element);?>')" ><?php _e('Insert','Awaken');?></a> </li>
             </ul>
             <div id="results-shortocde"></div>
             <?php } else {?>

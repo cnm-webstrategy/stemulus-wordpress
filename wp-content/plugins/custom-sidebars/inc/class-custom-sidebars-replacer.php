@@ -58,7 +58,7 @@ class CustomSidebarsReplacer extends CustomSidebars {
 	 */
 	public function register_custom_sidebars() {
 		$sb = self::get_custom_sidebars();
-
+		$sb = CustomSidebars::sort_sidebars_by_name( $sb );
 		foreach ( $sb as $sidebar ) {
 			/**
 			 * Filter sidebar options for custom sidebars.
@@ -69,7 +69,6 @@ class CustomSidebarsReplacer extends CustomSidebars {
 			 *           the sidebar.
 			 */
 			$sidebar = apply_filters( 'cs_sidebar_params', $sidebar );
-
 			register_sidebar( $sidebar );
 		}
 	}
@@ -191,6 +190,7 @@ class CustomSidebarsReplacer extends CustomSidebars {
 		// 1 |== Single posts/pages --------------------------------------------
 		if ( is_single() ) {
 			$post_type = get_post_type();
+			$post_type = apply_filters( 'cs_replace_post_type', $post_type, 'single' );
 			$expl && do_action( 'cs_explain', 'Type 1: Single ' . ucfirst( $post_type ) );
 
 			if ( ! self::supported_post_type( $post_type ) ) {
@@ -314,6 +314,7 @@ class CustomSidebarsReplacer extends CustomSidebars {
 			// `get_post_type() != 'post'` .. post-archive = post-index (see 7)
 
 			$post_type = get_post_type();
+			$post_type = apply_filters( 'cs_replace_post_type', $post_type, 'archive' );
 			$expl && do_action( 'cs_explain', 'Type 4: ' . ucfirst( $post_type ) . ' Archive' );
 
 			if ( ! self::supported_post_type( $post_type ) ) {
@@ -339,6 +340,7 @@ class CustomSidebarsReplacer extends CustomSidebars {
 			// `! is_front_page()` .. in case the site uses static front page.
 
 			$post_type = get_post_type();
+			$post_type = apply_filters( 'cs_replace_post_type', $post_type, 'page' );
 			$expl && do_action( 'cs_explain', 'Type 5: ' . ucfirst( $post_type ) );
 
 			if ( ! self::supported_post_type( $post_type ) ) {
