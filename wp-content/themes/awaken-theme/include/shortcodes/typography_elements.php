@@ -68,7 +68,7 @@ if ( ! function_exists( 'cs_pb_divider' ) ) {
           </li>
           <li class="to-field select-style">
             <select name="divider_style[]" class="dropdown" >
-              <option <?php if($divider_style=="crossy")echo "selected";?> value="crossy" ><?php _e('Crossy','Awaken');?></option>
+              <option <?php if($divider_style=="crossy")echo "selected";?> value="crossy" ><?php _e('Cross','Awaken');?></option>
               <option <?php if($divider_style=="plain")echo "selected";?> value="plain" ><?php _e('Plain','Awaken');?></option>
               <option <?php if($divider_style=="zigzag")echo "selected";?> value="zigzag" ><?php _e('Zigzag','Awaken');?></option>
               <option <?php if($divider_style=="small-zigzag")echo "selected";?> value="small-zigzag" ><?php _e('Small Zigzag','Awaken');?></option>
@@ -425,7 +425,7 @@ if ( ! function_exists( 'cs_pb_dropcap' ) ) {
   <?php cs_element_setting($name,$cs_counter,$dropcap_element_size, '', 'bold',$type='');?>
   <div class="cs-wrapp-class-<?php echo intval($cs_counter)?> <?php echo esc_attr($shortcode_element);?>" id="<?php echo esc_attr($name.$cs_counter)?>" data-shortcode-template="[cs_dropcap {{attributes}}]{{content}}[/cs_dropcap]" style="display: none;">
     <div class="cs-heading-area">
-      <h5><?php _e('Edit Dropcap Options','Awaken');?></h5>
+      <h5><?php _e('Edit Drop cap Options','Awaken');?></h5>
       <a href="javascript:removeoverlay('<?php echo esc_js($name.$cs_counter)?>','<?php echo esc_js($filter_element);?>')" class="cs-btnclose"><i class="fa fa-times"></i></a> </div>
     <div class="cs-pbwp-content">
       <div class="cs-wrapp-clone cs-shortcode-wrapp">
@@ -457,7 +457,7 @@ if ( ! function_exists( 'cs_pb_dropcap' ) ) {
           <li class="to-field">
             <div class="cs-drag-slider" data-slider-min="0" data-slider-max="80" data-slider-step="1" data-slider-value="<?php echo esc_attr($dropcap_size)?>"></div>
             <input  class="cs-range-input"  name="dropcap_size[]" type="text" value="<?php echo intval($dropcap_size)?>"   />
-            <p><?php _e('add your font size for the dropcap text','Awaken');?></p>
+            <p><?php _e('Add your font size for the drop cap text','Awaken');?></p>
           </li>
         </ul>
         <ul class="form-elements">
@@ -803,7 +803,7 @@ if ( ! function_exists( 'cs_pb_heading' ) ) {
           <li class="to-field">
             <div class="select-style">
               <select class="dropdown" name="heading_animation[]">
-                <option value="">Select Animation</option>
+                <option value=""><?php _e('Select Animation','Awaken');?></option>
                 <?php 
 					$animation_array = cs_animation_style();
 					foreach($animation_array as $animation_key=>$animation_value){
@@ -925,7 +925,7 @@ if ( ! function_exists( 'cs_pb_list' ) ) {
                   <option value="icon" <?php if($cs_list_type =="icon")echo "selected";?>><?php _e('Icon','Awaken');?> </option>
                   <option value="built" <?php if($cs_list_type =="built")echo "selected";?>><?php _e('Built','Awaken');?></option>
                   <option value="decimal" <?php if($cs_list_type =="decimal") echo "selected";?> ><?php _e('Decimal','Awaken');?></option>
-                  <option value="alphabatic" <?php if($cs_list_type =="alphabatic")echo "selected";?>><?php _e('Alphabatic','Awaken');?> </option>
+                  <option value="alphabatic" <?php if($cs_list_type =="alphabatic")echo "selected";?>><?php _e('Alphabetic','Awaken');?> </option>
                   <option value="numeric-icon" <?php if($cs_list_type =="numeric-icon")echo "selected";?>><?php _e('Numeric and Icon','Awaken');?> </option>
                   <!-- <option value="custom_icon">Custom Icon</option>-->
                 </select>
@@ -998,7 +998,7 @@ if ( ! function_exists( 'cs_pb_list' ) ) {
         <div class="wrapptabbox no-padding-lr">
           <div class="opt-conts">
             <ul class="form-elements">
-              <li class="to-field"> <a href="#" class="add_servicesss cs-main-btn" onclick="cs_shortcode_element_ajax_call('list', 'shortcode-item-<?php echo esc_js($cs_counter);?>', '<?php echo admin_url('admin-ajax.php');?>')"><i class="fa fa-plus-circle"></i>Add List Item</a> </li>
+              <li class="to-field"> <a href="#" class="add_servicesss cs-main-btn" onclick="cs_shortcode_element_ajax_call('list', 'shortcode-item-<?php echo esc_js($cs_counter);?>', '<?php echo admin_url('admin-ajax.php');?>')"><i class="fa fa-plus-circle"></i><?php _e('Add List Item','Awaken');?></a> </li>
               <div id="loading" class="shortcodeload"></div>
             </ul>
           </div>
@@ -1351,7 +1351,7 @@ if ( ! function_exists( 'cs_pb_testimonials' ) ) {
   <?php cs_element_setting($name,$cs_counter,$testimonials_element_size, '', 'comments-o',$type='');?>
   <div class="cs-wrapp-class-<?php echo cs_allow_special_char($cs_counter)?> <?php echo cs_allow_special_char($shortcode_element);?>" id="<?php echo cs_allow_special_char($name.$cs_counter)?>" style="display: none;">
     <div class="cs-heading-area">
-      <h5>Edit Testimonials Options</h5>
+      <h5><?php _e('Edit Testimonials Options','Awaken');?></h5>
       <a href="javascript:removeoverlay('<?php echo cs_allow_special_char($name.$cs_counter)?>','<?php echo cs_allow_special_char($filter_element);?>')" class="cs-btnclose"><i class="fa fa-times"></i></a> </div>
       <div class="cs-clone-append cs-pbwp-content">
       <div class="cs-wrapp-tab-box">
@@ -1360,46 +1360,46 @@ if ( ! function_exists( 'cs_pb_testimonials' ) ) {
             <?php if(isset($_POST['shortcode_element']) && $_POST['shortcode_element'] == 'shortcode'){cs_shortcode_element_size();}?>
             <ul class="form-elements">
               <li class="to-label">
-                <label>Section Title</label>
+                <label><?php _e('Section Title','Awaken');?></label>
               </li>
               <li class="to-field">
                 <input  name="cs_testimonial_section_title[]" type="text"  value="<?php echo cs_allow_special_char($cs_testimonial_section_title)?>"   />
-                <p> This is used for the one page navigation, to identify the section below. Give a title </p>
+                <p> <?php _e('This is used for the one page navigation, to identify the section below. Give a title','Awaken');?></p>
               </li>
             </ul>
             <ul class='form-elements'>
               <li class='to-label'>
-                <label>Style:</label>
+                <label><?php _e('Style','Awaken');?></label>
               </li>
               <li class='to-field'>
                 <div class='input-sec select-style'>
                   <select name='testimonial_style[]' class='dropdown'>
-                    <option value='simple' <?php if($testimonial_style == 'simple'){echo 'selected';}?>>Classic Slider </option>
-                    <option value='fancy' <?php if($testimonial_style == 'fancy'){echo 'selected';}?>>Modern Slider </option>
-                    <option value='slider' <?php if($testimonial_style == 'slider'){echo 'selected';}?>>Simple Slider </option>
+                    <option value='simple' <?php if($testimonial_style == 'simple'){echo 'selected';}?>><?php _e('Classic Slider','Awaken');?></option>
+                    <option value='fancy' <?php if($testimonial_style == 'fancy'){echo 'selected';}?>><?php _e('Modern Slider','Awaken');?> </option>
+                    <option value='slider' <?php if($testimonial_style == 'slider'){echo 'selected';}?>><?php _e('Simple Slider','Awaken');?> </option>
                   </select>
                 </div>
                 <div class='left-info'>
-                  <p>Testimonial Style</p>
+                  <p><?php _e('Testimonial Style','Awaken');?></p>
                 </div>
               </li>
             </ul>
             <ul class="form-elements">
               <li class="to-label">
-                <label>Align</label>
+                <label><?php _e('Align','Awaken');?></label>
               </li>
               <li class="to-field select-style">
                 <select name="cs_testimonial_text_align[]" class="dropdown" >
-                  <option <?php if($cs_testimonial_text_align=="left")echo "selected";?> >left</option>
-                  <option <?php if($cs_testimonial_text_align=="right")echo "selected";?> >right</option>
-                  <option <?php if($cs_testimonial_text_align=="center")echo "selected";?> >center</option>
+                  <option <?php if($cs_testimonial_text_align=="left")echo "selected";?> ><?php _e('left','Awaken');?></option>
+                  <option <?php if($cs_testimonial_text_align=="right")echo "selected";?> ><?php _e('right','Awaken');?></option>
+                  <option <?php if($cs_testimonial_text_align=="center")echo "selected";?> ><?php _e('center','Awaken');?></option>
                 </select>
-                <p> This will not apply in Slider View.</p>
+                <p> <?php _e('This will not apply in Slider View','Awaken');?></p>
               </li>
             </ul>
             <ul class="form-elements">
               <li class="to-label">
-                <label>Text Color</label>
+                <label><?php _e('Text Color','Awaken');?></label>
               </li>
               <li class="to-field">
                 <input  name="testimonial_text_color[]" type="text" class="bg_color"  value="<?php echo esc_attr($testimonial_text_color)?>"/>
@@ -1428,11 +1428,11 @@ if ( ! function_exists( 'cs_pb_testimonials' ) ) {
 					?>
           <div class='cs-wrapp-clone cs-shortcode-wrapp cs-pbwp-content'  id="cs_infobox_<?php echo cs_allow_special_char($rand_string);?>">
             <header>
-              <h4><i class='fa fa-arrows'></i>Testimonial</h4>
-              <a href='#' class='deleteit_node'><i class='fa fa-minus-circle'></i>Remove</a></header>
+              <h4><i class='fa fa-arrows'></i><?php _e('Testimonial','Awaken');?></h4>
+              <a href='#' class='deleteit_node'><i class='fa fa-minus-circle'></i><?php _e('Remove','Awaken');?></a></header>
             <ul class='form-elements'>
               <li class='to-label'>
-                <label>Text:</label>
+                <label><?php _e('Text','Awaken');?></label>
               </li>
               <li class='to-field'>
                 <div class='input-sec'>
@@ -1442,7 +1442,7 @@ if ( ! function_exists( 'cs_pb_testimonials' ) ) {
             </ul>
             <ul class='form-elements'>
               <li class='to-label'>
-                <label>Author:</label>
+                <label><?php _e('Author','Awaken');?></label>
               </li>
               <li class='to-field'>
                 <div class='input-sec'>
@@ -1452,24 +1452,24 @@ if ( ! function_exists( 'cs_pb_testimonials' ) ) {
             </ul>
             <ul class='form-elements'>
               <li class='to-label'>
-                <label>Company:</label>
+                <label><?php _e('Company','Awaken');?></label>
               </li>
               <li class='to-field'>
                 <div class='input-sec'>
                   <input class='txtfield' type='text' name='testimonial_company[]' value="<?php echo cs_allow_special_char($testimonial_company);?>" />
                 </div>
                 <div class='left-info'>
-                  <p>Company Name</p>
+                  <p><?php _e('Company Name','Awaken');?></p>
                 </div>
               </li>
             </ul>
             <ul class="form-elements">
               <li class="to-label">
-                <label>Image</label>
+                <label><?php _e('Image','Awaken');?></label>
               </li>
               <li class="to-field">
                 <input id="testimonial_img<?php echo cs_allow_special_char($rand_string)?>" name="testimonial_img[]" type="hidden" class="" value="<?php echo cs_allow_special_char($testimonial_img);?>"/>
-                <input name="testimonial_img<?php echo cs_allow_special_char($rand_string)?>"  type="button" class="uploadMedia left" value="Browse"/>
+                <input name="testimonial_img<?php echo cs_allow_special_char($rand_string)?>"  type="button" class="uploadMedia left" value="<?php _e('Browse','Awaken');?>"/>
               </li>
             </ul>
             <div class="page-wrap" style="overflow:hidden; display:<?php echo cs_allow_special_char($testimonial_img) && trim($testimonial_img) !='' ? 'inline' : 'none';?>" id="testimonial_img<?php echo cs_allow_special_char($rand_string)?>_box" >
@@ -1497,12 +1497,12 @@ if ( ! function_exists( 'cs_pb_testimonials' ) ) {
         <div class="wrapptabbox cs-pbwp-content" style="padding:0">
           <div class="opt-conts">
             <ul class="form-elements">
-              <li class="to-field"> <a href="#" class="add_servicesss cs-main-btn" onclick="cs_shortcode_element_ajax_call('testimonials', 'shortcode-item-<?php echo cs_allow_special_char($cs_counter);?>', '<?php echo admin_url('admin-ajax.php');?>')"><i class="fa fa-plus-circle"></i>Add testimonials</a> </li>
+              <li class="to-field"> <a href="#" class="add_servicesss cs-main-btn" onclick="cs_shortcode_element_ajax_call('testimonials', 'shortcode-item-<?php echo cs_allow_special_char($cs_counter);?>', '<?php echo admin_url('admin-ajax.php');?>')"><i class="fa fa-plus-circle"></i><?php _e('Add testimonials','Awaken');?></a> </li>
               <div id="loading" class="shortcodeload"></div>
             </ul>
             <?php if(isset($_POST['shortcode_element']) && $_POST['shortcode_element'] == 'shortcode'){?>
             <ul class="form-elements insert-bg noborder">
-              <li class="to-field"> <a class="insert-btn cs-main-btn" onclick="javascript:Shortcode_tab_insert_editor('<?php echo str_replace('cs_pb_','',$name);?>','shortcode-item-<?php echo cs_allow_special_char($cs_counter);?>','<?php echo cs_allow_special_char($filter_element);?>')" >INSERT</a> </li>
+              <li class="to-field"> <a class="insert-btn cs-main-btn" onclick="javascript:Shortcode_tab_insert_editor('<?php echo str_replace('cs_pb_','',$name);?>','shortcode-item-<?php echo cs_allow_special_char($cs_counter);?>','<?php echo cs_allow_special_char($filter_element);?>')" ><?php _e('Insert','Awaken');?></a> </li>
             </ul>
             <div id="results-shortocde"></div>
             <?php } else {?>
@@ -1588,7 +1588,7 @@ if ( ! function_exists( 'cs_pb_quote' ) ) {
   <?php cs_element_setting($name,$cs_counter,$quote_element_size, '', 'quote-right',$type='');?>
   <div class="cs-wrapp-class-<?php echo intval($cs_counter)?> <?php echo cs_allow_special_char($shortcode_element);?>" id="<?php echo cs_allow_special_char($name.$cs_counter)?>"  data-shortcode-template="[cs_quote {{attributes}}]{{content}}[/cs_quote]" style="display: none;">
     <div class="cs-heading-area">
-      <h5>Edit Quote Options</h5>
+      <h5><?php _e('Edit Quote Options','Awaken');?></h5>
       <a href="javascript:removeoverlay('<?php echo esc_js($name.$cs_counter)?>','<?php echo esc_js($filter_element);?>')" class="cs-btnclose"><i class="fa fa-times"></i></a> </div>
     <div class="cs-pbwp-content">
       <div class="cs-wrapp-clone cs-shortcode-wrapp">
@@ -1596,62 +1596,62 @@ if ( ! function_exists( 'cs_pb_quote' ) ) {
           <?php if(isset($_POST['shortcode_element']) && $_POST['shortcode_element'] == 'shortcode'){cs_shortcode_element_size();}?>
           <ul class="form-elements">
             <li class="to-label">
-              <label>Section Title</label>
+              <label><?php _e('Section Title','Awaken');?></label>
             </li>
             <li class="to-field">
               <input  name="cs_quote_section_title[]" type="text"  value="<?php echo cs_allow_special_char($cs_quote_section_title)?>"   />
-              <p> This is used for the one page navigation, to identify the section below. Give a title </p>
+              <p> <?php _e('This is used for the one page navigation, to identify the section below. Give a title','Awaken');?></p>
             </li>
           </ul>
           <ul class="form-elements">
             <li class="to-label">
-              <label>Author</label>
+              <label><?php _e('Author','Awaken');?></label>
             </li>
             <li class="to-field">
               <input type="text" name="quote_cite[]" class="txtfield" value="<?php echo esc_attr($quote_cite)?>" />
-              <p>give the name of the author</p>
+              <p><?php _e('Give the name of the author','Awaken');?></p>
             </li>
           </ul>
           <ul class="form-elements">
             <li class="to-label">
-              <label>Author url</label>
+              <label><?php _e('Author url','Awaken');?></label>
             </li>
             <li class="to-field">
               <input type="text" name="quote_cite_url[]" class="txtfield" value="<?php echo esc_url($quote_cite_url);?>" />
-              <p>give the author external/internal url</p>
+              <p><?php _e('Give the author external/internal Link','Awaken');?></p>
             </li>
           </ul>
           <ul class="form-elements">
             <li class="to-label">
-              <label>Text Color</label>
+              <label><?php _e('Text Color','Awaken');?></label>
             </li>
             <li class="to-field">
               <input type="text" name="quote_text_color[]" class="bg_color" value="<?php echo esc_attr($quote_text_color)?>" />
               <div class="left-box">
-                <p>Provide a hex colour code here (include #) if you want to override the default.</p>
+                <p><?php _e('Provide a hex colour code here (include #) if you want to override the default','Awaken');?></p>
               </div>
             </li>
           </ul>
           <ul class="form-elements">
             <li class="to-label">
-              <label>Align</label>
+              <label><?php _e('Align','Awaken');?></label>
             </li>
             <li class="to-field select-style">
               <select name="quote_align[]" class="dropdown" >
-                <option <?php if($quote_align=="left")echo "selected";?> >left</option>
-                <option <?php if($quote_align=="right")echo "selected";?> >right</option>
-                <option <?php if($quote_align=="center")echo "selected";?> >center</option>
+                <option <?php if($quote_align=="left")echo "selected";?> ><?php _e('left','Awaken');?></option>
+                <option <?php if($quote_align=="right")echo "selected";?> ><?php _e('right','Awaken');?></option>
+                <option <?php if($quote_align=="center")echo "selected";?> ><?php _e('center','Awaken');?></option>
               </select>
-              <p>Align the content position</p>
+              <p><?php _e('Align the content position','Awaken');?></p>
             </li>
           </ul>
           <ul class="form-elements">
             <li class="to-label">
-              <label>Quote Content</label>
+              <label><?php _e('Quote Content','Awaken');?></label>
             </li>
             <li class="to-field">
               <textarea name="quote_content[]" data-content-text="cs-shortcode-textarea"><?php echo esc_textarea($quote_content);?></textarea>
-              <p>Enter your content</p>
+              <p><?php _e('Enter your content','Awaken');?></p>
             </li>
           </ul>
           <?php 
@@ -1663,7 +1663,7 @@ if ( ! function_exists( 'cs_pb_quote' ) ) {
       </div>
       <?php if(isset($_POST['shortcode_element']) && $_POST['shortcode_element'] == 'shortcode'){?>
       <ul class="form-elements insert-bg">
-        <li class="to-field"> <a class="insert-btn cs-main-btn" onclick="javascript:Shortcode_tab_insert_editor('<?php echo str_replace('cs_pb_','',$name);?>','<?php echo esc_js($name.$cs_counter)?>','<?php echo esc_js($filter_element);?>')" >Insert</a> </li>
+        <li class="to-field"> <a class="insert-btn cs-main-btn" onclick="javascript:Shortcode_tab_insert_editor('<?php echo str_replace('cs_pb_','',$name);?>','<?php echo esc_js($name.$cs_counter)?>','<?php echo esc_js($filter_element);?>')" ><?php _e('Insert','Awaken');?></a> </li>
       </ul>
       <div id="results-shortocde"></div>
       <?php } else {?>
@@ -1784,7 +1784,7 @@ if ( ! function_exists( 'cs_pb_contactus' ) ) {
           </li>
           <li class="to-field">
             <input type="text" name="cs_success[]" class="txtfield" value="<?php echo esc_attr($cs_success);?>" />
-            <p><?php _e('set a meesage if your email sent successfully','Awaken');?> </p>
+            <p><?php _e('Set a message if your email sent successfully','Awaken');?> </p>
           </li>
         </ul>
         <ul class="form-elements">

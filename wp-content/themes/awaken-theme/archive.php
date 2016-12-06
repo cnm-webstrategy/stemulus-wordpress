@@ -86,7 +86,7 @@
 					$taxonomy = 'category';
 					$taxonomy_tag = 'post_tag';
 					$args_cat = array();
-					if(is_author()){
+					if( is_author() ) {
 						$args_cat = array('author' => $wp_query->query_vars['author']);
 						$post_type = array( 'post' );
 					} elseif(is_date()){
@@ -182,8 +182,8 @@
 									
 									if ( $categories_list ){
 										echo '<li> <i class="fa fa-bars"></i>';
-									  printf( __( '%1$s', 'Awaken'),$categories_list );
-									  echo ' </li>';
+											printf( __( '%1$s', 'Awaken'),$categories_list );
+										echo ' </li>';
 									} 
 								   // End if Tags 
                                 ?>

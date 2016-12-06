@@ -116,7 +116,7 @@ if ( ! function_exists( 'cs_pb_clients' ) ) {
                 <li class="to-field">
                     <div class="select-style">
                         <select class="dropdown" name="cs_client_animation[]">
-                            <option value="">Select Animation</option>
+                            <option value=""><?php _e('Select Animation','Awaken');?></option>
                             <?php 
                                 $animation_array = cs_animation_style();
                                 foreach($animation_array as $animation_key=>$animation_value){
@@ -150,7 +150,7 @@ if ( ! function_exists( 'cs_pb_clients' ) ) {
                       <div class='cs-wrapp-clone cs-shortcode-wrapp'  id="cs_infobox_<?php echo cs_allow_special_char($rand_id);?>">
                         <header>
                           <h4><i class='fa fa-arrows'></i><?php _e('Clients','Awaken');?></h4>
-                          <a href='#' class='deleteit_node'><i class='fa fa-minus-circle'></i>Remove</a></header>
+                          <a href='#' class='deleteit_node'><i class='fa fa-minus-circle'></i><?php _e('Remove','Awaken');?></a></header>
                          <ul class="form-elements">
                           <li class="to-label">
                             <label><?php _e('Title','Awaken');?></label>
@@ -186,7 +186,7 @@ if ( ! function_exists( 'cs_pb_clients' ) ) {
                           </li>
                           <li class="to-field">
                             <input id="cs_client_logo<?php echo cs_allow_special_char($itemCounter)?>" name="cs_client_logo[]" type="hidden" class="" value="<?php echo cs_allow_special_char($cs_client_logo);?>"/>
-                            <input name="cs_client_logo<?php echo cs_allow_special_char($itemCounter)?>"  type="button" class="uploadMedia left" value="Browse"/>
+                            <input name="cs_client_logo<?php echo cs_allow_special_char($itemCounter)?>"  type="button" class="uploadMedia left" value="<?php _e('Browse','Awaken');?>"/>
                           </li>
                         </ul>
                         <div class="page-wrap" style="overflow:hidden; display:<?php echo cs_allow_special_char($cs_client_logo) && trim($cs_client_logo) !='' ? 'inline' : 'none';?>" id="cs_client_logo<?php echo cs_allow_special_char($itemCounter)?>_box" >
@@ -308,13 +308,13 @@ if ( ! function_exists( 'cs_pb_contentslider' ) ) {
         </ul>
         <ul class="form-elements">
           <li class="to-label">
-            <label><?php _e('Select Catgory','Awaken');?></label>
+            <label><?php _e('Select Category','Awaken');?></label>
           </li>
           <li class="to-field">
             <div class="input-sec">
               <div class="select-style">
                 <select name="cs_contentslider_dcpt_cat[]" class="dropdown"  >
-                  <option value="0"><?php _e('Select Catgory','Awaken');?></option>
+                  <option value="0"><?php _e('Select Category','Awaken');?></option>
                       <?php show_all_cats('', '',$cs_contentslider_dcpt_cat, "category");?>
                 </select>
               </div>
@@ -463,7 +463,7 @@ if ( ! function_exists( 'cs_pb_blog' ) ) {
             <?php
              if(isset($_POST['shortcode_element']) && $_POST['shortcode_element'] == 'shortcode'){cs_shortcode_element_size();}?>
             <ul class="form-elements">
-                <li class="to-label"><label>Section Title</label></li>
+                <li class="to-label"><label><?php _e('Section Title','Awaken');?></label></li>
                 <li class="to-field">
                     <input  name="cs_blog_section_title[]" type="text"  value="<?php echo cs_allow_special_char($cs_blog_section_title)?>"   />
                 </li>                  
@@ -564,7 +564,7 @@ if ( ! function_exists( 'cs_pb_blog' ) ) {
               </ul>
               <ul class="form-elements">
                 <li class="to-label">
-                  <label>Length of Excerpt</label>
+                  <label><?php _e('Length of Excerpt','Awaken');?></label>
                 </li>
                 <li class="to-field">
                   <div class="input-sec">
@@ -744,7 +744,7 @@ if ( ! function_exists( 'cs_pb_teams' ) ) {
                   </li>
                   <li class="to-field">
                     <input id="cs_team_profile_image<?php echo esc_attr($rand_counter)?>" name="cs_team_profile_image[]" type="hidden" class="" value="<?php echo esc_url($cs_team_profile_image);?>"/>
-                    <input name="cs_team_profile_image<?php echo esc_attr($rand_counter);?>"  type="button" class="uploadMedia left" value="Browse"/>
+                    <input name="cs_team_profile_image<?php echo esc_attr($rand_counter);?>"  type="button" class="uploadMedia left" value="<?php _e('Browse','Awaken');?>"/>
                   </li>
                 </ul>
                 <div class="page-wrap" style="overflow:hidden; display:<?php echo esc_url($cs_team_profile_image) && trim($cs_team_profile_image) !='' ? 'inline' : 'none';?>" id="cs_team_profile_image<?php echo esc_attr($rand_counter)?>_box" >
@@ -810,7 +810,7 @@ if ( ! function_exists( 'cs_pb_teams' ) ) {
                     <li class="to-label"><label><?php _e('Animation Class','Awaken');?> </label></li>
                     <li class="to-field select-style">
                         <select class="dropdown" name="teams_animation[]">
-                            <option value="">Select Animation</option>
+                            <option value=""><?php _e('Select Animation','Awaken');?></option>
                             <?php 
                                 $animation_array = cs_animation_style();
                                 foreach($animation_array as $animation_key=>$animation_value){

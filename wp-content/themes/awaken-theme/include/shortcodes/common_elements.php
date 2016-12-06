@@ -57,7 +57,7 @@ if ( ! function_exists( 'cs_pb_button' ) ) {
 		}
 	?>
 
-<div id="<?php echo esc_attr($name.$cs_counter);?>_del" class="column  parentdelete <?php echo esc_attr($coloumn_class);?> <?php echo esc_attr($shortcode_view);?>" item="blog" data="<?php echo element_size_data_array_index($button_element_size)?>" >
+<div id="<?php echo esc_attr($name.$cs_counter);?>_del" class="column  parentdelete <?php echo esc_attr($coloumn_class);?> <?php echo esc_attr($shortcode_view);?>" item="button" data="<?php echo element_size_data_array_index($button_element_size)?>" >
   <?php cs_element_setting($name,$cs_counter,$button_element_size,'','heart');?>
   <div class="cs-wrapp-class-<?php echo esc_attr($cs_counter)?> <?php echo esc_attr($shortcode_element);?>" id="<?php echo esc_attr($name.$cs_counter)?>" data-shortcode-template="[cs_button {{attributes}}]" style="display: none;">
     <div class="cs-heading-area">
@@ -401,7 +401,7 @@ if ( ! function_exists( 'cs_pb_tabs' ) ) {
         <div class="wrapptabbox">
           <div class="opt-conts">
             <ul class="form-elements noborder">
-              <li class="to-field"> <a href="#" class="add_servicesss cs-main-btn" onclick="cs_shortcode_element_ajax_call('tabs', 'shortcode-item-<?php echo cs_allow_special_char($cs_counter);?>', '<?php echo cs_allow_special_char(admin_url('admin-ajax.php'));?>')"><i class="fa fa-plus-circle"></i>Add Tab</a> </li>
+              <li class="to-field"> <a href="#" class="add_servicesss cs-main-btn" onclick="cs_shortcode_element_ajax_call('tabs', 'shortcode-item-<?php echo cs_allow_special_char($cs_counter);?>', '<?php echo cs_allow_special_char(admin_url('admin-ajax.php'));?>')"><i class="fa fa-plus-circle"></i><?php _e('Add Tab','Awaken');?></a> </li>
                <div id="loading" class="shortcodeload"></div>
             </ul>
             <?php if(isset($_POST['shortcode_element']) && $_POST['shortcode_element'] == 'shortcode'){?>
@@ -647,10 +647,10 @@ if ( ! function_exists( 'cs_pb_pricetable' ) ) {
                       <select name="pricetable_style[]" class="dropdown" onchange="cs_pricetable_style_vlaue(this.value, <?php echo esc_js($cs_counter);?>)" >
                         <option <?php if($pricetable_style=="classic")echo "selected";?> value="classic" ><?php _e('Classic','Awaken');?></option>
                         <option <?php if($pricetable_style=="simple")echo "selected";?> value="simple" ><?php _e('Simple','Awaken');?></option>
-                        <option <?php if($pricetable_style=="modren")echo "selected";?> value="modren" ><?php _e('Modren','Awaken');?></option>
+                        <option <?php if($pricetable_style=="modren")echo "selected";?> value="modren" ><?php _e('Modern','Awaken');?></option>
                       </select>
                       <div class='left-info'>
-                        <div class='left-info'><p><?php _e('Choose a pricetable view','Awaken');?></p></div>
+                        <div class='left-info'><p><?php _e('Choose a price table view','Awaken');?></p></div>
                       </div>
                     </div>
                   </li>
@@ -691,7 +691,7 @@ if ( ! function_exists( 'cs_pb_pricetable' ) ) {
                   </li>
                   <li class="to-field">
                     <input id="pricetable_img<?php echo esc_attr($cs_counter)?>" name="pricetable_img[]" type="hidden" class="" value="<?php echo esc_url($pricetable_img);?>"/>
-                    <label class="browse-icon"><input name="pricetable_img<?php echo esc_attr($cs_counter)?>"  type="button" class="uploadMedia left" value="Browse"/></label>
+                    <label class="browse-icon"><input name="pricetable_img<?php echo esc_attr($cs_counter)?>"  type="button" class="uploadMedia left" value="<?php _e('Browse','Awaken');?>"/></label>
                     <div class='left-info'>
                       <div class='left-info'><p><?php _e('set image for the item','Awaken');?> </p></div>
                     </div>
@@ -712,7 +712,7 @@ if ( ! function_exists( 'cs_pb_pricetable' ) ) {
                 </div>
                 <ul class="form-elements">
                   <li class="to-label">
-                    <label>Time Duration</label>
+                    <label><?php _e('Time Duration','Awaken');?></label>
                   </li>
                   <li class="to-field">
                     <input type="text" name="pricetable_period[]" class="" value="<?php echo esc_attr($pricetable_period);?>" />
@@ -732,23 +732,29 @@ if ( ! function_exists( 'cs_pb_pricetable' ) ) {
                     </div>
                   </li>
                 </ul>
-                <ul class="form-elements bcevent_title">
+                
+                
+                
+                
+                
+                <ul class="form-elements">
                   <li class="to-label">
-                    <label><?php _e('Button Text','Awaken');?></label>
+                    <label><?php _e('Button Link','Awaken');?></label>
                   </li>
                   <li class="to-field">
-                    <div class="input-sec">
-                      <input type="text" name="btn_text[]" class="txtfield" value="<?php echo cs_allow_special_char($btn_text);?>" />
-                      <div id="pricetbale-title<?php echo esc_attr($cs_counter);?>" class="color-picker">
-                        <input type="text" name="btn_bg_color[]" class="bg_color" value="<?php echo esc_attr($btn_bg_color);?>" />
-                        <label><?php _e('Background Color','Awaken');?></label>
-                        <div class='left-info'>
-                          <div class='left-info'><p><?php _e('Text color on the button,If you want to override the default','Awaken');?></p></div>
-                        </div>
-                      </div>
+                  <input type="text" name="btn_bg_color[]" class="" value="<?php echo esc_url($btn_bg_color);?>" />
+                    <div class='left-info'>
+                     <div class='left-info'><p><?php _e('Text color on the button,If you want to override the default','Awaken');?></p></div>
                     </div>
                   </li>
                 </ul>
+                
+                
+                
+                
+                
+                
+                
                 <ul class="form-elements">
                   <li class="to-label">
                     <label><?php _e('Featured','Awaken');?></label>
@@ -778,7 +784,7 @@ if ( ! function_exists( 'cs_pb_pricetable' ) ) {
                   <li class="to-field">
                     <div class="select-style">
                       <select class="dropdown" name="pricetable_animation[]">
-                        <option value="">Select Animation</option>
+                        <option value=""><?php _e('Select Animation','Awaken');?></option>
                         <?php 
                             $animation_array = cs_animation_style();
                             foreach($animation_array as $animation_key=>$animation_value){
@@ -801,7 +807,7 @@ if ( ! function_exists( 'cs_pb_pricetable' ) ) {
                   <li class="to-label">
                     <label><?php _e('Pricing Features','Awaken');?></label>
                   </li>
-                  <li class="to-field"> <a class="add_field_button" href="#"  onclick="javascript:cs_add_field('cs-shortcode-wrapp_<?php echo esc_js($name.$cs_counter);?>','cs_infobox')">Add New Feature input box <i class="fa fa-plus-circle" style="color:red; font-size:18px"></i></a> 
+                  <li class="to-field"> <a class="add_field_button" href="#"  onclick="javascript:cs_add_field('cs-shortcode-wrapp_<?php echo esc_js($name.$cs_counter);?>','cs_infobox')"><?php _e('Add New Feature input box','Awaken');?> <i class="fa fa-plus-circle" style="color:red; font-size:18px"></i></a> 
                   
                     <div class='left-info'>
                       <div class='left-info'><p><?php _e('set feature price of the product','Awaken');?></p></div>
@@ -997,7 +1003,7 @@ if ( ! function_exists( 'cs_pb_accordion' ) ) {
               <li class="to-field select-style">
               	<div class='input-sec select-style'>
                 <select class="dropdown" name="accordion_animation[]">
-                  <option value="">Select Animation</option>
+                  <option value=""><?php _e('Select Animation','Awaken');?></option>
                   <?php 
 						$animation_array = cs_animation_style();
 						foreach($animation_array as $animation_key=>$animation_value){
@@ -1040,11 +1046,11 @@ if ( ! function_exists( 'cs_pb_accordion' ) ) {
 					?>
           <div class='cs-wrapp-clone cs-shortcode-wrapp  cs-pbwp-content'  id="cs_infobox_<?php echo cs_allow_special_char($rand_id);?>">
             <header>
-              <h4><i class='fa fa-arrows'></i>Accordion</h4>
-              <a href='#' class='deleteit_node'><i class='fa fa-minus-circle'></i>Remove</a></header>
+              <h4><i class='fa fa-arrows'></i><?php _e('Accordion','Awaken');?></h4>
+              <a href='#' class='deleteit_node'><i class='fa fa-minus-circle'></i><?php _e('Remove','Awaken');?></a></header>
             <ul class='form-elements'>
               <li class='to-label'>
-                <label>Active</label>
+                <label><?php _e('Active','Awaken');?></label>
               </li>
               <li class='to-field select-style'>
                 <div class='input-sec select-style'>
@@ -1108,7 +1114,7 @@ if ( ! function_exists( 'cs_pb_accordion' ) ) {
         <div class="wrapptabbox">
           <div class="opt-conts">
             <ul class="form-elements noborder">
-              <li class="to-field"> <a href="#" class="add_servicesss cs-main-btn" onclick="cs_shortcode_element_ajax_call('accordions', 'shortcode-item-<?php echo cs_allow_special_char($cs_counter);?>', '<?php echo cs_allow_special_char(admin_url('admin-ajax.php'));?>')"><i class="fa fa-plus-circle"></i>Add accordion</a> </li>
+              <li class="to-field"> <a href="#" class="add_servicesss cs-main-btn" onclick="cs_shortcode_element_ajax_call('accordions', 'shortcode-item-<?php echo cs_allow_special_char($cs_counter);?>', '<?php echo cs_allow_special_char(admin_url('admin-ajax.php'));?>')"><i class="fa fa-plus-circle"></i><?php _e('Add accordion','Awaken');?></a> </li>
                <div id="loading" class="shortcodeload"></div>
             </ul>
             <?php if(isset($_POST['shortcode_element']) && $_POST['shortcode_element'] == 'shortcode'){?>
@@ -1270,7 +1276,7 @@ if ( ! function_exists( 'cs_pb_call_to_action' ) ) {
           </li>
           <li class="to-field">
             <input id="cs_call_to_action_bg_img<?php echo esc_attr($cs_counter)?>" name="cs_call_to_action_bg_img[]" type="hidden" class="" value="<?php echo esc_attr($cs_call_to_action_bg_img);?>"/>
-            <input name="cs_call_to_action_bg_img<?php echo esc_attr($cs_counter)?>"  type="button" class="uploadMedia left" value="Browse"/>
+            <input name="cs_call_to_action_bg_img<?php echo esc_attr($cs_counter)?>"  type="button" class="uploadMedia left" value="<?php _e('Browse','Awaken');?>"/>
             <div class='left-info'><p><?php _e('Select the background image for action element','Awaken');?></p></div>
           </li>
         </ul>
@@ -1329,7 +1335,7 @@ if ( ! function_exists( 'cs_pb_call_to_action' ) ) {
           </li>
           <li class="to-field select-style">
             <select class="dropdown" name="cs_call_to_action_animation[]">
-              <option value="">Select Animation</option>
+              <option value=""><?php _e('Select Animation','Awaken');?></option>
               <?php 
 				$animation_array = cs_animation_style();
 				foreach($animation_array as $animation_key=>$animation_value){
@@ -1541,7 +1547,7 @@ if ( ! function_exists( 'cs_pb_counter' ) ) {
             </li>
             <li class="to-field">
               <input id="cs_counter_logo<?php echo esc_attr($random_id);?>" name="cs_counter_logo[]" type="hidden" class="" value="<?php echo esc_url($cs_counter_logo);?>"/>
-              <input name="cs_counter_logo<?php echo esc_attr($random_id);?>"  type="button" class="uploadMedia left" value="Browse"/>
+              <input name="cs_counter_logo<?php echo esc_attr($random_id);?>"  type="button" class="uploadMedia left" value="<?php _e('Browse','Awaken');?>"/>
             </li>
           </ul>
           <div class="page-wrap" style="overflow:hidden;" id="cs_counter_logo<?php echo esc_attr($random_id);?>_box" >
@@ -1560,7 +1566,7 @@ if ( ! function_exists( 'cs_pb_counter' ) ) {
         </div>
         <ul class="form-elements bcevent_title">
           <li class="to-label">
-            <label><?php _e('set number','Awaken');?></label>
+            <label><?php _e('Set number','Awaken');?></label>
           </li>
           <li class="to-field">
             <div class="input-sec">
@@ -1590,7 +1596,7 @@ if ( ! function_exists( 'cs_pb_counter' ) ) {
         </ul>
         <ul class="form-elements">
           <li class="to-label">
-            <label><?php _e('Content(s)','Awaken');?></label>
+            <label><?php _e('Content','Awaken');?></label>
           </li>
           <li class="to-field">
             <textarea type="text" name="counter_text[]" class="txtfield" data-content-text="cs-shortcode-textarea"><?php echo esc_textarea($atts_content);?></textarea>
@@ -1646,7 +1652,7 @@ if ( ! function_exists( 'cs_pb_counter' ) ) {
           </li>
           <li class="to-field select-style">
             <select class="dropdown" name="counter_animation[]">
-              <option value="">Select Animation</option>
+              <option value=""><?php _e('Select Animation','Awaken');?></option>
               <?php 
 				$animation_array = cs_animation_style();
 				foreach($animation_array as $animation_key=>$animation_value){
@@ -1746,7 +1752,7 @@ if ( ! function_exists( 'cs_pb_progressbars' ) ) {
   <?php cs_element_setting($name,$cs_counter,$progressbars_element_size,'','list-alt');?>
   <div class="cs-wrapp-class-<?php echo esc_attr($cs_counter)?> <?php echo esc_attr($shortcode_element);?>" id="<?php echo esc_attr($name.$cs_counter);?>" style="display: none;">
     <div class="cs-heading-area">
-      <h5><?php _e('Edit Progressbars Options','Awaken');?></h5>
+      <h5><?php _e('Edit Progress bars Options','Awaken');?></h5>
       <a href="javascript:removeoverlay('<?php echo esc_js($name.$cs_counter);?>','<?php echo esc_js($filter_element);?>')" class="cs-btnclose"><i class="fa fa-times"></i></a> </div>
       <div class="cs-clone-append cs-pbwp-content" >
       <div class="cs-wrapp-tab-box">
@@ -1755,7 +1761,7 @@ if ( ! function_exists( 'cs_pb_progressbars' ) ) {
             <?php if(isset($_POST['shortcode_element']) && $_POST['shortcode_element'] == 'shortcode'){cs_shortcode_element_size();}?>
             <ul class="form-elements">
               <li class="to-label">
-                <label><?php _e('Progress Bar Style','Awaken');?></label>
+                <label><?php _e('Progress bar Style','Awaken');?></label>
               </li>
               <li class="to-field select-style">
                 <select class="cs_progressbars_style" name="cs_progressbars_style[]">
@@ -1780,7 +1786,7 @@ if ( ! function_exists( 'cs_pb_progressbars' ) ) {
               </li>
               <li class="to-field select-style">
                 <select class="dropdown" name="progressbars_animation[]">
-                  <option value="">Select Animation</option>
+                  <option value=""><?php _e('Select Animation','Awaken');?></option>
                   <?php 
 						$animation_array = cs_animation_style();
 						foreach($animation_array as $animation_key=>$animation_value){
@@ -1811,8 +1817,8 @@ if ( ! function_exists( 'cs_pb_progressbars' ) ) {
 				 }
           echo '<div class="cs-wrapp-clone cs-shortcode-wrapp cs-pbwp-content" id="cs_infobox_'.$rand_id.'">'; ?>
             <header>
-              <h4><i class='fa fa-arrows'></i>ProgressBar</h4>
-              <a href='#' class='deleteit_node'><i class='fa fa-minus-circle'></i>Remove</a></header>
+              <h4><i class='fa fa-arrows'></i><?php _e('Progress bar','Awaken');?> </h4>
+              <a href='#' class='deleteit_node'><i class='fa fa-minus-circle'></i><?php _e('Remove','Awaken');?> </a></header>
             <ul class="form-elements">
               <li class="to-label">
                 <label><?php _e('Progress Bar Title','Awaken');?></label>
@@ -1823,7 +1829,7 @@ if ( ! function_exists( 'cs_pb_progressbars' ) ) {
             </ul>
             <ul class="form-elements">
               <li class="to-label">
-                <label><?php _e('Skill (in percentage)','Awaken');?></label>
+                <label><?php _e('Skill in percentage','Awaken');?></label>
               </li>
               <li class="to-field">
                 <div class="cs-drag-slider" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="<?php echo esc_attr($progressbars_percentage)?>"></div>
@@ -2015,7 +2021,7 @@ if ( ! function_exists( 'cs_pb_piecharts' ) ) {
           </li>
           <li class="to-field">
             <input id="piechart_bg_image<?php echo esc_attr($cs_counter)?>" name="piechart_bg_image[]" type="hidden" class="" value="<?php echo esc_url($piechart_bg_image);?>"/>
-            <input name="piechart_bg_image<?php echo esc_attr($cs_counter)?>"  type="button" class="uploadMedia left" value="Browse"/>
+            <input name="piechart_bg_image<?php echo esc_attr($cs_counter)?>"  type="button" class="uploadMedia left" value="<?php _e('Browse','Awaken');?>"/>
             <div class='left-info'><p><?php _e('Set background images','Awaken');?></p></div>
           </li>
         </ul>
@@ -2047,7 +2053,7 @@ if ( ! function_exists( 'cs_pb_piecharts' ) ) {
           </li>
           <li class="to-field select-style">
             <select class="dropdown" name="piechart_animation[]">
-              <option value="">Select Animation</option>
+              <option value=""><?php _e('Select Animation','Awaken');?></option>
               <?php 
 					$animation_array = cs_animation_style();
 					foreach($animation_array as $animation_key=>$animation_value){
@@ -2209,7 +2215,7 @@ if ( ! function_exists( 'cs_pb_services' ) ) {
             </li>
             <li class="to-field">
               <input id="service_bg_image<?php echo esc_attr($rand_counter);?>" name="cs_service_bg_image[]" type="hidden" class="" value="<?php echo esc_url($cs_service_bg_image);?>"/>
-              <input name="service_bg_image<?php echo esc_attr($rand_counter);?>"  type="button" class="uploadMedia left" value="Browse"/>
+              <input name="service_bg_image<?php echo esc_attr($rand_counter);?>"  type="button" class="uploadMedia left" value="<?php _e('Browse','Awaken');?>"/>
             </li>
           </ul>
           <div class="page-wrap" style="overflow:hidden; display:<?php echo esc_url($cs_service_bg_image) && trim($cs_service_bg_image) !='' ? 'inline' : 'none';?>" id="service_bg_image<?php echo esc_attr($rand_counter);?>_box" >
@@ -2339,7 +2345,7 @@ if ( ! function_exists( 'cs_pb_services' ) ) {
           </li>
           <li class="to-field select-style">
             <select class="dropdown" name="cs_service_animation[]">
-              <option value="">Select Animation</option>
+              <option value=""><?php _e('Select Animation','Awaken');?></option>
               <?php 
 				$animation_array = cs_animation_style();
 				foreach($animation_array as $animation_key=>$animation_value){
@@ -2486,7 +2492,7 @@ if ( ! function_exists( 'cs_pb_table' ) ) {
         </ul>
         <ul class="form-elements">
           <li class="to-label">
-            <label><?php _e('Table Style style','Awaken');?></label>
+            <label><?php _e('Table Style','Awaken');?></label>
           </li>
           <li class="to-field">
           	<div class="select-style">
@@ -2502,7 +2508,7 @@ if ( ! function_exists( 'cs_pb_table' ) ) {
         </ul>
         <ul class="form-elements">
           <li class="to-label">
-            <label>Table Content</label>
+            <label><?php _e('Table Content','Awaken');?></label>
           </li>
           <li class="to-field">
             <div class="input-sec">
@@ -2633,7 +2639,7 @@ if ( ! function_exists( 'cs_pb_faq' ) ) {
               </li>
               <li class="to-field select-style">
                 <select class="dropdown" name="faq_animation[]">
-                  <option value="">Select Animation</option>
+                  <option value=""><?php _e('Select Animation','Awaken');?></option>
                   <?php 
 						$animation_array = cs_animation_style();
 						foreach($animation_array as $animation_key=>$animation_value){
@@ -2673,7 +2679,7 @@ if ( ! function_exists( 'cs_pb_faq' ) ) {
           <div class='cs-wrapp-clone cs-shortcode-wrapp  cs-pbwp-content'  id="cs_infobox_<?php echo esc_attr($rand_id);?>">
             <header>
               <h4><i class='fa fa-arrows'></i><?php _e('FAQ','Awaken');?></h4>
-              <a href='#' class='deleteit_node'><i class='fa fa-minus-circle'></i>Remove</a>
+              <a href='#' class='deleteit_node'><i class='fa fa-minus-circle'></i><?php _e('Remove','Awaken');?></a>
             </header>
             <ul class='form-elements'>
               <li class='to-label'>
@@ -2688,7 +2694,7 @@ if ( ! function_exists( 'cs_pb_faq' ) ) {
             </ul>
             <ul class='form-elements'>
               <li class='to-label'>
-                <label>Faq Title:</label>
+                <label><?php _e('Faq title','Awaken');?></label>
               </li>
               <li class='to-field'>
                 <div class='input-sec'>
@@ -2727,7 +2733,7 @@ if ( ! function_exists( 'cs_pb_faq' ) ) {
         <div class="wrapptabbox">
           <div class="opt-conts">
             <ul class="form-elements">
-              <li class="to-field"> <a href="#" class="add_servicesss cs-main-btn" onclick="cs_shortcode_element_ajax_call('faq', 'shortcode-item-<?php echo esc_js($cs_counter);?>', '<?php echo esc_js(admin_url('admin-ajax.php'));?>')"><i class="fa fa-plus-circle"></i>Add Faq</a> </li>
+              <li class="to-field"> <a href="#" class="add_servicesss cs-main-btn" onclick="cs_shortcode_element_ajax_call('faq', 'shortcode-item-<?php echo esc_js($cs_counter);?>', '<?php echo esc_js(admin_url('admin-ajax.php'));?>')"><i class="fa fa-plus-circle"></i><?php _e('Add Faq','Awaken');?></a> </li>
                <div id="loading" class="shortcodeload"></div>
             </ul>
             <?php if(isset($_POST['shortcode_element']) && $_POST['shortcode_element'] == 'shortcode'){?>

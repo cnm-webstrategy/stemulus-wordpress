@@ -114,11 +114,11 @@
 	// adding course meta info start
 	add_action( 'add_meta_boxes', 'cs_meta_sermons_add' );
 	function cs_meta_sermons_add(){  
-		add_meta_box( 'cs_meta_sermon', 'Sermons Options', 'cs_meta_sermon', 'sermons', 'normal', 'high' );  
+		add_meta_box( 'cs_meta_sermon', __('Sermons Options','Awaken'), 'cs_meta_sermon', 'sermons', 'normal', 'high' );  
 	}
 	function cs_meta_sermon( $post ) {
-		global $post,$cs_xmlObject;
-		 $cs_theme_options=get_option('cs_theme_options');
+		global $post,$cs_xmlObject,$cs_theme_options;
+		 //$cs_theme_options=get_option('cs_theme_options');
 		
 		$cs_builtin_seo_fields =$cs_theme_options['cs_builtin_seo_fields'];
 		$cs_header_position =$cs_theme_options['cs_header_position'];
@@ -148,7 +148,7 @@
                  						<li><a href="#tab-header-position-settings" data-toggle="tab"><i class="fa fa-forward"></i><?php _e('Header Absolute','Awaken');?></a></li>
                  					<?php }?>
 									<?php if($cs_builtin_seo_fields == 'on'){?>
-									<li><a href="#tab-seo-advance-settings" data-toggle="tab"><i class="fa fa-dribbble"></i> <?php _e('SEO Options','Awaken');?></a></li>
+									<li><a href="#tab-seo-advance-settings" data-toggle="tab"><i class="fa fa-dribbble"></i> <?php _e('Seo Options','Awaken');?></a></li>
 									<?php }?>
                                    
                                     <li><a data-toggle="tab" href="#tab-sermons-settings-cs-sermons"><i class="fa fa-calendar"></i><?php _e('Sermons Options','Awaken'); ?></a></li>

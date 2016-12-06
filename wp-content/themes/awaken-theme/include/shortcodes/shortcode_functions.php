@@ -255,7 +255,7 @@ if (!function_exists('cs_portfolio_listing_shortcode')) {
                                 <?php } ?>
                                     <figcaption>
                                         <div class="figinn lightbox">
-                                            <a data-rel="prettyPhoto" href="<?php echo esc_url($full_image_url);?>" class="fa fa-search-plus"></a>
+                                            <a rel="prettyPhoto" data-rel="prettyPhoto" href="<?php echo esc_url($full_image_url);?>" class="fa fa-search-plus"></a>
                                             <a href="<?php the_permalink(); ?>" class="fa fa-link"></a>
                                         </div>
                                     </figcaption>
@@ -1650,7 +1650,7 @@ if ( ! function_exists( 'cs_shortcode_names' ) ) {
 						'categories'=>'typography misc',
 				 ),
 				  'dropcap'=>array(
-						'title'=>__('Dropcap','Awaken'),
+						'title'=>__('Drop cap','Awaken'),
 						'name'=>'dropcap',
 						'icon'=>'fa-bold',
 						'categories'=>'typography misc',
@@ -1717,25 +1717,25 @@ if ( ! function_exists( 'cs_shortcode_names' ) ) {
 						'categories'=>' contentblocks',
 				 ),
 				 'progressbars'=>array(
-						'title'=>'Progressbars',
+						'title'=>__('Progress bars','Awaken'),
 						'name'=>'progressbars',
 						'icon'=>'fa-list-alt',
 						'categories'=>' commonelements',
 				 ),
 				 'piecharts'=>array(
-						'title'=>__('Piecharts','Awaken'),
+						'title'=>__('Pie charts','Awaken'),
 						'name'=>'piecharts',
 						'icon'=>'fa-tachometer',
 						'categories'=>'commonelements',
 				 ),
 				 'promobox'=>array(
-						'title'=>__('Promobox','Awaken'),
+						'title'=>__('Promo box','Awaken'),
 						'name'=>'promobox',
 						'icon'=>'fa-life-ring',
 						'categories'=>' mediaelement',
 				 ),
 				 'pricetable'=>array(
-						'title'=>__('Pricetable','Awaken'),
+						'title'=>__('Price table','Awaken'),
 						'name'=>'pricetable',
 						'icon'=>'fa-table',
 						'categories'=>'commonelements',
@@ -1906,7 +1906,7 @@ if ( ! function_exists( 'cs_shortcode_popup' ) ) {
 			<div class="page-elements">
 			<div class="cs-heading-area">
 				 <h5>
-					<i class="fa fa-plus-circle"></i> Add Element
+					<i class="fa fa-plus-circle"></i><?php _e('Add Element','Awaken');?> 
 				</h5>
 				<span class='cs-btnclose' onclick='javascript:removeoverlay("composer-<?php echo esc_js($rand) ?>","append")'><i class="fa fa-times"></i></span>
 			</div>
@@ -1916,11 +1916,11 @@ if ( ! function_exists( 'cs_shortcode_popup' ) ) {
 				});
 			</script>
 		 <div class="cs-filter-content shortcode">
-			<p><input type="text" id="quicksearch<?php echo intval($rand) ?>" placeholder="Search" /></p>
+			<p><input type="text" id="quicksearch<?php echo intval($rand) ?>" placeholder="<?php _e('Search','Awaken');?> " /></p>
 			  <div class="cs-filtermenu-wrap">
-				<h6>Filter by</h6>
+				 <h6><?php _e('Filter by','Awaken');?></h6>>
 				<ul class="cs-filter-menu" id="filters<?php echo intval($rand) ?>">
-				  <li data-filter="all" class="active">Show all</li>
+				  <li data-filter="all" class="active"><?php _e('Show all','Awaken');?></li>
                   <?php foreach($cs_page_categories_name as $key=>$value){
 				  		echo '<li data-filter="'.$key.'">'.$value.'</li>';
 					}?>
@@ -1941,7 +1941,7 @@ if ( ! function_exists( 'cs_shortcode_popup' ) ) {
 	   <?php 
 		if(isset($shortcode) && $shortcode <> ''){
 			?>
-			<a class="button" href="javascript:_createpop('composer-<?php echo esc_js($rand) ?>', 'filter')"><i class="fa fa-plus-circle"></i> CS: Insert shortcode</a>
+			<a class="button" href="javascript:_createpop('composer-<?php echo esc_js($rand) ?>', 'filter')"><i class="fa fa-plus-circle"></i><?php _e('CS: Insert shortcode','Awaken');?></a>
 			<?php
 		}
 	}
@@ -1954,17 +1954,17 @@ if ( ! function_exists( 'cs_shortcode_element_size' ) ) {
 	function cs_shortcode_element_size($column_size =''){
 		?>
 			<ul class="form-elements">
-                <li class="to-label"><label>Size</label></li>
+                <li class="to-label"><label><?php _e('Size','Awaken');?></label></li>
                 <li class="to-field select-style">
                     <select class="column_size" id="column_size" name="column_size[]">
-                        <option value="1/1" <?php if($column_size == '1/1'){echo 'selected="selected"';}?>>Full width</option>
-                        <option value="1/2" <?php if($column_size == '1/2'){echo 'selected="selected"';}?>>One half</option>
-                        <option value="1/3" <?php if($column_size == '1/3'){echo 'selected="selected"';}?>>One third</option
-                        ><option value="2/3" <?php if($column_size == '2/3'){echo 'selected="selected"';}?>>Two third</option>
-                        <option value="1/4" <?php if($column_size == '1/4'){echo 'selected="selected"';}?>>One fourth</option>
-                        <option value="3/4" <?php if($column_size == '3/4'){echo 'selected="selected"';}?>>Three fourth</option>
+                        <option value="1/1" <?php if($column_size == '1/1'){echo 'selected="selected"';}?>><?php _e('Full width','Awaken');?></option>
+                        <option value="1/2" <?php if($column_size == '1/2'){echo 'selected="selected"';}?>><?php _e('One half','Awaken');?></option>
+                        <option value="1/3" <?php if($column_size == '1/3'){echo 'selected="selected"';}?>><?php _e('One third','Awaken');?></option
+                        ><option value="2/3" <?php if($column_size == '2/3'){echo 'selected="selected"';}?>><?php _e('Two third','Awaken');?></option>
+                        <option value="1/4" <?php if($column_size == '1/4'){echo 'selected="selected"';}?>><?php _e('One fourth','Awaken');?></option>
+                        <option value="3/4" <?php if($column_size == '3/4'){echo 'selected="selected"';}?>><?php _e('Three fourth','Awaken');?></option>
                     </select>
-                    <p>Select column width. This width will be calculated depend page width</p>
+                    <p><?php _e('Select column width. This width will be calculated depend page width','Awaken');?></p>
                 </li>                  
             </ul>
 		<?php
@@ -1997,19 +1997,19 @@ if ( ! function_exists( 'cs_shortcode_custom_classes' ) ) {
 	function cs_shortcode_custom_classes($cs_custom_class = '',$cs_custom_animation='',$cs_custom_animation_duration='1'){
 		?>
         	<ul class="form-elements">
-                <li class="to-label"><label>Custom ID</label></li>
+                <li class="to-label"><label><?php _e('Custom Id','Awaken');?></label></li>
                 <li class="to-field">
                     <input type="text" name="cs_custom_class[]" class="txtfield"  value="<?php echo sanitize_text_field($cs_custom_class); ?>" />
-                    <p>Use this option if you want to use specified Class for this element	</p>
+                    <p><?php _e('Use this option if you want to use specified Class for this element','Awaken');?>	</p>
                 </li>
             </ul>
             <?php $custom_animation_array = array('fade'=>'Fade','slide'=>'Slide','left-slide'=>'left Slide');?>
             
             <ul class="form-elements">
-                <li class="to-label"><label>Animation Class <?php echo sanitize_text_field($cs_custom_animation);?></label></li>
+                <li class="to-label"><label><?php _e('Animation Class','Awaken');?> <?php echo sanitize_text_field($cs_custom_animation);?></label></li>
                 <li class="to-field select-style">
                 	<select class="dropdown" name="cs_custom_animation[]">
-                    	<option value="">Animation Class</option>
+                    	<option value=""><?php _e('Animation Class','Awaken');?></option>
                         <?php 
 								$animation_array = cs_animation_style();
 								foreach($animation_array as $animation_key=>$animation_value){
@@ -2022,7 +2022,7 @@ if ( ! function_exists( 'cs_shortcode_custom_classes' ) ) {
 								}
 						?>
                       </select>
-                      <p>Select Entrance animation type from the dropdown </p>
+                      <p><?php _e('Select Entrance animation type from the dropdown','Awaken');?></p>
                 </li>
             </ul>
         <?php
@@ -2037,18 +2037,18 @@ if ( ! function_exists( 'cs_shortcode_custom_dynamic_classes' ) ) {
 	function cs_shortcode_custom_dynamic_classes($cs_custom_class = '',$cs_custom_animation='',$cs_custom_animation_duration='1',$prefix){
 		?>
         	<ul class="form-elements">
-                <li class="to-label"><label>Custom ID</label></li>
+                <li class="to-label"><label><?php _e('Custom Id','Awaken');?></label></li>
                 <li class="to-field">
                     <input type="text" name="<?php echo sanitize_text_field($prefix);?>_class[]" class="txtfield"  value="<?php echo sanitize_text_field($cs_custom_class)?>" />
-                    <p>Use this option if you want to use specified id for this element</p>
+                    <p><?php _e('Use this option if you want to use specified id for this element','Awaken');?></p>
                 </li>
             </ul>
             <?php $custom_animation_array = array('fade'=>'Fade','slide'=>'Slide','left-slide'=>'left Slide');?>
             <ul class="form-elements">
-                <li class="to-label"><label>Animation Class <?php echo sanitize_text_field($cs_custom_animation);?></label></li>
+                <li class="to-label"><label><?php _e('Animation Class','Awaken');?> <?php echo sanitize_text_field($cs_custom_animation);?></label></li>
                 <li class="to-field select-style">
                 	<select class="dropdown" name="<?php echo sanitize_text_field($prefix);?>_animation[]">
-                    	<option value="">Select Animation</option>
+                    	<option value=""><?php _e('Select Animation','Awaken');?></option>
                         <?php 
 								$animation_array = cs_animation_style();
 								foreach($animation_array as $animation_key=>$animation_value){
@@ -2062,7 +2062,7 @@ if ( ! function_exists( 'cs_shortcode_custom_dynamic_classes' ) ) {
 						
 						?>
                       </select>
-                      <p>Select Entrance animation type from the dropdown</p>
+                      <p><?php _e('Select Entrance animation type from the dropdown','Awaken');?></p>
                 </li>
             </ul>  
         <?php
@@ -2420,61 +2420,61 @@ if ( ! function_exists( 'cs_shortcode_element_ajax_call' ) ) {
 				$rand_id = rand(8,7777);
 				?>
 				<div class='cs-wrapp-clone cs-shortcode-wrapp'  id="cs_infobox_<?php echo intval( $rand_id);?>">
-					<header><h4><i class='fa fa-arrows'></i>Service</h4> <a href='#' class='deleteit_node'><i class='fa fa-minus-circle'></i>Remove</a></header>
+					<header><h4><i class='fa fa-arrows'></i><?php _e('Service','Awaken');?></h4> <a href='#' class='deleteit_node'><i class='fa fa-minus-circle'></i><?php _e('Remove','Awaken');?></a></header>
                     
                     <?php if ( function_exists( 'cs_shortcode_element_size' ) ) {cs_shortcode_element_size();}?>
 					<ul class='form-elements'>
-						<li class='to-label'><label>Service Title:</label></li>
+						<li class='to-label'><label><?php _e('Service Title','Awaken');?></label></li>
 						<li class='to-field'> <div class='input-sec'><input class='txtfield' type='text' name='service_title[]' /></div>
-						<div class='left-info'><p>Title of the Service.</p></div>
+						<div class='left-info'><p><?php _e('Title of the Service','Awaken');?></p></div>
 						</li>
 					</ul>
 					<ul class='form-elements'>
-						<li class='to-label'><label>Service View:</label></li>
+						<li class='to-label'><label><?php _e('Service View','Awaken');?></label></li>
 						<li class='to-field select-style'> <div class='input-sec'><select name='service_type[]' class='dropdown'>
-                        <option value='size_large'>Large Boxed</option>
-                        <option value='size_large_normal'>Large Normal</option>
-                        <option value='size_circle'>Circle</option>
-                        <option  value="size_medium" >Medium</option>
-                        <option value='size_small'>Small</option>
+                        <option value='size_large'><?php _e('Large Boxed','Awaken');?></option>
+                        <option value='size_large_normal'><?php _e('Large Normal','Awaken');?></option>
+                        <option value='size_circle'><?php _e('Circle','Awaken');?></option>
+                        <option  value="size_medium" ><?php _e('Medium','Awaken');?></option>
+                        <option value='size_small'><?php _e('Small','Awaken');?></option>
                         </select></div>
-						<div class='left-info'><p>Type of the Service.</p></div>
+						<div class='left-info'><p><?php _e('Type of the Service','Awaken');?></p></div>
 						</li>
 					</ul>
 					 <ul class='form-elements' id="<?php echo intval( $rand_id);?>">
-							<li class='to-label'><label>Fontawsome Icon:</label></li>
+							<li class='to-label'><label><?php _e('Fontawsome Icon','Awaken');?></label></li>
 							<li class="to-field">
 								<input type="hidden" class="cs-search-icon-hidden" name="cs_service_icon[]">
 								<?php cs_fontawsome_icons_box('',$rand_id);?>
 							</li>
 					</ul>
                     <ul class="form-elements">
-                        <li class="to-label"><label>Icon Postion</label></li>
+                        <li class="to-label"><label><?php _e('Icon Postion','Awaken');?></label></li>
                         <li class="to-field select-style">
                             <select class="service_icon_postion" name="service_icon_postion[]">
-                                <option value="left">left</option>
-                                <option value="right">Right</option>
-                                <option value="top">Top</option>
-                                <option value="center">Center</option>
+                                <option value="left"><?php _e('left','Awaken');?></option>
+                                <option value="right"><?php _e('Right','Awaken');?></option>
+                                <option value="top"><?php _e('Top','Awaken');?></option>
+                                <option value="center"><?php _e('Center','Awaken');?></option>
                             </select>
                         </li>                  
                     </ul>
                     <ul class="form-elements">
-                        <li class="to-label"><label>Icon Type</label></li>
+                        <li class="to-label"><label><?php _e('Icon Type','Awaken');?></label></li>
                         <li class="to-field select-style">
                             <select class="service_icon_type" name="service_icon_type[]">
-                                <option value="circle">Circle</option>
-                                <option value="square">Square</option>
+                                <option value="circle"><?php _e('Circle','Awaken');?></option>
+                                <option value="square"><?php _e('Square','Awaken');?></option>
                             </select>
                         </li>                  
                     </ul>
                     <ul class="form-elements">
                           <li class="to-label">
-                            <label>Service Bg Image</label>
+                            <label><?php _e('Service Background Image','Awaken');?></label>
                           </li>
                           <li class="to-field">
                             <input id="service_bg_image<?php echo intval( $rand_id);?>" name="service_bg_image[]" type="hidden" class="" value=""/>
-                            <input name="service_bg_image<?php echo intval( $rand_id);?>"  type="button" class="uploadMedia left" value="Browse"/>
+                            <input name="service_bg_image<?php echo intval( $rand_id);?>"  type="button" class="uploadMedia left" value="<?php _e('Browse','Awaken');?>"/>
                           </li>
                         </ul>
                         <div class="page-wrap" style="overflow:hidden; display:none;?>" id="service_bg_image<?php echo intval( $rand_id);?>_box" >
@@ -2491,57 +2491,57 @@ if ( ! function_exists( 'cs_shortcode_element_ajax_call' ) ) {
                           </div>
                         </div>
 					<ul class='form-elements'>
-						<li class='to-label'><label>Service Link URL:</label></li>
+						<li class='to-label'><label><?php _e('Service Url','Awaken');?></label></li>
 						<li class='to-field'> <div class='input-sec'><input class='txtfield' type='text' name='service_link_url[]' /></div>
-						<div class='left-info'><p>Service Link Url</p></div>
+						<div class='left-info'><p><?php _e('Service Url','Awaken');?></p></div>
 						</li>
 					</ul>
                     <ul class="form-elements">
-                        <li class="to-label"><label>Border</label></li>
+                        <li class="to-label"><label><?php _e('Border','Awaken');?></label></li>
                         <li class="to-field select-style">
                             <select class="service_border" id="service_border" name="service_border[]">
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
+                                <option value="yes"><?php _e('Yes','Awaken');?></option>
+                                <option value="no"><?php _e('No','Awaken');?></option>
                             </select>
                         </li>                  
                     </ul>
 					<ul class='form-elements'>
-						<li class='to-label'><label>Service Text:</label></li>
+						<li class='to-label'><label><?php _e('Service Text','Awaken');?></label></li>
 						<li class='to-field'> <div class='input-sec'><textarea class='txtfield' data-content-text="cs-shortcode-textarea" name='service_text[]'></textarea></div>
 						</li>
 					</ul>
                     <ul class="form-elements">
-                        <li class="to-label"><label>Divider</label></li>
+                        <li class="to-label"><label><?php _e('Divider','Awaken');?></label></li>
                         <li class="to-field select-style">
                             <select class="service_divider" name="service_divider[]">
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
+                                <option value="yes"><?php _e('Yes','Awaken');?></option>
+                                <option value="no"><?php _e('No','Awaken');?></option>
                             </select>
                         </li>                  
                     </ul>
                     <ul class="form-elements">
-                        <li class="to-label"><label>Icon Color</label></li>
+                        <li class="to-label"><label><?php _e('Icon Color','Awaken');?></label></li>
                         <li class="to-field">
                             <input type="text" name="service_icon_color[]" class="bg_color"  value="" />
                         </li>
                     </ul>
                     <ul class="form-elements">
-                        <li class="to-label"><label>Icon Background Color</label></li>
+                        <li class="to-label"><label><?php _e('Icon Background Color','Awaken');?></label></li>
                         <li class="to-field">
                             <input type="text" name="service_icon_bg_color[]" class="bg_color"  value="" />
                         </li>
                     </ul>
                   	 <ul class="form-elements">
-                        <li class="to-label"><label>Custom ID</label></li>
+                        <li class="to-label"><label><?php _e('Custom Id','Awaken');?></label></li>
                         <li class="to-field">
                             <input type="text" name="service_class[]" class="txtfield"  value="" />
                         </li>
                      </ul>
                     <ul class="form-elements">
-                        <li class="to-label"><label>Animation Class </label></li>
+                        <li class="to-label"><label><?php _e('Animation Class','Awaken');?> </label></li>
                         <li class="to-field select-style">
                             <select class="dropdown" name="service_animation[]">
-                                <option value="">Select Animation</option>
+                                <option value=""><?php _e('Select Animation','Awaken');?></option>
                                 <?php 
                                     $animation_array = cs_animation_style();
                                     foreach($animation_array as $animation_key=>$animation_value){
@@ -2562,39 +2562,39 @@ if ( ! function_exists( 'cs_shortcode_element_ajax_call' ) ) {
 				 $rand_id = rand(5,999);
 				?>
                 	<div class='cs-wrapp-clone cs-shortcode-wrapp'  id="cs_infobox_<?php echo intval( $rand_id);?>">
-                        <header><h4><i class='fa fa-arrows'></i>Accordion</h4> <a href='#' class='deleteit_node'><i class='fa fa-minus-circle'></i>Remove</a></header>
+                        <header><h4><i class='fa fa-arrows'></i><?php _e('Accordion','Awaken');?></h4> <a href='#' class='deleteit_node'><i class='fa fa-minus-circle'></i><?php _e('Remove','Awaken');?></a></header>
                         <ul class='form-elements'>
-                            <li class='to-label'><label>Active</label></li>
-                            <li class='to-field select-style'> <select name='accordion_active[]'><option value="no">No</option><option value="yes">Yes</option></select>
+                            <li class='to-label'><label><?php _e('Active','Awaken');?></label></li>
+                            <li class='to-field select-style'> <select name='accordion_active[]'><option value="no"><?php _e('No','Awaken');?></option><option value="yes"><?php _e('Yes','Awaken');?></option></select>
                             <div class='left-info'>
-                              <p>You can set the section that is active here by select dropdown</p>
+                              <p><?php _e('You can set the section that is active here by select dropdown','Awaken');?></p>
                             </div>
                             </li>
                         </ul>
                         <ul class='form-elements'>
-                            <li class='to-label'><label>Accordion Title:</label></li>
+                            <li class='to-label'><label><?php _e('Accordion Title','Awaken');?></label></li>
                             <li class='to-field'> <div class='input-sec'><input class='txtfield' type='text' name='accordion_title[]' /></div>
                             <div class='left-info'>
-                              <p>Enter accordion title</p>
+                              <p><?php _e('Enter accordion title','Awaken');?></p>
                             </div>
                             </li>
                         </ul>
                         <ul class='form-elements' id="<?php echo intval($rand_id);?>">
-							<li class='to-label'><label>Fontawsome Icon:</label></li>
+							<li class='to-label'><label><?php _e('Fontawsome Icon','Awaken');?></label></li>
 							<li class="to-field">
                                     <input type="hidden" class="cs-search-icon-hidden" name="cs_accordian_icon[]">
                                     <?php cs_fontawsome_icons_box('',$rand_id);?>
                                     
                                     <div class='left-info'>
-                                      <p>select the fontawsome Icons you would like to add to your menu items</p>
+                                      <p><?php _e('select the fontawsome Icons you would like to add to your menu items','Awaken');?></p>
                                     </div>
                             </li>
                         </ul>
                         <ul class='form-elements'>
-                            <li class='to-label'><label>Accordion Text:</label></li>
+                            <li class='to-label'><label><?php _e('Accordion Text','Awaken');?></label></li>
                             <li class='to-field'> <div class='input-sec'><textarea class='txtfield' data-content-text="cs-shortcode-textarea" name='accordion_text[]'></textarea></div>
                             <div class='left-info'>
-                              <p>Enter your content.</p>
+                              <p><?php _e('Enter your content','Awaken');?></p>
                             </div>
                             </li>
                         </ul>
@@ -2607,26 +2607,26 @@ if ( ! function_exists( 'cs_shortcode_element_ajax_call' ) ) {
 				 $rand_id = rand(5,999);
 				?>
                 	<div class='cs-wrapp-clone cs-shortcode-wrapp'  id="cs_infobox_<?php echo intval( $rand_id);?>">
-                        <header><h4><i class='fa fa-arrows'></i>FAQ</h4> <a href='#' class='deleteit_node'><i class='fa fa-minus-circle'></i>Remove</a></header>
+                        <header><h4><i class='fa fa-arrows'></i><?php _e('FAQ','Awaken');?></h4> <a href='#' class='deleteit_node'><i class='fa fa-minus-circle'></i><?php _e('Remove','Awaken');?></a></header>
                         <ul class='form-elements'>
-                            <li class='to-label'><label>Active</label></li>
-                            <li class='to-field select-style'> <select name='faq_active[]'><option value="no">No</option><option value="yes">Yes</option></select>
+                            <li class='to-label'><label><?php _e('Active','Awaken');?></label></li>
+                            <li class='to-field select-style'> <select name='faq_active[]'><option value="no"><?php _e('No','Awaken');?></option><option value="yes"><?php _e('Yes','Awaken');?></option></select>
                             </li>
                         </ul>
                         <ul class='form-elements'>
-                            <li class='to-label'><label>Faq Title:</label></li>
+                            <li class='to-label'><label><?php _e('Faq title','Awaken');?></label></li>
                             <li class='to-field'> <div class='input-sec'><input class='txtfield' type='text' name='faq_title[]' /></div>
                             </li>
                         </ul>
                         <ul class='form-elements' id="<?php echo intval( $rand_id);?>">
-							<li class='to-label'><label>Fontawsome Icon:</label></li>
+							<li class='to-label'><label><?php _e('Fontawsome Icon','Awaken');?></label></li>
 							<li class="to-field">
                                     <input type="hidden" class="cs-search-icon-hidden" name="cs_faq_icon[]">
                                     <?php cs_fontawsome_icons_box('',$rand_id);?>
                             </li>
                         </ul>
                         <ul class='form-elements'>
-                            <li class='to-label'><label>Faq Text:</label></li>
+                            <li class='to-label'><label><?php _e('Faq Text','Awaken');?></label></li>
                             <li class='to-field'> <div class='input-sec'><textarea class='txtfield' data-content-text="cs-shortcode-textarea" name='faq_text[]'></textarea></div>
                             </li>
                         </ul>
@@ -2638,22 +2638,23 @@ if ( ! function_exists( 'cs_shortcode_element_ajax_call' ) ) {
 				 $rand_id = rand(5,999);
 				?>
                 	<div class='cs-wrapp-clone cs-shortcode-wrapp'  id="cs_infobox_<?php echo intval( $rand_id);?>">
-                        <header><h4><i class='fa fa-arrows'></i>Register</h4> <a href='#' class='deleteit_node'><i class='fa fa-minus-circle'></i>Remove</a></header>
+                        <header><h4><i class='fa fa-arrows'></i><?php _e('Register','Awaken');?></h4> <a href='#' class='deleteit_node'><i class='fa fa-minus-circle'></i><?php _e('Remove','Awaken');?></a></header>
                         <ul class='form-elements'>
-                            <li class='to-label'><label>Register Title:</label></li>
+                            <li class='to-label'><label><?php _e('Register Title','Awaken');?></label></li>
                             <li class='to-field'> <div class='input-sec'><input class='txtfield' type='text' name='register_title[]' /></div>
                             </li>
                         </ul>
                         
                         <ul class='form-elements'>
-                            <li class='to-label'><label>User Role:</label></li>
-                            <li class='to-field'> <div class="select-style"><select name='register_role[]'><option value="subscriber">Subscriber</option><option value="staff">Staff</option><option value="member">Member</option><option value="instructor">Instructor</option>
-                            <option value="customer">Customer</option><option value="contributor">Contributor</option><option value="author">Author</option><option value="editor">Editor</option><option value="administrator">Administrator</option></select></div>
+                            <li class='to-label'><label><?php _e('User Role','Awaken');?></label></li>
+                            <li class='to-field'> <div class="select-style"><select name='register_role[]'>
+                            <option value="subscriber"><?php _e('Subscriber','Awaken');?></option><option value="staff"><?php _e('Staff','Awaken');?></option><option value="member"><?php _e('Member','Awaken');?></option><option value="instructor"><?php _e('Instructor','Awaken');?></option>
+                            <option value="customer"><?php _e('Customer','Awaken');?></option><option value="contributor"><?php _e('Contributor','Awaken');?></option><option value="author"><?php _e('Author','Awaken');?></option><option value="editor"><?php _e('Editor','Awaken');?></option><option value="administrator"><?php _e('Administrator','Awaken');?></option></select></div>
                             </li>
                         </ul>
                         
                         <ul class='form-elements'>
-                            <li class='to-label'><label>Register Text:</label></li>
+                            <li class='to-label'><label><?php _e('Register Text','Awaken');?></label></li>
                             <li class='to-field'> <div class='input-sec'><textarea class='txtfield' data-content-text="cs-shortcode-textarea" name='register_text[]'></textarea></div>
                             </li>
                         </ul>
@@ -2665,36 +2666,36 @@ if ( ! function_exists( 'cs_shortcode_element_ajax_call' ) ) {
 				$rand_id = rand(40, 9999999);
 			?>
                 	<div class='cs-wrapp-clone cs-shortcode-wrapp add_tabs  cs-pbwp-content'  id="cs_infobox_<?php echo intval( $rand_id);?>">
-								<header><h4><i class='fa fa-arrows'></i>Tab</h4> <a href='#' class='deleteit_node'><i class='fa fa-minus-circle'></i>Remove</a></header>
+								<header><h4><i class='fa fa-arrows'></i><?php _e('Tab','Awaken');?></h4> <a href='#' class='deleteit_node'><i class='fa fa-minus-circle'></i><?php _e('Remove','Awaken');?></a></header>
 								<ul class='form-elements'>
-									<li class='to-label'><label>Active</label></li>
+									<li class='to-label'><label><?php _e('Active','Awaken');?></label></li>
 									<li class='to-field'> 
-                                    	<div class="select-style"><select name='tab_active[]'><option value="no">No</option><option value="yes">Yes</option></select></div>
+                                    	<div class="select-style"><select name='tab_active[]'><option value="no"><?php _e('No','Awaken');?></option><option value="yes"><?php _e('Yes','Awaken');?></option></select></div>
                                         <div class='left-info'>
-                                          <p>You can set the section that is active here by select dropdown</p>
+                                          <p><?php _e('You can set the section that is active here by select dropdown','Awaken');?></p>
                                         </div>
 									</li>
 								</ul>
 								<ul class='form-elements'>
-									<li class='to-label'><label>Tab Title:</label></li>
+									<li class='to-label'><label><?php _e('Tab Title','Awaken');?></label></li>
 									<li class='to-field'> <div class='input-sec'><input class='txtfield' type='text' name='tab_title[]' /></div>
 									</li>
 								</ul>
                                 <ul class='form-elements' id="<?php echo intval( $rand_id);?>">
-                                	<li class='to-label'><label>Fontawsome Icon:</label></li>
+                                	<li class='to-label'><label><?php _e('Fontawsome Icon','Awaken');?></label></li>
                                 	<li class="to-field">
                                         <input type="hidden" class="cs-search-icon-hidden" name="cs_tab_icon[]">
                                         <?php cs_fontawsome_icons_box('',$rand_id);?>
                                         <div class='left-info'>
-                                          <p> select the fontawsome Icons you would like to add to your menu items</p>
+                                          <p><?php _e('select the fontawsome Icons you would like to add to your menu items','Awaken');?> </p>
                                         </div>
                                 	</li>
                                 </ul>
                                 <ul class='form-elements'>
-									<li class='to-label'><label>Tab Text:</label></li>
+									<li class='to-label'><label><?php _e('Tab Text','Awaken');?></label></li>
 									<li class='to-field'> <div class='input-sec'><textarea class='txtfield' data-content-text="cs-shortcode-textarea" name='tab_text[]'></textarea></div>
                                     <div class='left-info'>
-                                      <p>Enter tab body content here</p>
+                                      <p><?php _e('Enter tab body content here','Awaken');?></p>
                                     </div>
 									</li>
 								</ul>
@@ -2705,29 +2706,29 @@ if ( ! function_exists( 'cs_shortcode_element_ajax_call' ) ) {
 				 $rand_id = rand(5,999);
 				?>
                     <div class='cs-wrapp-clone cs-shortcode-wrapp cs-pbwp-content'  id="cs_infobox_<?php echo intval( $rand_id);?>">
-                        <header><h4><i class='fa fa-arrows'></i>Testimonial</h4> <a href='#' class='deleteit_node'><i class='fa fa-minus-circle'></i>Remove</a></header>
+                        <header><h4><i class='fa fa-arrows'></i><?php _e('Testimonial','Awaken');?></h4> <a href='#' class='deleteit_node'><i class='fa fa-minus-circle'></i><?php _e('Remove','Awaken');?></a></header>
                         <ul class='form-elements'>
-                            <li class='to-label'><label>Text:</label></li>
+                            <li class='to-label'><label><?php _e('Text','Awaken');?></label></li>
                             <li class='to-field'> <div class='input-sec'><textarea class='txtfield' data-content-text="cs-shortcode-textarea" name='testimonial_text[]'></textarea></div>
                             </li>
                         </ul>
                         <ul class='form-elements'>
-                            <li class='to-label'><label>Author:</label></li>
+                            <li class='to-label'><label><?php _e('Author','Awaken');?></label></li>
                             <li class='to-field'> <div class='input-sec'><input class='txtfield' type='text' name='testimonial_author[]' /></div></li>
                         </ul>
                         <ul class='form-elements'>
-                            <li class='to-label'><label>Company:</label></li>
+                            <li class='to-label'><label><?php _e('Company','Awaken');?></label></li>
                             <li class='to-field'> <div class='input-sec'><input class='txtfield' type='text' name='testimonial_company[]' /></div>
-                            <div class='left-info'><p>Company Name</p></div>
+                            <div class='left-info'><p><?php _e('Company Name','Awaken');?></p></div>
                             </li>
                         </ul>
                         <ul class="form-elements">
                           <li class="to-label">
-                            <label>Background Image</label>
+                            <label><?php _e('Background Image','Awaken');?></label>
                           </li>
                           <li class="to-field">
                             <input id="testimonial_img<?php echo intval( $rand_id);?>" name="testimonial_img[]" type="hidden" class="" value=""/>
-                            <input name="testimonial_img<?php echo intval( $rand_id);?>"  type="button" class="uploadMedia left" value="Browse"/>
+                            <input name="testimonial_img<?php echo intval( $rand_id);?>"  type="button" class="uploadMedia left" value="<?php _e('Browse','Awaken');?>"/>
                           </li>
                         </ul>
                         <div class="page-wrap" style="overflow:hidden; display:none" id="testimonial_img<?php echo intval( $rand_id);?>_box" >
@@ -2750,32 +2751,32 @@ if ( ! function_exists( 'cs_shortcode_element_ajax_call' ) ) {
 				$counter_count = rand(40, 9999999);
 				?>
                 <div class='cs-wrapp-clone cs-shortcode-wrapp' id="cs_infobox_<?php echo intval($counter_count);?>">
-                        <header><h4><i class='fa fa-arrows'></i>Counter</h4> <a href='#' class='deleteit_node'><i class='fa fa-minus-circle'></i>Remove</a></header>
+                        <header><h4><i class='fa fa-arrows'></i><?php _e('Counter','Awaken');?></h4> <a href='#' class='deleteit_node'><i class='fa fa-minus-circle'></i><?php _e('Remove','Awaken');?></a></header>
                         <ul class="form-elements">
-                            <li class="to-label"><label>Counter Title</label></li>
+                            <li class="to-label"><label><?php _e('Counter Title','Awaken');?></label></li>
                             <li class="to-field"><input type="text"  name="counter_title[]"  class="txtfield"  /></li>
                         </ul>
                         <ul class="form-elements">
-                            <li class="to-label"><label>Type</label></li>
+                            <li class="to-label"><label><?php _e('Type','Awaken');?></label></li>
                             <li class="to-field">
                                 <div class="select-style">
                                     <select name="counter_style[]" class="dropdown" >
-                                        <option value="one" >Counter Style One</option>
-                                        <option value="two" >Counter Style Two</option>
-                                        <option value="three" >Counter Style Three</option>
-                                        <option value="four" >Counter Style Four</option>
+                                        <option value="one" ><?php _e('Counter Style One','Awaken');?></option>
+                                        <option value="two" ><?php _e('Counter Style Two','Awaken');?></option>
+                                        <option value="three" ><?php _e('Counter Style Three','Awaken');?></option>
+                                        <option value="four" ><?php _e('Counter Style Four','Awaken');?></option>
                                      </select>
                                  </div>
                             </li>
                         </ul>
                         
                         <ul class="form-elements">
-                            <li class="to-label"><label>Choose Icon</label></li>
+                            <li class="to-label"><label><?php _e('Choose Icon','Awaken');?></label></li>
                             <li class="to-field">
                                 <div class="select-style">
                                     <select name="counter_icon_type[]" class="dropdown" onchange="cs_counter_image(this.value,'<?php echo esc_js($counter_count)?>','')">
-                                        <option <?php if($counter_item->counter_icon_type=="icon")echo "selected";?> value="icon" >Icon</option>
-                                        <option <?php if($counter_item->counter_icon_type=="image")echo "selected";?> value="image" >Image</option>
+                                        <option <?php if($counter_item->counter_icon_type=="icon")echo "selected";?> value="icon" ><?php _e('Icon','Awaken');?></option>
+                                        <option <?php if($counter_item->counter_icon_type=="image")echo "selected";?> value="image" ><?php _e('Image','Awaken');?></option>
                                      </select>
                                  </div>
                             </li>
@@ -2783,25 +2784,25 @@ if ( ! function_exists( 'cs_shortcode_element_ajax_call' ) ) {
                         
                         <div class="selected_icon_type" id="selected_icon_type<?php echo intval($counter_count)?>">
                         	 <ul class='form-elements' id="<?php echo intval($counter_count);?>">
-								<li class='to-label'><label>Fontawsome Icon:</label></li>
+								<li class='to-label'><label><?php _e('Fontawsome Icon','Awaken');?></label></li>
 								<li class="to-field">
                                      <input type="hidden" class="cs-search-icon-hidden" name="counter_icon">
                                      <?php cs_fontawsome_icons_box('',$counter_count);?>
                             	</li>
                          </ul>
                          	<ul class="form-elements">
-                                <li class="to-label"><label>Icon Color</label></li>
+                                <li class="to-label"><label><?php _e('Icon Color','Awaken');?></label></li>
                                 <li><input type="text"  name="icon_color[]"  class="bg_color"  /></li>
                             </ul>
                         </div>
                         <div class="selected_image_type" id="selected_image_type<?php echo intval($counter_count)?>" style="display:none">
                        		<ul class="form-elements">
                               <li class="to-label">
-                                <label>Image</label>
+                                <label><?php _e('Image','Awaken');?></label>
                               </li>
                               <li class="to-field">
                                 <input id="cs_counter_logo<?php echo intval($counter_count)?>" name="cs_counter_logo[]" type="hidden" class="" value=""/>
-                                <input name="cs_counter_logo<?php echo intval($counter_count)?>"  type="button" class="uploadMedia left" value="Browse"/>
+                                <input name="cs_counter_logo<?php echo intval($counter_count)?>"  type="button" class="uploadMedia left" value="<?php _e('Browse','Awaken');?>"/>
                               </li>
                             </ul>
                             <div class="page-wrap" style="overflow:hidden; display:<?php echo 'none';?>" id="cs_counter_logo<?php echo intval($counter_count)?>_box" >
@@ -2820,47 +2821,47 @@ if ( ! function_exists( 'cs_shortcode_element_ajax_call' ) ) {
         				</div>
 						
                         <ul class="form-elements">
-                            <li class="to-label"><label>Background Color</label></li>
+                            <li class="to-label"><label><?php _e('Background Color','Awaken');?></label></li>
                             <li><input type="text"  name="counter_bg_color[]" class="bg_color" value="" /></li>
                         </ul>
                                         
                         <ul class="form-elements">
-                            <li class="to-label"><label>Numbers</label></li>
+                            <li class="to-label"><label><?php _e('Numbers','Awaken');?></label></li>
                             <li class="to-field"><input type="text" name="counter_numbers[]" class="txtfield" value="" /></li>
                         </ul>
                       	<ul class="form-elements">
-                            <li class="to-label"><label>Count Text Color</label></li>
+                            <li class="to-label"><label><?php _e('Count Text Color','Awaken');?></label></li>
                             <li><input type="text" name="counter_text_color[]" class="bg_color" /></li>
                         </ul>
                         
                         <ul class="form-elements">
-                            <li class="to-label"><label>Link Title</label></li>
+                            <li class="to-label"><label><?php _e('Link Title','Awaken');?></label></li>
                             <li class="to-field"><input type="text" name="counter_icon_linktitle[]" class="txtfield" /></li>
                         </ul>
                         <ul class="form-elements">
-                            <li class="to-label"><label>Link</label></li>
+                            <li class="to-label"><label><?php _e('Link','Awaken');?></label></li>
                             <li class="to-field"><input type="text" name="counter_icon_linkurl[]" class="txtfield"/></li>
                         </ul>
                         <ul class="form-elements">
-                            <li class="to-label"><label>Button Color</label></li>
+                            <li class="to-label"><label><?php _e('Button Color','Awaken');?></label></li>
                             <li><input type="text"  name="counter_link_bgcolor[]" class="bg_color"  /></li>
                         </ul>
                         <ul class="form-elements">
-                            <li class="to-label"><label>Text</label></li>
+                            <li class="to-label"><label><?php _e('Text','Awaken');?></label></li>
                             <li class="to-field"><textarea type="text" name="counter_text[]" class="txtfield" data-content-text="cs-shortcode-textarea" /><?php echo cs_allow_special_char($counter_text)?></textarea></li>
                         </ul>
                         <ul class="form-elements">
-                            <li class="to-label"><label>Custom ID</label></li>
+                            <li class="to-label"><label><?php _e('Custom Id','Awaken');?></label></li>
                             <li class="to-field">
                                 <input type="text" name="coutner_class[]" class="txtfield"  value="" />
                             </li>
                          </ul>
                        
                         <ul class="form-elements">
-                            <li class="to-label"><label>Animation Class </label></li>
+                            <li class="to-label"><label><?php _e('Animation Class','Awaken');?> </label></li>
                             <li class="to-field select-style">
                                 <select class="dropdown" name="coutner_animation[]">
-                                    <option value="">Select Animation</option>
+                                    <option value=""><?php _e('Select Animation','Awaken');?></option>
                                     <?php 
 									
                                         $animation_array = cs_animation_style();
@@ -2882,14 +2883,14 @@ if ( ! function_exists( 'cs_shortcode_element_ajax_call' ) ) {
 							$rand_id = rand(40, 9999999);
 						?>
                 	<div class='cs-wrapp-clone cs-shortcode-wrapp' id="cs_infobox_<?php echo intval($rand_id);?>">
-                            <header><h4><i class='fa fa-arrows'></i>List Item(s)</h4> <a href='#' class='deleteit_node'><i class='fa fa-minus-circle'></i>Remove</a></header>
+                            <header><h4><i class='fa fa-arrows'></i><?php _e('List Item','Awaken');?></h4> <a href='#' class='deleteit_node'><i class='fa fa-minus-circle'></i><?php _e('Remove','Awaken');?></a></header>
                             <ul class='form-elements'>
-                                <li class='to-label'><label>List Item:</label></li>
+                                <li class='to-label'><label><?php _e('List Item','Awaken');?></label></li>
                                 <li class='to-field'> <div class='input-sec'><input class='txtfield' type='text' name='cs_list_item[]' data-content-text="cs-shortcode-textarea" /></div>
                                 </li>
                             </ul> 
                             <ul class='form-elements' id="<?php echo intval( $rand_id);?>">
-								<li class='to-label'><label>Fontawsome Icon:</label></li>
+								<li class='to-label'><label><?php _e('Fontawsome Icon','Awaken');?></label></li>
 								<li class="to-field">
                                 <input type="hidden" class="cs-search-icon-hidden" name="cs_list_icon[]">
                                 <?php cs_fontawsome_icons_box('',$rand_id);?>
@@ -2902,31 +2903,31 @@ if ( ! function_exists( 'cs_shortcode_element_ajax_call' ) ) {
 					$rand_id = rand(432420, 9999999);
 				?>
                     <div class='cs-wrapp-clone cs-shortcode-wrapp' id="cs_infobox_<?php echo intval( $rand_id);?>">
-                            <header><h4><i class='fa fa-arrows'></i>Infobox Item(s)</h4> 
+                            <header><h4><i class='fa fa-arrows'></i><?php _e('Info box Item','Awaken');?></h4> 
                                 <a href='#' class='deleteit_node'>
-                                    <i class='fa fa-minus-circle'></i>Remove
+                                    <i class='fa fa-minus-circle'></i><?php _e('Remove','Awaken');?>
                                 </a>
                             </header>
                             
                         <ul class='form-elements' id="cs_infobox_<?php echo absint($rand_id);?>">
-                            <li class='to-label'><label>Fontawsome Icon:</label></li>
+                            <li class='to-label'><label><?php _e('Fontawsome Icon','Awaken');?></label></li>
                             <li class="to-field">
                                 <input type="hidden" class="cs-search-icon-hidden" name="cs_infobox_list_icon[]">
                                 <?php cs_fontawsome_icons_box('',$rand_id);?>
                             </li>
                         </ul>
                         <ul class='form-elements'>
-                            <li class='to-label'><label>Icon Color:</label></li>
+                            <li class='to-label'><label><?php _e('Icon Color','Awaken');?></label></li>
                             <li class='to-field'> <div class='input-sec'><input class='bg_color' type='text' name='cs_infobox_list_color[]' /></div>
                             </li>
                         </ul> 
                         <ul class='form-elements'>
-                            <li class='to-label'><label>Title:</label></li>
+                            <li class='to-label'><label><?php _e('Title','Awaken');?></label></li>
                             <li class='to-field'> <div class='input-sec'><input class='txtfield' type='text' name='cs_infobox_list_title[]' /></div>
                             </li>
                         </ul>
                          <ul class='form-elements'>
-                            <li class='to-label'><label>Short Description:</label></li>
+                            <li class='to-label'><label><?php _e('Short Description','Awaken');?></label></li>
                             <li class='to-field'> <div class='input-sec'><textarea name='cs_infobox_list_description[]' rows="8" cols="20" data-content-text="cs-shortcode-textarea" /></textarea></div>
                             </li>
                         </ul> 
@@ -2942,16 +2943,16 @@ if ( ! function_exists( 'cs_shortcode_element_ajax_call' ) ) {
 				$rand_id = 'clinets_'.rand(40, 9999999);
 				?>
                 	<div class='cs-wrapp-clone cs-shortcode-wrapp' id="cs_infobox_<?php echo intval( $rand_id);?>">
-                        <header><h4><i class='fa fa-arrows'></i>Album Item(s)</h4> <a href='#' class='deleteit_node'><i class='fa fa-minus-circle'></i>Remove</a></header>
+                        <header><h4><i class='fa fa-arrows'></i><?php _e('Album Item','Awaken');?></h4> <a href='#' class='deleteit_node'><i class='fa fa-minus-circle'></i><?php _e('Remove','Awaken');?></a></header>
                         <ul class="form-elements">
-                            <li class="to-label"><label>Track Title</label></li>
+                            <li class="to-label"><label><?php _e('Track Title','Awaken');?></label></li>
                             <li class="to-field">
                                 <input type="text" id="cs_album_track_title" name="cs_album_track_title[]" value="Track Title" />
                             </li>
                         </ul>
                         
                         <ul class="form-elements">
-                            <li class="to-label"><label>Track MP3 URL</label></li>
+                            <li class="to-label"><label><?php _e('Track MP3 Url','Awaken');?></label></li>
                             <li class="to-field">
                                 <input id="cs_album_track_mp3_url" name="cs_album_track_mp3_url[]" value="" type="text" class="small" />
                                 <!--<input id="custom_media_upload" name="cs_album_track_mp3_url" type="button" class="uploadfile left" value="Browse"/>-->
@@ -2965,23 +2966,23 @@ if ( ! function_exists( 'cs_shortcode_element_ajax_call' ) ) {
 				$clients_count = 'clinets_'.rand(40, 9999999);
 				?>
                 	<div class='cs-wrapp-clone cs-shortcode-wrapp' id="cs_infobox_<?php echo cs_allow_special_char($clients_count);?>">
-                        <header><h4><i class='fa fa-arrows'></i>Client</h4> <a href='#' class='deleteit_node'><i class='fa fa-minus-circle'></i>Remove</a></header>
+                        <header><h4><i class='fa fa-arrows'></i><?php _e('Client','Awaken');?></h4> <a href='#' class='deleteit_node'><i class='fa fa-minus-circle'></i><?php _e('Remove','Awaken');?></a></header>
                         <ul class="form-elements">
                           <li class="to-label">
-                            <label>Title</label>
+                            <label><?php _e('Title','Awaken');?></label>
                           </li>
                           <li class="to-field">
                             <input type="text" id="cs_client_title" class="" name="cs_client_title[]" value="" />
                           </li>
                         </ul>
                         <ul class="form-elements">
-                            <li class="to-label"><label>Background Color</label></li>
+                            <li class="to-label"><label><?php _e('Background Color','Awaken');?></label></li>
                             <li class="to-field">
                                 <input type="text" id="cs_bg_color" class="bg_color" name="cs_bg_color[]" value="" />
                             </li>
                         </ul>
                         <ul class="form-elements">
-                            <li class="to-label"><label>Website URL</label></li>
+                            <li class="to-label"><label><?php _e('Website Url','Awaken');?></label></li>
                             <li class="to-field">
                                 <div class="input-sec"> <input type="text" id="cs_website_url" class="" name="cs_website_url[]" value="" /></div>
                                 <div class="left-info"><p>e.g. http://yourdomain.com/</p></div>
@@ -2989,11 +2990,11 @@ if ( ! function_exists( 'cs_shortcode_element_ajax_call' ) ) {
                         </ul>
                         <ul class="form-elements">
                           <li class="to-label">
-                            <label>Client Logo</label>
+                            <label><?php _e('Client Logo','Awaken');?></label>
                           </li>
                           <li class="to-field">
                             <input id="cs_client_logo<?php echo cs_allow_special_char($clients_count)?>" name="cs_client_logo[]" type="hidden" class="" value=""/>
-                            <input name="cs_client_logo<?php echo cs_allow_special_char($clients_count)?>"  type="button" class="uploadMedia left" value="Browse"/>
+                            <input name="cs_client_logo<?php echo cs_allow_special_char($clients_count)?>"  type="button" class="uploadMedia left" value="<?php _e('Browse','Awaken');?>"/>
                           </li>
                         </ul>
                         <div class="page-wrap" style="overflow:hidden; display:<?php echo 'none';?>" id="cs_client_logo<?php echo cs_allow_special_char($clients_count)?>_box" >
@@ -3016,23 +3017,23 @@ if ( ! function_exists( 'cs_shortcode_element_ajax_call' ) ) {
 				$rand_id = rand(40, 9999999);
 				?>
                 	<div class='cs-wrapp-clone cs-shortcode-wrapp cs-pbwp-content' id="cs_infobox_<?php echo intval( $rand_id);?>">
-                        <header><h4><i class='fa fa-arrows'></i>Progressbars</h4> <a href='#' class='deleteit_node'><i class='fa fa-minus-circle'></i>Remove</a></header>
+                        <header><h4><i class='fa fa-arrows'></i><?php _e('Progress bars','Awaken');?></h4> <a href='#' class='deleteit_node'><i class='fa fa-minus-circle'></i><?php _e('Remove','Awaken');?></a></header>
                         <ul class="form-elements">
-                            <li class="to-label"><label>ProgressBars Title</label></li>
+                            <li class="to-label"><label><?php _e('Progress bars Title','Awaken');?></label></li>
                             <li class="to-field">
                                 <input type="text" name="progressbars_title[]" class="txtfield" value="" />
                             </li>
                         </ul>
                         <ul class="form-elements">
-                            <li class="to-label"><label>Skill (in percentage)</label></li>
+                            <li class="to-label"><label><?php _e('Skill in percentage','Awaken');?></label></li>
                             <li class="to-field">
                                 <div class="cs-drag-slider" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value=""></div>
                                 <input  class="cs-range-input"  name="progressbars_percentage[]" type="text" value=""   />
-                                <p>Set the Skill (In %)</p>
+                                <p><?php _e('Set the Skill (In %)','Awaken');?></p>
                             </li>
                         </ul>
                         <ul class="form-elements">
-                            <li class="to-label"><label>ProgressBars Color</label></li>
+                            <li class="to-label"><label><?php _e('Progress bars Color','Awaken');?></label></li>
                             <li class="to-field">
                                 <input type="text" name="progressbars_color[]" class="bg_color" value="#000" />
                             </li>
@@ -3044,14 +3045,14 @@ if ( ! function_exists( 'cs_shortcode_element_ajax_call' ) ) {
 				$offer_count = 'offer_'.rand(40, 9999999);
 				?>
                 	<div class='cs-wrapp-clone cs-shortcode-wrapp' id="cs_infobox_<?php echo intval($offer_count);?>">
-                        <header><h4><i class='fa fa-arrows'></i>Offer Slider Item</h4> <a href='#' class='deleteit_node'><i class='fa fa-minus-circle'></i>Remove</a></header>
+                        <header><h4><i class='fa fa-arrows'></i><?php _e('Offer Slider Item','Awaken');?></h4> <a href='#' class='deleteit_node'><i class='fa fa-minus-circle'></i><?php _e('Remove','Awaken');?></a></header>
                         <ul class="form-elements">
                           <li class="to-label">
-                            <label>Image</label>
+                            <label><?php _e('Image','Awaken');?></label>
                           </li>
                           <li class="to-field">
                             <input id="cs_slider_image<?php echo intval($offer_count)?>" name="cs_slider_image[]" type="hidden" class="" value=""/>
-                            <input name="cs_slider_image<?php echo intval($offer_count)?>"  type="button" class="uploadMedia left" value="Browse"/>
+                            <input name="cs_slider_image<?php echo intval($offer_count)?>"  type="button" class="uploadMedia left" value="<?php _e('Browse','Awaken');?>"/>
                           </li>
                         </ul>
                         <div class="page-wrap" style="overflow:hidden; display:<?php echo 'none';?>" id="cs_slider_image<?php echo intval($offer_count) ?>_box"  >
@@ -3069,7 +3070,7 @@ if ( ! function_exists( 'cs_shortcode_element_ajax_call' ) ) {
                         </div>
                         <ul class="form-elements">
                           <li class="to-label">
-                            <label>Title</label>
+                            <label><?php _e('Title','Awaken');?></label>
                           </li>
                           <li class="to-field">
                             <input type="text" name="cs_slider_title[]" class="txtfield" value="" />
@@ -3077,7 +3078,7 @@ if ( ! function_exists( 'cs_shortcode_element_ajax_call' ) ) {
                         </ul>
                         <ul class="form-elements">
                           <li class="to-label">
-                            <label>Content(s)</label>
+                            <label><?php _e('Content','Awaken');?></label>
                           </li>
                           <li class="to-field">
                             <textarea name="cs_slider_contents[]" data-content-text="cs-shortcode-textarea"></textarea>
@@ -3085,7 +3086,7 @@ if ( ! function_exists( 'cs_shortcode_element_ajax_call' ) ) {
                         </ul>
                         <ul class="form-elements">
                           <li class="to-label">
-                            <label>Link</label>
+                            <label><?php _e('Link','Awaken');?></label>
                           </li>
                           <li class="to-field">
                             <input type="text" name="cs_readmore_link[]" class="txtfield" value="" />
@@ -3093,7 +3094,7 @@ if ( ! function_exists( 'cs_shortcode_element_ajax_call' ) ) {
                         </ul>
                         <ul class="form-elements">
                           <li class="to-label">
-                            <label>Link Title</label>
+                            <label><?php _e('Link Title','Awaken');?></label>
                           </li>
                           <li class="to-field">
                             <input type="text" name="cs_offerslider_link_title[]" class="txtfield" value="" />
