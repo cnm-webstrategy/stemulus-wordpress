@@ -13,7 +13,7 @@ function my_theme_enqueue_styles() {
     );
 
     // is this wpengine production?
-    if ( is_wpe() ) {
+    if ( function_exists('is_wpe') && is_wpe() ) {
         wp_enqueue_style('typography-font', 'https://cloud.typography.com/6007112/641408/css/fonts.css');
     } else  {
         //development url
