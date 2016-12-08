@@ -21,3 +21,14 @@ body {
     border-color: #41b6e6;
     color: #41b6e6;
 }
+
+@media print {
+   
+   .site-header {
+    display:none;
+}
+}
+
+.site-title a:hover {
+    color: #41b6e6;
+}
