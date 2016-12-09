@@ -1,6 +1,6 @@
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'vitesse', sans-serif;
+    font-family: 'Vitesse', sans-serif;
 }
 
 .site-title {
@@ -12,7 +12,12 @@ body {
     font-family: 'Lato', sans-serif;
     }
 
-    a {
+.home-top .home-middle .home-bottom .wrap {
+    font-family: 'lato', sans-serif;
+
+}
+
+a {
     color: #41b6e6;
 }
 
