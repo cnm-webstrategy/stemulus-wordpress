@@ -54,6 +54,14 @@ function ebor_load_scripts_GH() {
 		wp_enqueue_script( 'ebor-supersized', get_template_directory_uri() . '/js/supersized.js', array('jquery') );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) 
 		wp_enqueue_script( 'comment-reply' );
+
+    // is this wpengine production?
+    if ( function_exists('is_wpe') && is_wpe() ) {
+        wp_enqueue_style('typography-font', 'https://cloud.typography.com/6007112/641408/css/fonts.css');
+    } else  {
+        //development url
+        wp_enqueue_style('typography-font', 'https://cloud.typography.com/6007112/785104/css/fonts.css');
+    }
 }
 add_action('wp_enqueue_scripts', 'ebor_load_scripts_GH');
 ?>
