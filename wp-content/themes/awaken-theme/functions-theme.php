@@ -935,7 +935,7 @@ if (!function_exists('cs_footer_twitter')) {
 								nextText:"<em class=\'fa fa-angle-down\'></em>",
 								start: function(slider) {
 									jQuery(".flexslider").fadeIn();
-                                                                        jQuery(.flexslider").resize();
+                                                                        jQuery(".flexslider").resize();
 								}
 							});
 						});

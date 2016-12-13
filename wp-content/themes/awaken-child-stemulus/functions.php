@@ -6,16 +6,18 @@ function theme_enqueue_styles() {
 
     wp_enqueue_style( 'child-style',
         get_stylesheet_directory_uri() . '/style.css',
-        array( $parent_style )
+        array( $parent_style ),
+        wp_get_theme()->get('Version')
     );
 
-	// is this wpengine production? 
-	 /*if ( is_wpe() ) {  
-	    wp_enqueue_style('typography-font', 'https://cloud.typography.com/6007112/641408/css/fonts.css');
-	} else  {
-		//development url
-		 wp_enqueue_style('typography-font', 'https://cloud.typography.com/6007112/785104/css/fonts.css');
-	}*/
+
+    // is this wpengine production?
+    if ( function_exists('is_wpe') && is_wpe() ) {
+        wp_enqueue_style('typography-font', 'https://cloud.typography.com/6007112/641408/css/fonts.css');
+    } else  {
+        //development url
+        wp_enqueue_style('typography-font', 'https://cloud.typography.com/6007112/785104/css/fonts.css');
+    }
 }
 
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles', 20 );
@@ -42,12 +44,5 @@ if ( ! function_exists( 'cs_get_font_family' ) ) {
 	}
 }
 
-// is this wpengine production?
-if ( function_exists('is_wpe') && is_wpe() ) {
-    wp_enqueue_style('typography-font', 'https://cloud.typography.com/6007112/641408/css/fonts.css');
-} else  {
-    //development url
-    wp_enqueue_style('typography-font', 'https://cloud.typography.com/6007112/785104/css/fonts.css');
-}
 
 ?>
