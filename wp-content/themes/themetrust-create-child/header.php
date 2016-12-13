@@ -21,6 +21,9 @@ if($header_transparent_bg == "yes"){ $header_class .= "transparent "; }
 $header_class .= $header_color_scheme;
 }
 ?>
+<?php /** @package WordPress @subpackage Default_Theme  **/
+header("Access-Control-Allow-Origin: *"); 
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
