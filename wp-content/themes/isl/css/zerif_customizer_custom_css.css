@@ -1,8 +1,3 @@
 .customize-control-widget_form .widget-control-save {
 	display:block !important;
 }
-
-.purchase-now .grey-btn, .contact-us .grey-btn {
-    float: none;
-    background: #404040;
-}
