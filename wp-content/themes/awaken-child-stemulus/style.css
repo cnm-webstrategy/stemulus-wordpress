@@ -25,7 +25,7 @@ label {
 }*/
 .rich_editor_text ul li {
   color: #777;
-  position: inside;
+  list-style-position: inside;
   padding: 0px 12px 0 5px;
   list-style-type: disc;
   margin: 15px 0 15px 0;
@@ -36,6 +36,14 @@ ul {
 
 li {
   line-height: 18px; }
+
+  ul li {
+  margin: 15px 0 15px 0; 
+  color: #777;
+  list-style-position: inside;
+  padding: 0px 12px 0 5px;
+  list-style-type: disc;
+  }
 
 .rich_editor_text li a {
   color: #428bca; }
