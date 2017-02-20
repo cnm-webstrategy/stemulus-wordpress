@@ -20,22 +20,20 @@ strong {
 label {
   text-transform: none; }
 
-/*.rich_editor_text ul {
-    margin: 5px 0 20px 0;
-}*/
-.rich_editor_text ul li {
-  color: #777;
-  position: inside;
-  padding: 0px 12px 0 5px;
-  list-style-type: disc;
-  margin: 15px 0 15px 0;
-  line-height: normal; }
 
 ul {
   margin: 15px 0 15px 0; }
 
 li {
   line-height: 18px; }
+
+  ul li {
+  color: #777;
+  list-style-position: inside;
+  padding: 0px 12px 0 5px;
+  list-style-type: disc;
+  line-height: 22px;
+  }
 
 .rich_editor_text li a {
   color: #428bca; }
