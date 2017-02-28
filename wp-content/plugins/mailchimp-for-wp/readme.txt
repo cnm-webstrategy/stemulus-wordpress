@@ -3,8 +3,8 @@ Contributors: Ibericode, DvanKooten, hchouhan, lapzor
 Donate link: https://mc4wp.com/#utm_source=wp-plugin-repo&utm_medium=mailchimp-for-wp&utm_campaign=donate-link
 Tags: mailchimp, mc4wp, email, marketing, newsletter, subscribe, widget, mc4wp, contact form 7, woocommerce, buddypress, ibericode, mailchimp forms, mailchimp integrations
 Requires at least: 4.1
-Tested up to: 4.6.1
-Stable tag: 4.0.7
+Tested up to: 4.7.2
+Stable tag: 4.0.13
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -178,6 +178,10 @@ The plugin is translated using Transifex. If you want to help out, please head o
 
 MailChimp for WordPress is being developed on GitHub. If you want to collaborate, please look at [ibericode/mailchimp-for-wordpress](https://github.com/ibericode/mailchimp-for-wordpress).
 
+#### Customizing the plugin
+
+MailChimp for WordPress comes with many filter & action hooks which allow you to modify the default plugin behavior. We're also maintaining a [collection of common code snippets for MailChimp for WordPress](https://github.com/ibericode/mc4wp-snippets).
+
 == Screenshots ==
 
 1. A static sign-up form in the sidebar of the Twenty Fifteen theme.
@@ -188,6 +192,77 @@ MailChimp for WordPress is being developed on GitHub. If you want to collaborate
 6. Detailed statistics on which methods are generating the most subscribers. **(Pro Feature)**
 
 == Changelog == 
+
+
+#### 4.0.13 - February 8, 2017
+
+**Improvements**
+
+- Ensure fields are HTML decoded before sending to MailChimp.
+- Better OptimizePress compatibility.
+- Show all address-type fields as required when form contains 1 or more fields of the same address group.
+
+
+#### 4.0.12 - January 16, 2017
+
+**Fixes**
+
+- Don't call `stripslashes` on POST data twice.
+
+**Improvements**
+
+- Plugin review notice is now dismissible over AJAX.
+- Improved formatting of birthday fields.
+- Updated Polish translations, thanks to Mateusz Lomber.
+- Updated German translations, thanks to Sven de Vries.
+
+**Additions**
+
+- Add `update_ecommerce_store_product` method to API class.
+- Throw form specific JavaScript events, like `15.subscribed` to hook into "subscribed" events for form with ID 15.
+
+
+#### 4.0.11 - December 9, 2016
+
+**Fixes**
+
+- Unescaped request variable on integration settings page, allowing for authenticated XSS. Thanks to [dxwsecurity](https://security.dxw.com/) for responsibly disclosing.
+
+**Improvements**
+
+- Add `$args` parameter to `API::get_lists_activity` method. Relates to the [MailChimp Activity](https://wordpress.org/plugins/mc4wp-activity/) plugin.
+
+
+#### 4.0.10 - December 6, 2016
+
+**Improvements**
+
+- You can now enable or disable debug logging from the "Other" settings page.
+- No longer using deprecated function in Contact Form 7, thanks to [stodorovic](https://github.com/stodorovic).
+- Improved UI for adding hidden interest groupings fields to a form.
+
+
+#### 4.0.9 - November 23, 2016
+
+**Fixes**
+
+- Issue with escaped HTML when using form tags introduced by previous update.
+
+
+#### 4.0.8 - November 23, 2016
+
+**Improvements**
+
+- Improved handling of large debug logs.
+- Improved error messages when writing exceptions to debug log.
+- Show notice when form is missing required MailChimp fields.
+- Custom form integration now handles arrays with 1-level depth. Thanks to [Mardari Igor](https://github.com/GarryOne).
+- You can now use nested tags in your form code, eg `{data key="utm_source" default="{current_path}"}`
+
+**Additions**
+
+- Add `data-hide-if` attribute logic to forms. See [conditionally hide form fields](https://mc4wp.com/kb/conditional-fields-elements/). Thanks to [Kurt Zenisek](http://kurtzenisek.com/).
+- Add hooks for delayed BuddyPress sign-up. Thanks to [Christian Wach](https://profiles.wordpress.org/needle).
 
 
 #### 4.0.7 - October 25, 2016
