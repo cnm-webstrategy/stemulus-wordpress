@@ -40,7 +40,7 @@ function cs_meta_woo_prod( $post ) {
                        <?php if($cs_builtin_seo_fields == 'on'){?>
                             <div id="tab-seo-advance-settings" class="tab-pane fade">
                                 <div class="theme-help">
-                                    <h4 style="padding-bottom:0px;">SEO Options</h4>
+                                    <h4 style="padding-bottom:0px;"><?php _e('Seo Options','Awaken');?></h4>
                                     <div class="clear"></div>
                                 </div>
                                 <?php cs_seo_settitngs_element();?>

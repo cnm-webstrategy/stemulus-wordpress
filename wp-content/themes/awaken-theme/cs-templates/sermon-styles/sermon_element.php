@@ -231,7 +231,7 @@ if ( ! function_exists( 'cs_pb_latest_sermon' ) ) {
             <?php
              if(isset($_POST['shortcode_element']) && $_POST['shortcode_element'] == 'shortcode'){cs_shortcode_element_size();}?>
             <ul class="form-elements">
-                <li class="to-label"><label>Section Title</label></li>
+                <li class="to-label"><label><?php _e('Section Title','Awaken');?></label></li>
                 <li class="to-field">
                     <input  name="cs_latest_sermon_section_title[]" type="text"  value="<?php echo esc_attr($cs_latest_sermon_section_title)?>"   />
                 </li>                  

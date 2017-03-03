@@ -29,6 +29,9 @@
 			$post_pagination_show = $cs_xmlObject->post_pagination_show;
 			
 			$cs_related_post = $cs_xmlObject->cs_related_post;
+		    $cs_complete_date = $cs_xmlObject->cs_project_to_date;
+	        $cs_fromdate =  $cs_xmlObject->cs_project_from_date;
+		 
 										
 			
 			if ( $cs_layout == "left") {
@@ -80,7 +83,10 @@
 							?>
                             <li>
                                 <h6><?php _e('Started Date', 'Awaken'); ?></h6>
-                                <a><?php echo date_i18n(get_option('date_format'), strtotime($cs_xmlObject->cs_project_from_date)); ?></a>
+                                <a><?php  
+								
+								echo $cs_fromdate;
+								//echo date_i18n(get_option('date_format'), strtotime($cs_xmlObject->cs_project_from_date)); ?></a>
                             </li>
                             <?php
 							}
@@ -88,7 +94,8 @@
 							?>
                             <li>
                                 <h6><?php _e('Completion Date', 'Awaken'); ?></h6>
-                                <a><?php echo date_i18n(get_option('date_format'), strtotime($cs_xmlObject->cs_project_to_date)); ?></a>
+                        
+                                <a><?php echo date_i18n(get_option('date_format'), strtotime($cs_xmlObject->cs_project_to_date)); echo  $cs_complete_date; ?></a>
                             </li>
                             <?php
 							}
@@ -103,6 +110,7 @@
 								  </li>
                           <?php } 
 							if(isset($cs_xmlObject->cs_project_plan) and $cs_xmlObject->cs_project_plan <> ''){
+
 							?>
                             	<li>
                                 	<h6><?php _e('Project Plan', 'Awaken'); ?></h6>
@@ -298,6 +306,7 @@
 								  $image_url = get_template_directory_uri().'/assets/images/no-image.jpg';
 							  }
 							  ?>
+							  
 							  <article class="cs-projects projects-medium<?php echo cs_allow_special_char($cs_noimage); ?>">
 								  <div class="cs-media">
 									  <figure>
@@ -308,6 +317,7 @@
 								  <section>
 									  <h5><a href="<?php the_permalink(); ?>"><?php echo substr(get_the_title(),0,24); if(strlen(get_the_title()) > 24) echo '...'; ?></a></h5>
 									  <ul class="post-option">
+									  	<?php echo "hello";?>
 										  <li><time datetime="<?php echo date_i18n('Y-m-d', strtotime(get_the_date())); ?>"><i class="fa fa-clock-o"></i><?php echo date_i18n(get_option('date_format'), strtotime(get_the_date())); ?></time></li>
 										  <?php echo get_the_term_list( get_the_ID(), 'project-category', '<li><i class="fa fa-align-left"></i>', ', ', '</li>' ); ?>
 									  </ul>

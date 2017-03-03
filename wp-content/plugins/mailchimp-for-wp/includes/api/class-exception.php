@@ -34,11 +34,38 @@ class MC4WP_API_Exception extends Exception {
                     $this->$key = $data->$key;
                 }
             }
-
-            // use MailChimp error as message
-            if( ! empty( $data->detail ) ) {
-                $this->message = $data->detail;
-            }
         }
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString() {
+        $string = $this->message . '.';
+
+        if( ! empty( $this->detail ) ) {
+            $string .= ' ' . $this->detail;
+        }
+
+
+        if( ! empty( $this->errors ) && isset( $this->errors[0]->field ) ) {
+
+            // strip off obsolete msg
+            $string = str_replace( 'For field-specific details, see the \'errors\' array.', '', $string );
+
+            // generate list of field errors
+            $field_errors = array();
+            foreach( $this->errors as $error ) {
+                if( ! empty( $error->field ) ) {
+                    $field_errors[] = sprintf( '- %s : %s', $error->field, $error->message );
+                } else {
+                    $field_errors[] = sprintf( '- %s', $error->message );
+                }
+            }
+
+            $string .= " \n" . join( "\n", $field_errors );
+        }
+
+        return $string;
     }
 }

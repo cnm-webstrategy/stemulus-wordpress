@@ -6,8 +6,8 @@ function cs_meta_post_add()
 }
 function cs_meta_post( $post ) {
 	$post_xml = get_post_meta($post->ID, "post", true);
-	global $cs_xmlObject;
-	$cs_theme_options=get_option('cs_theme_options');
+	global $cs_xmlObject, $cs_theme_options;
+	//$cs_theme_options=get_option('cs_theme_options');
 	$cs_builtin_seo_fields =$cs_theme_options['cs_builtin_seo_fields'];
 	if ( $post_xml <> "" ) {
 		$cs_xmlObject = new SimpleXMLElement($post_xml);
@@ -68,7 +68,7 @@ function cs_meta_post( $post ) {
                        <?php if($cs_builtin_seo_fields == 'on'){?>
                             <div id="tab-seo-advance-settings" class="tab-pane fade">
                                 <div class="theme-help">
-                                    <h4 style="padding-bottom:0px;">SEO Options</h4>
+                                    <h4 style="padding-bottom:0px;"><?php _e('Seo Options','Awaken');?></h4>
                                     <div class="clear"></div>
                                 </div>
                                 <?php cs_seo_settitngs_element();?>
@@ -190,11 +190,11 @@ function cs_meta_post( $post ) {
                             	<div class="input-sec">
                                     <input type="text" id="post_thumb_audio2" name="post_thumb_audio" value="<?php echo htmlspecialchars($post_thumb_audio)?>" class="txtfield" />
                                     <label class="cs-browse">
-                                    	<input type="button" id="post_thumb_audio2" name="post_thumb_audio2" class="uploadfile left" value="Browse"/>
+                                    	<input type="button" id="post_thumb_audio2" name="post_thumb_audio2" class="uploadfile left" value="<?php _e('Browse','Awaken');?>"/>
                                     </label>
                                 </div>
                                 <div class="left-info">
-                                	<p><?php _e('Enter Specific Audio URL (Youtube, Vimeo and all otheres wordpress supported)','Awaken');?></p>
+                                	<p><?php _e('Enter Specific Audio Url (Youtube, Vimeo and all otheres wordpress supported)','Awaken');?></p>
                                 </div>
                             </li>
                         </ul>
@@ -204,11 +204,11 @@ function cs_meta_post( $post ) {
                             	<div class="input-sec">
                                     <input id="post_thumb_video2" name="post_thumb_video" value="<?php echo cs_allow_special_char($post_thumb_video)?>" type="text" class="small" />
                                     <label class="cs-browse">
-	                                    <input id="post_thumb_video2" name="post_thumb_video2" type="button" class="uploadfile left" value="Browse"/>
+	                                    <input id="post_thumb_video2" name="post_thumb_video2" type="button" class="uploadfile left" value="<?php _e('Browse','Awaken');?>"/>
                                     </label>
                                 </div>
                                 <div class="left-info">
-                                	<p><?php _e('Enter Specific Video URL (Youtube, Vimeo and all otheres wordpress supported) OR you can select it from your media library','Awaken');?></p>
+                                	<p><?php _e('Enter Specific Video Url (Youtube, Vimeo and all otheres wordpress supported) OR you can select it from your media library','Awaken');?></p>
                                 </div>
                             </li>
                         </ul>
@@ -222,10 +222,10 @@ function cs_meta_post( $post ) {
                             <div class="input-sec">
                                 <div class="select-style">
                                     <select name="inside_post_thumb_view" class="dropdown" onchange="javascript:new_toggle_inside_post(this.value)">
-                                        <option <?php if($inside_post_thumb_view=="Single Image")echo "selected";?> ><?php _e('Single Image','Awaken');?></option>
-                                        <option <?php if($inside_post_thumb_view=="Audio")echo "selected";?> ><?php _e('Audio','Awaken');?></option>
-                                        <option <?php if($inside_post_thumb_view=="Video")echo "selected";?> value="Video"><?php _e('Video/Soundcloud','Awaken');?></option>
-                                        <option <?php if($inside_post_thumb_view=="Slider")echo "selected";?> ><?php _e('Slider','Awaken');?></option>
+                                        <option value="Single Image" <?php if($inside_post_thumb_view=="Single Image")echo "selected";?> ><?php _e('Single Image','Awaken');?></option>
+                                        <option value="Audio" <?php if($inside_post_thumb_view=="Audio")echo "selected";?> ><?php _e('Audio','Awaken');?></option>
+                                        <option value="Video" <?php if($inside_post_thumb_view=="Video")echo "selected";?> value="Video"><?php _e('Video/Soundcloud','Awaken');?></option>
+                                        <option value="Slider" <?php if($inside_post_thumb_view=="Slider")echo "selected";?> ><?php _e('Slider','Awaken');?></option>
                                     </select>
                                 </div>
                             </div>
@@ -239,11 +239,11 @@ function cs_meta_post( $post ) {
                                     <div class="input-sec">
                                         <input type="text" id="inside_post_thumb_audio2" name="inside_post_thumb_audio" value="<?php echo htmlspecialchars($inside_post_thumb_audio)?>" class="txtfield" />
                                         <label class="cs-browse">
-                                            <input type="button" id="inside_post_thumb_audio2" name="inside_post_thumb_audio2" class="uploadfile left" value="Browse"/>
+                                            <input type="button" id="inside_post_thumb_audio2" name="inside_post_thumb_audio2" class="uploadfile left" value="<?php _e('Browse','Awaken');?>"/>
                                         </label>
                                     </div>
                                     <div class="left-info">
-                                        <p><?php _e('Enter Specific Audio URL (Youtube, Vimeo and all otheres wordpress supported)','Awaken');?></p>
+                                        <p><?php _e('Enter Specific Audio Url (Youtube, Vimeo and all otheres wordpress supported)','Awaken');?></p>
                                     </div>
                                 </li>
                             </ul>
@@ -253,11 +253,11 @@ function cs_meta_post( $post ) {
                                     <div class="input-sec">
                                         <input id="inside_post_thumb_video2" name="inside_post_thumb_video" value="<?php echo cs_allow_special_char($inside_post_thumb_video)?>" type="text" class="small" />
                                         <label class="cs-browse">
-                                            <input id="inside_post_thumb_video2" name="inside_post_thumb_video2" type="button" class="uploadfile left" value="Browse"/>
+                                            <input id="inside_post_thumb_video2" name="inside_post_thumb_video2" type="button" class="uploadfile left" value="<?php _e('Browse','Awaken');?>"/>
                                         </label>
                                     </div>
                                     <div class="left-info">
-                                        <p><?php _e('Enter Specific Video URL (Youtube, Vimeo and all otheres wordpress supported) OR you can select it from your media library','Awaken');?></p>
+                                        <p><?php _e('Enter Specific Video Url (Youtube, Vimeo and all otheres wordpress supported) OR you can select it from your media library','Awaken');?></p>
                                     </div>
                                 </li>
                             </ul>
