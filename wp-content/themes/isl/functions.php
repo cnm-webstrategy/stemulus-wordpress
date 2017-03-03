@@ -1823,3 +1823,5 @@ function remove_class_function( $classes ) {
     return $classes;
 
 }
+
+include 'custom-functions.php';

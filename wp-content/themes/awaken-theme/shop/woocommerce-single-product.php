@@ -1,4 +1,7 @@
 <?php
+remove_filter('comment_form_field_comment', 'cs_filter_comment_form_field_comment', 10, 1);
+remove_action('comment_form_logged_in_after', 'cs_comment_tut_fields');
+remove_action('comment_form_after_fields', 'cs_comment_tut_fields');
 /**
 	Product Detail
  * @package LMS

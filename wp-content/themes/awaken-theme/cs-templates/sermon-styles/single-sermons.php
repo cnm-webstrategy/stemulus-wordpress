@@ -148,7 +148,7 @@
                                   </ul>
                                   
                                   <?php if($sermon_summery <> ''){ ?>
-                                        <p><strong><?php _e('Summary:&nbsp;','Awaken'); ?></strong><?php echo esc_attr($sermon_summery); ?></p>
+                                        <p><strong><?php _e('Summary','Awaken'); ?></strong><?php echo esc_attr($sermon_summery); ?></p>
                                     <?php } ?>
                                   <ul class="post-links">
                                     <?php 

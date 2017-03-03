@@ -249,6 +249,11 @@ class OAuthRequest {
    * attempt to build up a request from what was passed to the server
    */
   public static function from_request($http_method=NULL, $http_url=NULL, $parameters=NULL) {
+	   global $wp_filesystem;
+	  		if (empty($wp_filesystem)) {
+				require_once (ABSPATH . '/wp-admin/includes/file.php');
+				WP_Filesystem();
+			}
     $scheme = (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != "on")
               ? 'http'
               : 'https';
@@ -277,7 +282,7 @@ class OAuthRequest {
                      "application/x-www-form-urlencoded")
           ) {
         $post_data = OAuthUtil::parse_parameters(
-          file_get_contents(self::$POST_INPUT)
+          $wp_filesystem->get_contents(self::$POST_INPUT)
         );
         $parameters = array_merge($parameters, $post_data);
       }

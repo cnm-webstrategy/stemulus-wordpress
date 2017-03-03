@@ -1245,6 +1245,7 @@ p.demo_store {
 .woocommerce ul.cart_list li:after, .woocommerce ul.product_list_widget li:after, .woocommerce-page ul.cart_list li:after, .woocommerce-page ul.product_list_widget li:after {
 	clear:both
 }
+.woocommerce ul.product_list_widget li a.remove{display: inline-block; position: absolute; right: 0px; top:35px;}
 .woocommerce ul.cart_list li a, .woocommerce ul.product_list_widget li a, .woocommerce-page ul.cart_list li a, .woocommerce-page ul.product_list_widget li a {
 	display:block;
 	font-weight:400;
@@ -2144,6 +2145,7 @@ display:none
 	text-align:right
 }
 .woocommerce ul.cart_list li, .woocommerce ul.product_list_widget li, .woocommerce-page ul.cart_list li, .woocommerce-page ul.product_list_widget li {
+	position: relative;
 *zoom:1
 }
 .woocommerce ul.cart_list li:after, .woocommerce ul.cart_list li:before, .woocommerce ul.product_list_widget li:after, .woocommerce ul.product_list_widget li:before, .woocommerce-page ul.cart_list li:after, .woocommerce-page ul.cart_list li:before, .woocommerce-page ul.product_list_widget li:after, .woocommerce-page ul.product_list_widget li:before {

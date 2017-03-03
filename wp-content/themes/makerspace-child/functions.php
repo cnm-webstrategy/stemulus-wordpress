@@ -10,12 +10,12 @@ function theme_enqueue_styles() {
     );
 
 	// is this wpengine production?
-	if ( is_wpe() ) {  
+	/* if ( is_wpe() ) {  
 	    wp_enqueue_style('typography-font', 'https://cloud.typography.com/6007112/641408/css/fonts.css');
 	} else  {
 		//development url
 		 wp_enqueue_style('typography-font', 'https://cloud.typography.com/6007112/785104/css/fonts.css');
-	}
+	} */
 }
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 
@@ -44,7 +44,7 @@ function ebor_load_scripts_GH() {
 	wp_enqueue_script( 'ebor-modernizr', get_template_directory_uri() . '/js/libs/modernizr-2.0.6.min.js', array('jquery') );
 	wp_enqueue_script( 'ebor-mediaelement', get_template_directory_uri() . '/player/lib/mediaelement.js', array('jquery') );
 	wp_enqueue_script( 'ebor-mediaelementplayer', get_template_directory_uri() . '/player/lib/mediaelementplayer.js', array('jquery') );
-	wp_enqueue_script( 'ebor-maps', 'http://maps.google.com/maps/api/js?sensor=true', array('jquery'), false, true );
+	wp_enqueue_script( 'ebor-maps', '//maps.google.com/maps/api/js?sensor=true', array('jquery'), false, true );
 	wp_enqueue_script( 'ebor-gumby', get_template_directory_uri() . '/js/libs/gumby.min.js', array('jquery'), false, true );
 	wp_enqueue_script( 'ebor-gumby-tabs', get_template_directory_uri() . '/js/libs/gumby.tabs.js', array('jquery'), false, true );
 	wp_enqueue_script( 'ebor-gumby-toggle', get_template_directory_uri() . '/js/libs/gumby.toggleswitch.js', array('jquery'), false, true );
@@ -54,6 +54,14 @@ function ebor_load_scripts_GH() {
 		wp_enqueue_script( 'ebor-supersized', get_template_directory_uri() . '/js/supersized.js', array('jquery') );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) 
 		wp_enqueue_script( 'comment-reply' );
+
+    // is this wpengine production?
+    if ( function_exists('is_wpe') && is_wpe() ) {
+        wp_enqueue_style('typography-font', 'https://cloud.typography.com/6007112/641408/css/fonts.css');
+    } else  {
+        //development url
+        wp_enqueue_style('typography-font', 'https://cloud.typography.com/6007112/785104/css/fonts.css');
+    }
 }
 add_action('wp_enqueue_scripts', 'ebor_load_scripts_GH');
 ?>

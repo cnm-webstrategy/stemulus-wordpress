@@ -17,8 +17,10 @@ global $fonts;
 		$font_array =get_option('cs_font_list');
 		$font_attribute = get_option('cs_font_attribute');
 	}else{
+		if (isset($fonts) and $fonts <> '') {
   		$font_array = cs_get_google_fontlist($fonts);
 		$font_attribute = cs_font_attribute($fonts);
+		}
 		if(is_array($font_array) and count($font_array) > 0 and is_array($font_attribute) and count($font_attribute) > 0){
 			update_option('cs_font_list',$font_array);
 			update_option('cs_font_attribute',$font_attribute);
@@ -81,19 +83,22 @@ global $fonts;
 
 /* get google font array from jason */
 function cs_get_google_fontlist($response = ''){
+	if (isset($response) && $response != '') {
 	$json_fonts = json_decode($response,  true);
-	$items = $json_fonts['items'];
+	$items = isset($json_fonts['items']) ? $json_fonts['items'] : '';
 	//$response = file_get_contents($cachefile);
 	$font_list= array();
 	$i=0;
-	if(is_array($items)){
+	if(isset($items) && $items <> '' && is_array($items)){
 		foreach($items as $item){
-		
+			if (isset($item['family'])) {
 			//$key=str_replace(' ','-',$item['family']);
 			$key=$item['family'];
 			$font_list[$key] = $item['family'];
+			}
 			$i++;
  		}
+	}
 	}else{
 			$font_list = '';
 	}
@@ -107,12 +112,12 @@ function cs_get_google_font_attribute($response = '', $id= 'ABeeZee'){
  	if(get_option('cs_font_attribute')){
 		$font_attribute = get_option('cs_font_attribute');
 		if(isset($font_attribute) and $font_attribute <> ''){
-			$items = $font_attribute[$id];
+			$items = isset($font_attribute[$id]) ? $font_attribute[$id] : '';
 		}
 	}
 	else{
 		$arrtibue_array	= cs_font_attribute($fonts);
-		$items = $arrtibue_array[$id];
+		$items = isset($arrtibue_array[$id]) ? $arrtibue_array[$id] : '';
 	}
 	return $items;
 	
@@ -132,11 +137,11 @@ function cs_get_google_font_attributes(){
  	if($index != 'default'){
 		if(get_option('cs_font_attribute')){
 			$font_attribute = get_option('cs_font_attribute');
-			$items = $font_attribute[$index];
+			$items = isset($font_attribute[$index]) ? $font_attribute[$index] : '';
 		}
 		else{
 			$json_fonts = json_decode($fonts, true);
-			$items = $json_fonts['items'][$index]['variants'];
+			$items = isset($json_fonts['items'][$index]['variants']) ? $json_fonts['items'][$index]['variants'] : ''; 
 		}
 		$html='<select id="'.$_POST['id'].'" name="'.$_POST['id'].'"><option value="">Select Attribute</option>';
 		if(is_array($items)){
@@ -158,15 +163,19 @@ function cs_get_google_font_attributes(){
 function cs_font_attribute($fontarray = ''){
 		global $fonts;
 		//return $response;	
+		if (isset($fontarray) && $fontarray != '') {
 		$json_fonts = json_decode($fontarray, true);
- 		$items = $json_fonts['items'];
+ 		$items = isset($json_fonts['items']) ? $json_fonts['items'] : '';
+		}
 		$font_list= array();
 		$i=0;
-		if(is_array($items)){
+		if (isset($items) && $items <> '' && is_array($items)) {
 			foreach($items as $item){
+				if (isset($item['family'])) {
 				//$key=str_replace(' ','-',$item['family']);
 				$key=$item['family'];
 				$font_list[$key] = $item['variants'];
+				}
 				$i++;
 			}
 		}else{
@@ -185,10 +194,10 @@ if ( ! function_exists( 'cs_get_font_family' ) ) {
 			$fonts = cs_googlefont_list();
  			$all_att = '';
 			if(isset($fonts) and is_array($fonts)){
-				$name = $fonts[$font_index];
+				$name = isset($fonts[$font_index]) ? $fonts[$font_index] : '';
 				$name = str_replace(' ', '+',$name);
 				if($att <> '') $all_att = ':'.$att;
-				$url = '//fonts.googleapis.com/css?family='.$name.$all_att;
+				$url = 'https://fonts.googleapis.com/css?family='.$name.$all_att;
 				$html ='@import url('.$url.');';
 			}
 		}
@@ -208,7 +217,7 @@ if ( ! function_exists( 'cs_get_font_name') ) {
 		if($font_index != 'default' ){
 			$fonts = cs_googlefont_list();
 			if(isset($fonts) and is_array($fonts)){
-				$name = $fonts[$font_index];
+				$name = isset($fonts[$font_index]) ? $fonts[$font_index] : '';
 				return $name;
 			}
 		}
@@ -261,8 +270,7 @@ if ( ! function_exists( 'cs_font_font_print') ) {
 		}
 		else{
 			if($imp == true) $important = ' !important';
-			//$html = 'font:'.$atts.' '.$size.'px \''.$f_name.'\', sans-serif'.$important.';'; /* REMOVED IMPORTANT */
-			$html = 'font:'.$atts.' '.$size.'px \''.$f_name.'\', sans-serif;';
+			$html = 'font:'.$atts.' '.$size.'px \''.$f_name.'\', sans-serif'.$important.';';
 		}
 		
 		return $html;

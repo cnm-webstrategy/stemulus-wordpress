@@ -5,5 +5,86 @@
  Template:     awaken-theme
  Text Domain:  awaken-child
 */
-.someClass .someOtherClass {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+.pageinfo {
+  vertical-align: bottom;
+  padding: 25px; }
+
+strong {
+  float: none;
+  font-size: inherit;
+  color: inherit; }
+
+.rich_editor_text strong {
+  float: none; }
+
+label {
+  text-transform: none; }
+
+
+ul {
+  margin: 15px 0 15px 0; }
+
+li {
+  line-height: 18px; }
+
+  ul li {
+  color: #777;
+  list-style-position: inside;
+  padding: 0px 12px 0 5px;
+  list-style-type: disc;
+  line-height: 22px;
+  }
+
+.rich_editor_text li a {
+  color: #428bca; }
+
+.rich_editor_text ol li {
+  line-height: inherit;
+  margin-top: 7px; }
+
+.widget.widget_text .textwidget p {
+  float: none;
+  line-height: 24px;
+  margin-bottom: 15px; }
+
+h1, .pageinfo h1 {
+  font-family: 'Vitesse A', 'Vitesse B';
+  font-size: 2em;
+  font-weight: normal; }
+
+h2, .cs-section-title h2 {
+  font-family: 'Vitesse A', 'Vitesse B';
+  font-size: 1.5em;
+  font-weight: normal;
+  text-transform: none;
+  padding-top: 25px; }
+
+h3 {
+  margin: 15px 0 4px 0; }
+
+h4 {
+  margin: 15px 0 4px 0; }
+
+div .navbar-default {
+  background-color: transparent; }
+
+.main-navbar .left-side {
+  width: auto; }
+
+@media all and (max-width: 767px) {
+  .navigation ul li {
+    float: none;
+    padding-left: 15px; }
+  div.rich_editor_text {
+    padding: 10px; }
+  div .pageinfo {
+    width: 100%; } }
+
+div.product-icon a {
+  display: inline-block;
+  width: 100%;
+  text-align: center; }
+
+@media print {
+  img {
+    display: none; } }

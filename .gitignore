@@ -15,6 +15,11 @@ Thumbs.db
 .ftpquota
 .git_bak
 node_modules/
+**/.git
+*_bak
+phpMyAdmin
+phpinfo.php
+apple*.png
 
 
 # wordpress specific

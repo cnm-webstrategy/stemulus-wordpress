@@ -42,11 +42,9 @@ if (!function_exists('cs_pricetable_shortcode')) {
 		$html = '';
 
 		$bgcolor_style = '';
-		
-		if(isset($btn_bg_color) && trim($btn_bg_color) <> ''){
-			$btn_bg_color = ' style="background-color:'.$btn_bg_color.'"';
-		}
-		
+	     
+                $btn_bg_color =isset($btn_bg_color) ? $btn_bg_color : '';
+            
 		if(isset($pricetable_bgcolor) && trim($pricetable_bgcolor) <> ''){
 			$bgcolor_style = ' style="background-color:'.$pricetable_bgcolor.'"';
 		}
@@ -82,7 +80,7 @@ if (!function_exists('cs_pricetable_shortcode')) {
 			$html .= '<ul class="features">';
 			$html .= do_shortcode($content);
 			$html .= '</ul>';
-			$html .= ' <a class="sigun_up" href="" '.$btn_bg_color.'>'.$btn_text.'</a>';
+			$html .= ' <a class="sigun_up" href="'.esc_url($btn_bg_color).'">'.$btn_text.'</a>';
 			$html .= '</article>';
 			return '<div '.$CustomId.' class="'.$column_class.'">'.$html.'</div>';
 		//}
@@ -457,7 +455,6 @@ if (!function_exists('cs_button_shortcode')) {
 	function cs_button_shortcode($atts) {
 		$defaults = array( 'button_size'=>'btn-lg','button_border' => '','border_button_color' => '','button_title' => '','button_link' => '#','button_color' => '#fff','button_bg_color' => '#000','button_icon_position' => 'left','button_icon'=>'', 'button_type' => 'rounded','button_target' => '_self','cs_button_class' => '','cs_button_animation' => 'cs-button-shortcode');
 		extract( shortcode_atts( $defaults, $atts ) );
-		
 		$CustomId	= '';
 		if ( isset( $cs_button_class ) && $cs_button_class ) {
 			$CustomId	= 'id="'.$cs_button_class.'"';
@@ -499,7 +496,7 @@ if (!function_exists('cs_button_shortcode')) {
 		$html  = '';
 		$html .= '<div '.$CustomId.' class="button_style">';
 		
-		$html .= '<a href="' . $button_link. '" class="default '.$button_type_class. ' ' . $button_size. ' bg-color ' . $cs_button_class. ' ' . $cs_button_animation. ' '.$has_icon.'" style="'.$border.'  background-color: ' . $button_bg_color . '; color:' . $button_color . ' ;">';
+		$html .= '<a href="' . esc_url($button_link). '" class="default '.$button_type_class. ' ' . $button_size. ' bg-color ' . $cs_button_class. ' ' . $cs_button_animation. ' '.$has_icon.'" style="'.$border.'  background-color: ' . $button_bg_color . '; color:' . $button_color . ' ;" target="'.$button_target.'">';
 		if(isset($button_icon) && $button_icon <> ''){
 			$html .= '<i class="fa '.$button_icon.' button-icon-'. $button_icon_position.'"></i>';
 		}

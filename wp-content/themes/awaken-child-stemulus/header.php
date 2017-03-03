@@ -38,6 +38,9 @@ $header_style = '';
  	$cs_builtin_seo_fields =$cs_theme_options['cs_builtin_seo_fields'];
 	if(isset($cs_theme_options['cs_layout'])){ $cs_site_layout =$cs_theme_options['cs_layout'];} else { $cs_site_layout == '';}
 ?>
+<?php /** @package WordPress @subpackage Default_Theme  **/
+header("Access-Control-Allow-Origin: *"); 
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
     <head>

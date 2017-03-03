@@ -35,7 +35,13 @@ class MC4WP_Contact_Form_7_Integration extends MC4WP_Integration {
 	* @return boolean
 	*/
 	public function init() {
-		wpcf7_add_shortcode( 'mc4wp_checkbox', array( $this, 'shortcode' ) );
+
+		if ( function_exists( 'wpcf7_add_form_tag' ) ) {
+			wpcf7_add_form_tag( 'mc4wp_checkbox', array( $this, 'shortcode' ) );
+		} else {
+			wpcf7_add_shortcode( 'mc4wp_checkbox', array( $this, 'shortcode' ) );
+		}
+
 		return true;
 	}
 
@@ -90,7 +96,8 @@ class MC4WP_Contact_Form_7_Integration extends MC4WP_Integration {
 
 		// do nothing if no email was found
 		if( empty( $data['EMAIL'] ) ) {
-			return false;
+            $this->get_log()->warning( sprintf( '%s > Unable to find EMAIL field.', $this->name ) );
+            return false;
 		}
 
 		return $this->subscribe( $data, $cf7_form->id() );
@@ -117,6 +124,9 @@ class MC4WP_Contact_Form_7_Integration extends MC4WP_Integration {
 			}
 		}
 
+		// disable paragraph wrap because CF7 defaults to `wpautop`
+		$this->options['wrap_p'] = 0;
+
 		return $this->get_checkbox_html();
 	}
 
@@ -124,7 +134,7 @@ class MC4WP_Contact_Form_7_Integration extends MC4WP_Integration {
 	 * @return bool
 	 */
 	public function is_installed() {
-		return function_exists( 'wpcf7_add_shortcode' );
+		return function_exists( 'wpcf7_contact_form' );
 	}
 
 	/**

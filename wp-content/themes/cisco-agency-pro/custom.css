@@ -1,0 +1,47 @@
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Vitesse', sans-serif;
+}
+
+.site-title {
+    font-family: 'Vitesse', sans-serif;
+}
+
+body {
+    background-color: #41b6e6;
+    font-family: 'Lato', sans-serif;
+    }
+
+
+.textwidget {
+    font-family: 'lato', sans-serif;
+
+}
+
+a {
+    color: #41b6e6;
+}
+
+.genesis-nav-menu a:hover, .genesis-nav-menu .current-menu-item > a, .genesis-nav-menu .v .current-menu-item > a:hover {
+    background-color: #282828;
+    border-color: #41b6e6;
+    color: #41b6e6;
+}
+
+@media print {
+   
+   .site-header {
+    display:none;
+}
+}
+
+.site-title a:hover {
+    color: #41b6e6;
+}
+
+
+@media only screen and (max-width: 1023px) {
+    .site-title {
+        font-size: 18px;
+    }
+}

@@ -8,7 +8,7 @@
 		Paradigma Tecnologico (@paradigmate)
 */
 var $ = jQuery;
-;$.fn.eventCalendar = function(options){
+$.fn.eventCalendar = function(options){
 
 	var eventsOpts = $.extend({}, $.fn.eventCalendar.defaults, options);
 
@@ -308,7 +308,7 @@ var $ = jQuery;
 				// show or hide event description
 				var eventDescClass = '';
 				if(!eventsOpts.showDescription) {
-					eventDescClass = 'hidden';
+					eventDescClass = '';
 				}
 				var eventLinkTarget = "_self";
 				if(eventsOpts.openEventInNewWindow) {
@@ -364,7 +364,7 @@ var $ = jQuery;
 									} else {
 										var eventTitle = '<span class="eventTitle">'+event.title+'</span>';
 									}
-									events.push('<li id="' + key + '" class="'+event.type+'"><time datetime="'+eventDate+'"><em>' + eventStringDate + '</em><small>'+eventHour+":"+eventMinute+'</small></time>'+eventTitle+'<p class="eventDesc ' + eventDescClass + '">' + event.description + '</p></li>');
+									events.push('<li id="' + key + '" class="'+event.type+'"><time datetime="'+eventDate+'"><em>' + eventStringDate + '</em><small>'+":"+eventMinute+'</small></time>'+eventTitle+'<p class="eventDesc">' + event.description + '</p></li>');
 									i++;
 								}
 						}
