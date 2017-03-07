@@ -71,6 +71,10 @@ div .navbar-default {
 .main-navbar .left-side {
   width: auto; }
 
+.page-content {
+  width: 100%;
+}
+
 .page-content ~ .page-sidebar {
     float: none;
     width: 100%;
@@ -79,6 +83,7 @@ div .navbar-default {
 .page-content ~ .page-sidebar .button_style {
   display: block;
 }
+
 
 @media all and (max-width: 1000px) {
 
@@ -96,6 +101,10 @@ div .navbar-default {
   }
 
   @media all and (min-width: 520px) {
+    .page-content {
+      width: 75%;
+    }
+
     #main-content .page-sidebar {
         float: right;
         width: 25%;
