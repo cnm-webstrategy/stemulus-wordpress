@@ -73,6 +73,11 @@ div .navbar-default {
 
 .page-content ~ .page-sidebar {
     float: none;
+    width: 100%;
+}
+
+.page-content ~ .page-sidebar .button_style {
+  display: block;
 }
 
 @media all and (max-width: 1000px) {
@@ -93,6 +98,11 @@ div .navbar-default {
   @media all and (min-width: 520px) {
     #main-content .page-sidebar {
         float: right;
+        width: 25%;
+    }
+
+    #main-content .page-sidebar .button_style{
+      display: inline-block;
     }
   }
 
