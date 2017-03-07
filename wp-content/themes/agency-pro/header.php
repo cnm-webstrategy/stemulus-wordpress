@@ -20,6 +20,8 @@ wp_head(); //* we need this for plugins
 </head>
 <?php
 
+$sitecode = () ? : ;
+
 $GTM = '
 		<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NVHXBB"
 		 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -32,7 +34,7 @@ $GTM = '
 	';
 
 genesis_markup( array(
-	'html5'   => '<body %s> '.$GTM,
+	'html5'   => '<body %s> ',//.$GTM,
 	'xhtml'   => sprintf( '<body class="%s" >', implode( ' ', get_body_class() ) ),
 	'context' => 'body',
 ) );

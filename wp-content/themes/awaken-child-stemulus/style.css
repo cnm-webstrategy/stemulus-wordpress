@@ -71,6 +71,14 @@ div .navbar-default {
 .main-navbar .left-side {
   width: auto; }
 
+.page-content ~ .page-sidebar {
+    float: none;
+}
+
+@media all and (max-width: 1000px) {
+
+}
+
 @media all and (max-width: 767px) {
   .navigation ul li {
     float: none;
@@ -78,12 +86,23 @@ div .navbar-default {
   div.rich_editor_text {
     padding: 10px; }
   div .pageinfo {
-    width: 100%; } }
+    width: 100%; } 
+  
+  }
+
+  @media all and (min-width: 520px) {
+    #main-content .page-sidebar {
+        float: right;
+    }
+  }
+
 
 div.product-icon a {
   display: inline-block;
   width: 100%;
   text-align: center; }
+
+
 
 @media print {
   img {

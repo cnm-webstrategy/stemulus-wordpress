@@ -135,3 +135,4 @@ genesis_register_sidebar( array(
 	'description' => __( 'This is the bottom section of the homepage.', 'agency' ),
 ) );
 
+include 'custom-functions.php';
