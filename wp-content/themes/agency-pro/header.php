@@ -20,7 +20,6 @@ wp_head(); //* we need this for plugins
 </head>
 <?php
 
-$sitecode = () ? : ;
 
 $GTM = '
 		<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NVHXBB"
