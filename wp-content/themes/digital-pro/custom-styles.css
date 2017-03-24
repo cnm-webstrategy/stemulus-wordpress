@@ -1,0 +1,36 @@
+#front-page-2 .flexible-widgets {
+	display: flex;	
+	flex-flow: row wrap;
+}
+#front-page-2 .widget {
+	flex: 1;
+	flex-wrap: wrap;
+	width: 33%;
+	border: 1px solid black;
+	clear: none;
+	padding: 40px;
+
+}
+#front-page-2 .widget-wrap {
+	padding-top: 0;
+	height: 46em;
+}
+#front-page-2 .textwidget > img {
+	min-width: 283px;
+	height: 100%;
+}
+#front-page-2 .textwidget {
+	display: flex;
+	flex-direction: column;
+}
+#front-page-2 .textwidget * {
+	flex: 1
+}
+
+#front-page-3 .flexible-widgets {
+	display: flex;	
+}
+#front-page-3 .widget {
+	flex: 1;
+}
+
