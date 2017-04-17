@@ -1,12 +1,11 @@
 #front-page-2 .flexible-widgets {
-	display: flex;	
+	display: flex;
 	flex-flow: row wrap;
 }
 #front-page-2 .widget {
 	flex: 1;
 	flex-wrap: wrap;
 	width: 33%;
-	border: 1px solid black;
 	clear: none;
 	padding: 40px;
 
@@ -15,22 +14,42 @@
 	padding-top: 0;
 	height: 46em;
 }
+#front-page-2 .widget-wrap .widget-title {
+	max-height: 70px;
+	min-height: 70px;
+	overflow: hidden;
+}
 #front-page-2 .textwidget > img {
 	min-width: 283px;
-	height: 100%;
+	height: auto;
+}
+#front-page-2 .textwidget > h4 {
+	padding-top: 20px;
+	min-height: 120px;
+	max-height: 120px;
 }
 #front-page-2 .textwidget {
 	display: flex;
 	flex-direction: column;
+	height: 100%;
 }
 #front-page-2 .textwidget * {
-	flex: 1
+	flex: 1;
 }
 
 #front-page-3 .flexible-widgets {
-	display: flex;	
+	display: flex;
 }
 #front-page-3 .widget {
 	flex: 1;
 }
 
+.front-page-2 .flexible-widgets.widget-full .widget-wrap, .front-page-2 .flexible-widgets.widget-halves.uneven .widget:last-of-type .widget-wrap {
+	padding-bottom: 21%;
+}
+
+
+.sidebar.sidebar-primary.widget-area {
+	position: fixed;
+	top: 0;
+}
