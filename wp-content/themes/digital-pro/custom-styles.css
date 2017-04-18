@@ -54,3 +54,10 @@
 	position: fixed;
 	top: 0;
 }
+
+#sticky-footer {
+
+	width: 100%;
+	height: 100px;
+	background-color: white;
+}
