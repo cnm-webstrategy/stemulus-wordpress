@@ -5,65 +5,89 @@ jQuery(document).ready(function($) {
 
 	//create sticky footer element
 	$('body').append('<div id="sticky-footer">this is sticky footer</div>');
-	var footerHeight =0,
-		footerTop = 0,
-		$footer = $('#sticky-footer');
+	var $stickyFooter = $('#sticky-footer');
+	var $footerWidgetsTop = $('#genesis-footer-widgets').offset().top;
 
+	var footerHeight = $stickyFooter.innerHeight();
+	var footerTop = ($(window).scrollTop()+$(window).height()-footerHeight)+"px";
+	$stickyFooter.css({position: 'absolute', top: footerTop})
 
-	function positionFooter() {
-		footerHeight = $footer.height();
-		footerTop = ($(window).scrollTop()+$(window).height()-footerHeight)+"px";
+	$(document).scroll(function() {
+		// temporarily show sticky footer at bottom of window
+		footerTop = ($(window).scrollTop()+$(window).height()-footerHeight);
+		$stickyFooter.css({position: 'absolute', top: footerTop})
 
-		if ( ($(document.body).height()+footerHeight) > $(window).height()) {
+		console.log( footerTop , $('#genesis-footer-widgets').offset().top );
 
-			$footer.css({
-				position: "absolute",
-				top: footerTop
-			})
-			// 	.animate({
-			// 	top: footerTop
-			// });
-
+		if ( footerTop < $footerWidgetsTop ) {
+			$stickyFooter.fadeIn();
 		} else {
-
-			$footer.css({
-				position: "static"
-			});
-		}
-	}
-
-	$(document)
-		.scroll(positionFooter)
-		.resize(positionFooter);
-	$(window)
-		.resize(hideFixedMenuOnResize);
-
-	function hideFixedMenuOnResize(){
-		if ($(window).width() < 800 ){
-			$('.sidebar.sidebar-primary.widget-area').css("position", "inherit");
-		}
-	}
-
-	$(document).scroll(function(){
-
-		positionFooter();
-
-		var scrollPos = $(document).scrollTop()/$(document).height();
-
-		// // hide fixed vertical menu when scroll is near bottom of page
-		// if (scrollPos < .08 || scrollPos >=.82 || $(window).width() < 800  ){
-		// 	$('.sidebar.sidebar-primary.widget-area').css("position", "inherit");
-		// } else {
-		// 		$('.sidebar.sidebar-primary.widget-area').css("position", "fixed")
-		// }
-
-		// show/hide sticky footer
-		if ( scrollPos >= .08 && scrollPos <= .85 ){
-			$footer.fadeIn();
-		} else {
-			$footer.fadeOut();
+			$stickyFooter.fadeOut();
 		}
 	})
+	// var footerHeight =0,
+	// 	footerTop = 0,
+	// 	$footer = $('#sticky-footer');
+    //
+    //
+	// function positionFooter() {
+	// 	footerHeight = $footer.height();
+	// 	footerTop = ($(window).scrollTop()+$(window).height()-footerHeight)+"px";
+    //
+	// 	if ( ($(document.body).height()+footerHeight) > $(window).height()) {
+    //
+	// 		$footer.css({
+	// 			position: "absolute",
+	// 			top: footerTop
+	// 		})
+	// 		// 	.animate({
+	// 		// 	top: footerTop
+	// 		// });
+    //
+	// 	} else {
+    //
+	// 		$footer.css({
+	// 			position: "static"
+	// 		});
+	// 	}
+	// }
+    //
+	// $(document)
+	// 	.scroll(positionFooter)
+	// 	.resize(positionFooter);
+	// $(window)
+	// 	.resize(hideFixedMenuOnResize);
+    //
+	// function hideFixedMenuOnResize(){
+	// 	if ($(window).width() < 800 ){
+	// 		$('.sidebar.sidebar-primary.widget-area').css("position", "inherit");
+	// 	}
+	// }
+	// // create an element after the sidebar and before the footer
+	// // that will detect a collision with the top of the page
+	// // if it doesn't already exist
+	// if (!$('.sticky-stopper').offset()) {
+	// 	$('#genesis-footer-widgets').before('<div class="sticky-stopper"></div>');
+	// }
+	// var $stickyStopper = $('.sticky-stopper');
+	//
+	// $(document).scroll(function(){
+    //
+	// 	positionFooter();
+    //
+	// 	var scrollPos = $(document).scrollTop()/$(document).height();
+    //
+    //
+    //
+    //
+    //
+	// 	// show/hide sticky footer
+	// 	if ( scrollPos >= .08 && scrollPos <= .85 ){
+	// 		$footer.fadeIn();
+	// 	} else {
+	// 		$footer.fadeOut();
+	// 	}
+	// })
 
 	/*********
 	 * sticky sidebar
