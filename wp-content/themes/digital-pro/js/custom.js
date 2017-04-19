@@ -35,6 +35,14 @@ jQuery(document).ready(function($) {
 	$(document)
 		.scroll(positionFooter)
 		.resize(positionFooter);
+	$(window)
+		.resize(hideFixedMenuOnResize);
+
+	function hideFixedMenuOnResize(){
+		if ($(window).width() < 800 ){
+			$('.sidebar.sidebar-primary.widget-area').css("position", "inherit");
+		}
+	}
 
 	$(document).scroll(function(){
 
@@ -43,14 +51,14 @@ jQuery(document).ready(function($) {
 		var scrollPos = $(document).scrollTop()/$(document).height();
 
 		// hide fixed vertical menu when scroll is near bottom of page
-		if (scrollPos >=.85 ){
+		if (scrollPos < .08 || scrollPos >=.82 || $(window).width() < 800  ){
 			$('.sidebar.sidebar-primary.widget-area').css("position", "inherit");
 		} else {
-			$('.sidebar.sidebar-primary.widget-area').css("position", "fixed")
+				$('.sidebar.sidebar-primary.widget-area').css("position", "fixed")
 		}
 
 		// show/hide sticky footer
-		if ( scrollPos >=.1 && scrollPos <= .8 ){
+		if ( scrollPos >= .08 && scrollPos <= .85 ){
 			$footer.fadeIn();
 		} else {
 			$footer.fadeOut();
