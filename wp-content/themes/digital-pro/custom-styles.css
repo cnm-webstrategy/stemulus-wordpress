@@ -1,3 +1,59 @@
+/* Typography begin */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Vitesse', sans-serif;
+
+}
+
+
+.site-title {
+    font-family: 'Vitesse', sans-serif;
+}
+
+.featured-content p.entry-meta {
+	font-family: 'Vitesse', sans-serif;
+	/*font-size: 10px;
+	font-size: 1rem;
+	font-weight: 400;
+	letter-spacing: 1px;
+	text-transform: uppercase;*/
+}
+body {
+    background-color: #fff;
+    color: #5b5e5e;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-size: 1.6rem;
+    font-weight: 400;
+    /*line-height: 2;*/
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+.page .entry-title, .single .entry-title {
+    font-size: 48px;
+    font-size: 4.8rem;
+    font-weight: 600;
+    border-bottom: 6px solid #0b72b7;
+    /* letter-spacing: -3px; */
+}
+
+
+.front-page-1 .widget_text .widget-title {
+    font-family: 'Vitesse', sans-serif;
+    font-size: 84px;
+    font-size: 8.4rem;
+    font-weight: 600;
+    margin-bottom: 0;
+    text-transform: none;}
+
+.widget-title {
+    /*color: #0b72b7;*/
+    letter-spacing: 0px;
+}
+
+/* Typography end */
+
 #front-page-2 .flexible-widgets {
 	display: flex;
 	flex-flow: row wrap;
