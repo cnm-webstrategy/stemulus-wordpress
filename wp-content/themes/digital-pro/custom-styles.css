@@ -54,6 +54,57 @@ body {
 
 /* Typography end */
 
+/*Widget Sub Nav */
+
+.sidebar .widgettitle {
+	font-family: 'Poppins', sans-serif;
+	font-size: 12px;
+	font-size: 1.2rem;
+	font-weight: 700;
+	letter-spacing: 1px;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+}
+
+.sidebar .widget {
+	margin-bottom: 80px;
+	margin-top: 250px;
+	padding:20px;
+	font-size: 16px;
+	font-weight:bold;
+	text-decoration: none;
+	border: none;
+
+}
+
+.sidebar a {
+	border-bottom: 0px solid #232525;
+	color: #232525;
+	text-decoration: none;
+}
+
+.sidebar a:focus,
+.sidebar a:hover {
+	border-bottom: 0px solid #e85555;
+	color: #0b72b7;
+}
+
+.sidebar p:last-child,
+.sidebar .ul li:last-child,
+.sidebar .widget:last-child {
+	margin-bottom: 0;
+}
+
+.sidebar ul li {
+	margin-bottom: 10px;
+}
+
+.sidebar p:last-child {
+	margin-bottom: 0;
+}
+
+/* Widget Sub Nav End */
+
 #front-page-2 .flexible-widgets {
 	display: flex;
 	flex-flow: row wrap;
