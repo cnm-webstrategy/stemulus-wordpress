@@ -65,6 +65,12 @@ jQuery(document).ready(function($) {
 		}
 	})
 
+	/*********
+	 * sticky sidebar
+	 * by Gene Higgins
+	 * inspired by http://codepen.io/perminder-klair/pen/tdzue
+	 */
+
 	// Does the sidebar exist?
 	if(!!$('#genesis-sidebar-primary').offset()) {
 
@@ -75,7 +81,10 @@ jQuery(document).ready(function($) {
 
 		// create an element after the sidebar and before the footer
 		// that will detect a collision with the top of the page
-		$('#genesis-footer-widgets').before('<div class="sticky-stopper"></div>');
+		// if it doesn't already exist
+		if (!$('.sticky-stopper').offset()) {
+			$('#genesis-footer-widgets').before('<div class="sticky-stopper"></div>');
+		}
 		var $stickyStopper = $('.sticky-stopper');
 		// get the sticky-stopper's position, taking into account the height of the sidebar
 		var stopPoint = $stickyStopper.offset().top - $sidebar.innerHeight() ;
