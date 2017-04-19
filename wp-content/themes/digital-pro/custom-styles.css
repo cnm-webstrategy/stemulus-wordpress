@@ -183,6 +183,8 @@ body {
 
 /* Widget Sub Nav End */
 
+/* Front page widgets */
+
 #front-page-2 .flexible-widgets {
 	display: flex;
 	flex-flow: row wrap;
@@ -239,6 +241,8 @@ body {
 	position: fixed;
 	top: 0;
 }
+
+/* Stink foot!  as in the frank zappa classic */
 
 #sticky-footer {
 
