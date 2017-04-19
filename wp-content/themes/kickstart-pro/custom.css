@@ -1,0 +1,74 @@
+h1, h2, h3, h4, .entry-header, .widgettitle, .widget-title {
+	font-family: 'Tungsten A', 'Tungsten B', Open Sans, sans-serif;
+}
+
+h1 a, h2 a, h3 a, h4 a {
+	font-family: 'Tungsten A', 'Tungsten B', Open Sans, sans-serif;
+}
+
+a {
+    color: #477bb8;
+    font-weight: bolder;
+}
+
+#text-2 h3.widget-title {
+	font-size: 30px;
+	font-weight: 400;
+}
+
+.home-row1 .widget-title, .home-row4 .widget-title, .home-row6 .widget-title {
+    text-align: left;
+}
+
+/* homepage widget area */
+.home-row1 .textwidget ul li {
+    color: #fff;
+    list-style-type: disc;
+    list-style-position: inside;
+    opacity: 1;
+    margin-left: 20px;
+    padding-left: 20px;
+    text-indent: -2em;
+}
+
+@media only screen and (max-width: 1023px) {
+/*	.site-inner {
+		position: relative;
+		top: -30px;
+	}*/
+	.backstretch img {
+		position: relative !important;
+		top: 384px !important;
+		left: 40% !important;
+    	transform: translate(-50%, -50%);
+	}
+	
+}
+
+@media only screen and (max-width: 900px) {
+	/*.site-inner {
+		position: relative;
+		top: -115px;
+	}*/
+	.backstretch img {
+		position: relative !important;
+		top: 384px !important;
+		left: 40% !important;
+    	transform: translate(-50%, -50%);
+	}
+	.header-image .site-header .wrap {
+		background-image: url(images/logo-mobile.png);
+		background-size: 268px 48px;
+	}
+
+	.genesis-nav-menu .current-menu-item > a {
+		background-color: #23548d;
+	}
+
+}
+
+@media only screen and (max-width: 480px) {
+	.backstretch img {
+		left: 24% !important;
+	}
+}
