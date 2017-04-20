@@ -19,7 +19,7 @@ jQuery(document).ready(function($) {
 
 		console.log( footerTop , $('#genesis-footer-widgets').offset().top );
 
-		if ( footerTop < $footerWidgetsTop ) {
+		if ( footerTop < $footerWidgetsTop && $(window).scrollTop() > 1000 ) {
 			$stickyFooter.fadeIn();
 		} else {
 			$stickyFooter.fadeOut();
