@@ -10,6 +10,11 @@ jQuery(document).ready(function($) {
 
 	var footerHeight = $stickyFooter.innerHeight();
 	var footerTop = ($(window).scrollTop()+$(window).height()-footerHeight)+"px";
+
+	// number of pixels that need to scroll before sticky footer shows
+	var dontShowBeforePx = 1000;
+
+	//sticky footer initial position
 	$stickyFooter.css({position: 'absolute', top: footerTop})
 
 	$(document).scroll(function() {
@@ -19,7 +24,7 @@ jQuery(document).ready(function($) {
 
 		console.log( footerTop , $('#genesis-footer-widgets').offset().top );
 
-		if ( footerTop < $footerWidgetsTop && $(window).scrollTop() > 1000 ) {
+		if ( footerTop < $footerWidgetsTop && $(window).scrollTop() > dontShowBeforePx ) {
 			$stickyFooter.fadeIn();
 		} else {
 			$stickyFooter.fadeOut();
