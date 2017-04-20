@@ -113,6 +113,11 @@ jQuery(document).ready(function($) {
 		// get the sticky-stopper's position, taking into account the height of the sidebar
 		var stopPoint = $stickyStopper.offset().top - $sidebar.innerHeight() ;
 
+		// don't make sidebar fixed if in mobile view
+		$(window).resize(function(){
+			console.log('resize')
+		})
+
 		// start paying attention to the scroll event
 		$(document).scroll(function() {
 			var padding = 10;
@@ -128,14 +133,23 @@ jQuery(document).ready(function($) {
 			if( stopPoint < $(window).scrollTop() + padding ){
 				// check if the stopPoint has hit the top of the page
 				// this is the bottom of the scroll
-				$sidebar.css({ position: 'absolute', top: stopPoint })
+				if( $(window).width() > 800) {
+					$sidebar.css({ position: 'absolute', top: stopPoint })
+				} else {
+					$sidebar.css({ position: 'static', top: 'initial' });
+				}
+
 			} else if ($sidebarInitialTop > $(window).scrollTop() + padding) {
 				// check if the sidebar's initial top has not yet scrolled to the top of the page
 				// this is the top of the scroll, i.e. the initial state
 				$sidebar.css({position: 'absolute', top: 'initial'})
 			} else {
 				// this is the scrolling behavior, i.e. fixed position
-				$sidebar.css({position: 'fixed', top:  padding})
+				if( $(window).width() > 800) {
+					$sidebar.css({position: 'fixed', top: padding})
+				} else {
+					$sidebar.css({ position: 'absolute', top: 'initial' });
+				}
 			}
 		})
 	}
