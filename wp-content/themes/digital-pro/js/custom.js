@@ -113,13 +113,7 @@ jQuery(document).ready(function($) {
 		// get the sticky-stopper's position, taking into account the height of the sidebar
 		var stopPoint = $stickyStopper.offset().top - $sidebar.innerHeight() ;
 
-		// don't make sidebar fixed if in mobile view
-		$(window).resize(function(){
-			console.log('resize')
-		})
-
-		// start paying attention to the scroll event
-		$(document).scroll(function() {
+		var positionSidebar = function() {
 			var padding = 10;
 
 			// determine if wpadminbar is visible, if so add its height to padding
@@ -151,6 +145,13 @@ jQuery(document).ready(function($) {
 					$sidebar.css({ position: 'absolute', top: 'initial' });
 				}
 			}
-		})
+		}
+
+		positionSidebar();
+
+		// don't make sidebar fixed if in mobile view
+		$(window).resize(positionSidebar);
+		// start paying attention to the scroll event
+		$(document).scroll(positionSidebar);
 	}
 })
