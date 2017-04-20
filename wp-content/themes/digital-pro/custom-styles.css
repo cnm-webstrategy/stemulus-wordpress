@@ -1,17 +1,17 @@
 /* Typography begin */
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Vitesse', sans-serif;
+    font-family: 'Vitesse A', 'Vitesse B', sans-serif;
 
 }
 
 
 .site-title {
-    font-family: 'Vitesse', sans-serif;
+    font-family: 'Vitesse A', 'Vitesse B', sans-serif;
 }
 
 .featured-content p.entry-meta {
-	font-family: 'Vitesse', sans-serif;
+	font-family: 'Vitesse A', 'Vitesse B', sans-serif;
 	/*font-size: 10px;
 	font-size: 1rem;
 	font-weight: 400;
@@ -41,7 +41,7 @@ body {
 
 
 .front-page-1 .widget_text .widget-title {
-    font-family: 'Vitesse', sans-serif;
+    font-family: 'Vitesse A', 'Vitesse B', sans-serif;
     font-size: 84px;
     font-size: 8.4rem;
     font-weight: 600;
