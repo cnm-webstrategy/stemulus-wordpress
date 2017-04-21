@@ -4,8 +4,9 @@
 jQuery(document).ready(function($) {
 
 		//create sticky footer element on non-front-page pages
-	if($('body').hasClass("needs-sticky-footer")) {
-		$('body').append('<div id="sticky-footer">this is sticky footer</div>');
+
+	if(!$('body').hasClass("front-page")) {
+		$('body').append('<div id="sticky-footer"><div style="float:left;padding: 20px 0 0 400px;"><h5>Ready to reboot your career?</h5></div>  <a href="/apply-now/" class="button entry-content text-widget" style="float:right;text-align:center;width:200px;margin-right:150px;" >Apply Now</a>  </div>');
 		var $stickyFooter = $('#sticky-footer');
 		var $footerWidgetsTop = $('#genesis-footer-widgets').offset().top;
 
