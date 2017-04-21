@@ -37,17 +37,6 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-.page .entry-content,
-.single .entry-content {
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 760px;
-}
-.page .entry-header, .single .entry-header {
-    margin: 0 auto 5%;
-    max-width: 760px;
-}
-
 .page .entry-title, .single .entry-title {
     font-size: 48px;
     font-size: 4.8rem;
@@ -83,13 +72,6 @@ textarea {
 	color: #5b5e5e;
 	font-family: 'Roboto', sans-serif;
 	
-}
-
-.footer-widgets .widget-title {
-	font-size: 22px;
-	font-size: 2.2rem;
-	letter-spacing: -1px;
-	text-align: left;
 }
 
 /* Typography end */
@@ -181,7 +163,6 @@ textarea {
 	margin-bottom: 25px;
 	text-transform: uppercase;
 	color: #0b72b7;
-	text-align:left;
 	}
 
 .sidebar .widget {
@@ -333,16 +314,6 @@ h2:before {
 .front-page-1 .widget-title {
 	color: #232525;
 }
-
-/*.front-page-1 .widget_text .widget-title {
-	font-family: 'Poppins', sans-serif;
-	font-size: 84px;
-	font-size: 8.4rem;
-	font-weight: 600;
-	letter-spacing: -3px;
-	margin-bottom: 0;
-	text-transform: none;
-}*/
 
 .front-page-1 p {
 	font-size: 24px;
