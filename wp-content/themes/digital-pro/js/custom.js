@@ -4,34 +4,38 @@
 jQuery(document).ready(function($) {
 
 		//create sticky footer element on non-front-page pages
-	if(!$('body').hasClass("front-page")) {
+	if($('body').hasClass("needs-sticky-footer")) {
 		$('body').append('<div id="sticky-footer">this is sticky footer</div>');
 		var $stickyFooter = $('#sticky-footer');
 		var $footerWidgetsTop = $('#genesis-footer-widgets').offset().top;
 
 		var footerHeight = $stickyFooter.innerHeight();
-		var footerTop = ($(window).scrollTop() + $(window).height() - footerHeight) + "px";
+		var footerTopInitial = ($(window).scrollTop() + $(window).height() - footerHeight) + "px";
 
 		// number of pixels that need to scroll before sticky footer shows
+		// or, this can be a percentage
 		var dontShowBeforePx = 1000;
 
-		//sticky footer initial position
-		$stickyFooter.css({position: 'absolute', top: footerTop})
-
-		$(document).scroll(function () {
-			// temporarily show sticky footer at bottom of window
-			footerTop = ($(window).scrollTop() + $(window).height() - footerHeight);
-			$stickyFooter.css({position: 'absolute', top: footerTop})
-
-			console.log(footerTop, $('#genesis-footer-widgets').offset().top);
-
+		var showStickyFooter = function(footerTop) {
 			if (footerTop < $footerWidgetsTop && $(window).scrollTop() > dontShowBeforePx) {
 				$stickyFooter.fadeIn();
 			} else {
 				$stickyFooter.fadeOut();
 			}
+		}
+
+		//sticky footer initial position
+		showStickyFooter(footerTopInitial);
+
+		$(document).scroll(function () {
+			// temporarily show sticky footer at bottom of window
+			var footerTopNow = ($(window).scrollTop() + $(window).height() - footerHeight);
+			$stickyFooter.css({position: 'absolute', top: footerTopNow})
+
+			showStickyFooter(footerTopNow);
 		})
 	}
+
 	/*********
 	 * sticky sidebar
 	 * by Gene Higgins
