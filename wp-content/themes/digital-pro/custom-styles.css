@@ -36,6 +36,17 @@ body {
     margin: 0;
     -webkit-font-smoothing: antialiased;
 }
+
+.site-header {
+	background-color: #fff;
+	border-bottom: 3px solid transparent;
+	padding: 28px 30px;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 999;
+}
+
 /*good for now max-width fix*/
 .page .entry-content,
 .single .entry-content {
@@ -55,7 +66,6 @@ body {
     border-bottom: 6px solid #ffd007;
     /* letter-spacing: -3px; */
 }
-
 
 .front-page-1 .widget_text .widget-title {
     font-family: 'Vitesse A', 'Vitesse B', sans-serif;
@@ -147,7 +157,7 @@ textarea {
 
 .genesis-nav-menu .sub-menu,
 .genesis-nav-menu .sub-menu a {
-	width: 180px;
+	width: 220px;
 }
 
 .genesis-nav-menu .sub-menu .sub-menu {
@@ -155,7 +165,7 @@ textarea {
 }
 
 .genesis-nav-menu .sub-menu a {
-	border: 1px solid #eee;
+	border-bottom: 3px solid #eee;
 	border-top: 0;
 	padding: 15px;
 	position: relative;
