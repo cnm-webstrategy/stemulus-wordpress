@@ -69,12 +69,8 @@ body {
 }
 
 .front-page-1 .widget_text .widget-title {
-<<<<<<< HEAD
-    font-family: 'Vitesse A', sans-serif;
 
-=======
     font-family: 'Vitesse A', 'Vitesse B', sans-serif;
->>>>>>> 53a8e1321179e1d676d7e98f8085b3fa72dde983
     font-size: 84px;
     font-size: 8.4rem;
     font-weight: 600;
