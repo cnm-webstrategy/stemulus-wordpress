@@ -173,17 +173,19 @@ textarea {
 	border-bottom: 3px solid #fff;
 }
 
-.genesis-nav-menu a:focus,
-.genesis-nav-menu a:hover,
-.genesis-nav-menu .current-menu-item > a {
-	color: #000;/*#e85555;*/
+.genesis-nav-menu a:hover {
+	color: #000000;
 	background-color: #f8f8f8;
 	border-bottom: 3px solid #ffd007;
 }
 
-.genesis-nav-menu a:hover {
-	color:#000;
+.genesis-nav-menu a:focus,
+.genesis-nav-menu .current-menu-item > a {
+	color: #000;
+	background-color: #f8f8f8;
+	border-bottom: 3px solid #ffd007;
 }
+
 
 .genesis-nav-menu .sub-menu {
 	background-color: #fff;
