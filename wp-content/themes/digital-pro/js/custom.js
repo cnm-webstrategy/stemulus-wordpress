@@ -4,34 +4,40 @@
 jQuery(document).ready(function($) {
 
 		//create sticky footer element on non-front-page pages
+
 	if(!$('body').hasClass("front-page")) {
-		$('body').append('<div id="sticky-footer"><div style="float:left;padding: 20px 0 0 400px;"><h5>Ready to reboot your career?</h5></div>  <a href="/apply-now/" class="button entry-content text-widget" style="float:right;text-align:center;width:200px;margin-right:150px;" >Apply Now</a>  </div>');
+		$('body').append('<div id="sticky-footer"><div class="flex"><h5>Ready to reboot your career?</h5>  <div><a href="/apply-now/" class="button entry-content text-widget"  >Apply Now</a></div> </div> </div>');
+		//$('body').append('<div id="sticky-footer"><div style="float:left;padding: 20px 0 0 400px;"><h5>Ready to reboot your career?</h5></div>  <a href="/apply-now/" class="button entry-content text-widget" style="float:right;text-align:center;width:200px;margin-right:150px;" >Apply Now</a>  </div>');
 		var $stickyFooter = $('#sticky-footer');
 		var $footerWidgetsTop = $('#genesis-footer-widgets').offset().top;
 
 		var footerHeight = $stickyFooter.innerHeight();
-		var footerTop = ($(window).scrollTop() + $(window).height() - footerHeight) + "px";
+		var footerTopInitial = ($(window).scrollTop() + $(window).height() - footerHeight) + "px";
 
 		// number of pixels that need to scroll before sticky footer shows
+		// or, this can be a percentage
 		var dontShowBeforePx = 1000;
 
-		//sticky footer initial position
-		$stickyFooter.css({position: 'absolute', top: footerTop})
-
-		$(document).scroll(function () {
-			// temporarily show sticky footer at bottom of window
-			footerTop = ($(window).scrollTop() + $(window).height() - footerHeight);
-			$stickyFooter.css({position: 'absolute', top: footerTop})
-
-			console.log(footerTop, $('#genesis-footer-widgets').offset().top);
-
+		var showStickyFooter = function(footerTop) {
 			if (footerTop < $footerWidgetsTop && $(window).scrollTop() > dontShowBeforePx) {
 				$stickyFooter.fadeIn();
 			} else {
 				$stickyFooter.fadeOut();
 			}
+		}
+
+		//sticky footer initial position
+		showStickyFooter(footerTopInitial);
+
+		$(document).scroll(function () {
+			// temporarily show sticky footer at bottom of window
+			var footerTopNow = ($(window).scrollTop() + $(window).height() - footerHeight);
+			$stickyFooter.css({position: 'absolute', top: footerTopNow})
+
+			showStickyFooter(footerTopNow);
 		})
 	}
+
 	/*********
 	 * sticky sidebar
 	 * by Gene Higgins

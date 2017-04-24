@@ -1,6 +1,7 @@
 /* Typography begin */
 
 h1, h2, h3, h4, h5, h6 {
+
     font-family: 'Vitesse A', 'Vitesse B', sans-serif;
 
 }
@@ -105,6 +106,7 @@ body {
 }
 
 .front-page-1 .widget_text .widget-title {
+
     font-family: 'Vitesse A', 'Vitesse B', sans-serif;
     font-size: 84px;
     font-size: 8.4rem;
@@ -129,7 +131,7 @@ select,
 textarea {
 	color: #5b5e5e;
 	font-family: 'Roboto', sans-serif;
-	
+
 }
 
 .footer-widgets .widget-title {
@@ -338,12 +340,13 @@ textarea {
 
 /* anchor menu offset */
 
-h2:before { 
-  display: block; 
-  content: " "; 
-  margin-top: -100px; 
-  height: 100px; 
-  visibility: hidden; 
+
+h2:before {
+  display: block;
+  content: " ";
+  margin-top: -100px;
+  height: 100px;
+  visibility: hidden;
   transition-timing-function: ease-out;
   transition: 0.25s;
   transform: translateY(0);
@@ -407,7 +410,7 @@ h2:before {
 .front-page-2 .flexible-widgets .widget:nth-child(even) {
 	clear: none;
 	padding-left: 8%;
-	border-right: 1px solid #eee; 
+	border-right: 1px solid #eee;
 }
 
 .front-page-3 {
@@ -431,7 +434,7 @@ h2:before {
     text-indent: -2em;
 }
 
-/* Stink foot!  as in the frank zappa classic */
+/* Stink foot!  as in the frank zappa classiccc */
 
 #sticky-footer {
 
@@ -442,7 +445,19 @@ h2:before {
 	padding: 20px;
 	color:#2d2d2d;
 	vertical-align: middle;
+}
+#sticky-footer .flex {
+	display: flex;
+	justify-content: center;
+}
 
+#sticky-footer .flex h5 {
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-right: 20px;
+}
+#sticky-footer .flex div {
+	text-align: center;
 }
 
 @media only screen and (max-width: 800px) {
