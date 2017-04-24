@@ -1,19 +1,24 @@
 /* Typography begin */
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Vitesse A', sans-serif;
 
+    font-family: 'Vitesse A', 'Vitesse B', sans-serif;
 
+}
+
+button, input[type="button"], input[type="reset"], input[type="submit"], .archive-pagination li a:focus, .archive-pagination li a:hover, .archive-pagination .active a, .button, .entry-content a.button, .footer-widgets-1, .textwidget a.button {
+    background-color: #ffd007;
+    border-color: #ffd007;
+    color: #000000;
 }
 
 
 .site-title {
-    font-family: 'Vitesse A', sans-serif;
+    font-family: 'Vitesse A', 'Vitesse B', sans-serif;
 }
 
 .featured-content p.entry-meta {
-	font-family: 'Vitesse A', sans-serif;
-
+	font-family: 'Vitesse A', 'Vitesse B', sans-serif;
 	/*font-size: 10px;
 	font-size: 1rem;
 	font-weight: 400;
@@ -33,6 +38,28 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+.site-header {
+	background-color: #fff;
+	border-bottom: 3px solid transparent;
+	padding: 28px 30px;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 999;
+}
+
+/*good for now max-width fix*/
+.page .entry-content,
+.single .entry-content {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 760px;
+}
+.page .entry-header, .single .entry-header {
+    margin: 0 auto 5%;
+    max-width: 760px;
+}
+
 .page .entry-title, .single .entry-title {
     font-size: 48px;
     font-size: 4.8rem;
@@ -41,19 +68,44 @@ body {
     /* letter-spacing: -3px; */
 }
 
-
 .front-page-1 .widget_text .widget-title {
+<<<<<<< HEAD
     font-family: 'Vitesse A', sans-serif;
 
+=======
+    font-family: 'Vitesse A', 'Vitesse B', sans-serif;
+>>>>>>> 53a8e1321179e1d676d7e98f8085b3fa72dde983
     font-size: 84px;
     font-size: 8.4rem;
     font-weight: 600;
     margin-bottom: 0;
-    text-transform: none;}
+    text-align: left;
+    text-transform: none;
+}
 
 .widget-title {
-    /*color: #0b72b7;*/
+    color: #2d2d2d;
     letter-spacing: 0px;
+    font-size: 18px;
+	font-size: 1.8rem;
+	text-align:center;
+	margin-bottom:20px;
+}
+
+
+input,
+select,
+textarea {
+	color: #5b5e5e;
+	font-family: 'Roboto', sans-serif;
+
+}
+
+.footer-widgets .widget-title {
+	font-size: 22px;
+	font-size: 2.2rem;
+	letter-spacing: -1px;
+	text-align: left;
 }
 
 /* Typography end */
@@ -111,7 +163,7 @@ body {
 
 .genesis-nav-menu .sub-menu,
 .genesis-nav-menu .sub-menu a {
-	width: 180px;
+	width: 220px;
 }
 
 .genesis-nav-menu .sub-menu .sub-menu {
@@ -119,7 +171,7 @@ body {
 }
 
 .genesis-nav-menu .sub-menu a {
-	border: 1px solid #eee;
+	border-bottom: 3px solid #eee;
 	border-top: 0;
 	padding: 15px;
 	position: relative;
@@ -145,6 +197,7 @@ body {
 	margin-bottom: 25px;
 	text-transform: uppercase;
 	color: #0b72b7;
+	text-align:left;
 	}
 
 .sidebar .widget {
@@ -202,29 +255,34 @@ body {
 }
 #front-page-2 .widget-wrap {
 	padding-top: 0;
-	height: 46em;
+	/*height: 46em;*/
 }
 #front-page-2 .widget-wrap .widget-title {
-	max-height: 70px;
+	/*max-height: 70px;
 	min-height: 70px;
-	overflow: hidden;
+	overflow: hidden;*/
 }
 #front-page-2 .textwidget > img {
-	min-width: 283px;
+	min-width: 90%;
 	height: auto;
+	text-align:center;
+	margin-bottom:20px;
 }
-#front-page-2 .textwidget > h4 {
-	padding-top: 20px;
+/*#front-page-2 .textwidget > h4 {
+	padding-top: 40px;
 	min-height: 120px;
 	max-height: 120px;
-}
+}*/
+
 #front-page-2 .textwidget {
 	display: flex;
 	flex-direction: column;
-	height: 100%;
+	/*height: 100%;*/
+	text-align:center;
 }
 #front-page-2 .textwidget * {
 	flex: 1;
+	text-align:center;
 }
 
 #front-page-3 .flexible-widgets {
@@ -248,23 +306,107 @@ body {
 h2:before {
   display: block;
   content: " ";
-  margin-top: -75px;
-  height: 75px;
-  visibility: hidden;
 
+  margin-top: -100px;
+  height: 100px;
+  visibility: hidden;
 }
 
-/* Stink foot!  as in the frank zappa classic */
+/*front page widget area alterations karl */
+
+/* Front Page 1
+--------------------------------------------- */
+
+.front-page-1 {
+	display: table;
+	margin-top: 90px;
+	overflow: hidden;
+	table-layout: fixed;
+	width: 100%;
+}
+
+.front-page-1 .wrap {
+	margin: 20px auto;
+	max-width: 1280px;
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
+.front-page-1 .widget {
+	margin-bottom: 40px;
+	background-color: rgba(255, 255, 255, .8);
+	padding:40px;
+}
+
+.front-page-1 .widget-area {
+	display: table-cell;
+	padding-top: 20px;
+	vertical-align: bottom;
+	width: 100%;
+}
+
+.front-page-1,
+.front-page-1 p,
+.front-page-1 .widget-title {
+	color: #232525;
+}
+
+/*.front-page-1 .widget_text .widget-title {
+	font-family: 'Poppins', sans-serif;
+	font-size: 84px;
+	font-size: 8.4rem;
+	font-weight: 600;
+	letter-spacing: -3px;
+	margin-bottom: 0;
+	text-transform: none;
+}*/
+
+.front-page-1 p {
+	font-size: 24px;
+	font-size: 2.4rem;
+}
+
+
+.front-page-2 .flexible-widgets .widget:nth-child(even) {
+	clear: none;
+	padding-left: 8%;
+	border-right: 1px solid #eee;
+}
+
+.front-page-3 {
+	background-color: #232525;
+	padding: 8% 4%;
+	text-align: center;
+}
+
+.front-page-3 .widget-title {
+	color: #ffd007;
+}
+
+/* Stink foot!  as in the frank zappa classiccc */
 
 #sticky-footer {
 
 	width: 100%;
-	height: 100px;
+	height: 110px;
 	background-color: #f8f8f8;
-	border-top:1px solid #eee;
+	border-top:3px solid #eee;
 	padding: 20px;
 	color:#2d2d2d;
+	vertical-align: middle;
+}
+#sticky-footer .flex {
+	display: flex;
+	justify-content: center;
+}
 
+#sticky-footer .flex h5 {
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-right: 20px;
+}
+#sticky-footer .flex div {
+	text-align: center;
 }
 
 @media only screen and (max-width: 800px) {
