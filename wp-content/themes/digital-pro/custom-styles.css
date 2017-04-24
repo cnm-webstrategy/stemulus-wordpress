@@ -1,29 +1,19 @@
 /* Typography begin */
 
 h1, h2, h3, h4, h5, h6 {
-<<<<<<< HEAD
     font-family: 'Vitesse A', sans-serif;
-=======
-    font-family: 'Vitesse', sans-serif;
->>>>>>> dc10a35550e64353453a059eb75232a11801195c
+
 
 }
 
 
 .site-title {
-<<<<<<< HEAD
     font-family: 'Vitesse A', sans-serif;
 }
 
 .featured-content p.entry-meta {
 	font-family: 'Vitesse A', sans-serif;
-=======
-    font-family: 'Vitesse', sans-serif;
-}
 
-.featured-content p.entry-meta {
-	font-family: 'Vitesse', sans-serif;
->>>>>>> dc10a35550e64353453a059eb75232a11801195c
 	/*font-size: 10px;
 	font-size: 1rem;
 	font-weight: 400;
@@ -53,11 +43,8 @@ body {
 
 
 .front-page-1 .widget_text .widget-title {
-<<<<<<< HEAD
     font-family: 'Vitesse A', sans-serif;
-=======
-    font-family: 'Vitesse', sans-serif;
->>>>>>> dc10a35550e64353453a059eb75232a11801195c
+
     font-size: 84px;
     font-size: 8.4rem;
     font-weight: 600;
@@ -258,21 +245,13 @@ body {
 
 /* anchor menu offset */
 
-<<<<<<< HEAD
 h2:before {
   display: block;
   content: " ";
   margin-top: -75px;
   height: 75px;
   visibility: hidden;
-=======
-h2:before { 
-  display: block; 
-  content: " "; 
-  margin-top: -75px; 
-  height: 75px; 
-  visibility: hidden; 
->>>>>>> dc10a35550e64353453a059eb75232a11801195c
+
 }
 
 /* Stink foot!  as in the frank zappa classic */
