@@ -461,5 +461,27 @@ h2:before {
 }
 
 @media only screen and (max-width: 800px) {
+	.front-page-1 .widget_text .widget-title {
+	font-size: 42px;
+    font-size: 4.2rem;
+    letter-spacing: 0px;
+}
+
+.front-page-1 .widget-area {
+	padding-top:0px;
+}
+
+}
+
+@media only screen and (max-width: 600px) {
+	.front-page-1 .widget_text .widget-title {
+	font-size: 32px;
+    font-size: 3.2rem;
+    letter-spacing: 0px;
+
+}
+.front-page-1 .widget-area {
+	padding-top:0px;
+}	
 
 }
