@@ -434,6 +434,17 @@ h2:before {
     text-indent: -2em;
 }
 
+/*  Footer Widgets 
+.footer-widgets a {
+	border-bottom-width: 0;
+	font-family: 'Poppins', sans-serif;
+	font-size: 14px;
+	font-size: 1.4rem;
+	font-weight: 600;
+	letter-spacing: 0.5px;
+	text-transform: uppercase;
+}*/
+
 /* Stink foot!  as in the frank zappa classiccc */
 
 #sticky-footer {
