@@ -6,6 +6,10 @@ h1 a, h2 a, h3 a, h4 a {
 	font-family: 'Tungsten A', 'Tungsten B', Open Sans, sans-serif;
 }
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> dc10a35550e64353453a059eb75232a11801195c
 a {
     color: #477bb8;
     font-weight: bolder;
@@ -42,7 +46,11 @@ a {
 		left: 40% !important;
     	transform: translate(-50%, -50%);
 	}
+<<<<<<< HEAD
+
+=======
 	
+>>>>>>> dc10a35550e64353453a059eb75232a11801195c
 }
 
 @media only screen and (max-width: 900px) {

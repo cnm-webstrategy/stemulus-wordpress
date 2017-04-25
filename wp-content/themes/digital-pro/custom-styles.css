@@ -1,6 +1,7 @@
 /* Typography begin */
 
 h1, h2, h3, h4, h5, h6 {
+
     font-family: 'Vitesse A', 'Vitesse B', sans-serif;
 
 }
@@ -11,6 +12,43 @@ button, input[type="button"], input[type="reset"], input[type="submit"], .archiv
     color: #000000;
 }
 
+/* instructors */
+
+
+.instructors-container {
+	padding: 40px 40px;
+	background-color:#f8f8f8;
+	border-top: 3px solid #eee;
+	border-bottom: 3px solid #eee;
+	margin: 40px 0;
+}
+
+.img-circle {
+    position: relative;
+  	width: 200px;
+  	height: 200px;
+  	overflow: hidden;
+  	border-radius: 50%;
+  	margin-bottom:10px;
+}
+
+
+.instructors {
+	font-family: 'Poppins', sans-serif;
+	color:#2d2d2d;
+	text-align:center;
+	text-transform:uppercase;
+	margin:20px;
+}
+
+.instructors a {
+	text-decoration: none;
+	border: none;
+}
+
+.instructors a:hover {
+	opacity: 0.8;
+}
 
 .site-title {
     font-family: 'Vitesse A', 'Vitesse B', sans-serif;
@@ -68,6 +106,7 @@ body {
 }
 
 .front-page-1 .widget_text .widget-title {
+
     font-family: 'Vitesse A', 'Vitesse B', sans-serif;
     font-size: 84px;
     font-size: 8.4rem;
@@ -171,14 +210,16 @@ textarea {
 	position: relative;
 }
 
-/*.genesis-nav-menu .menu-item:hover {
+.genesis-nav-menu .menu-item:hover {
 	position: static;
+
 }
 
 .genesis-nav-menu .menu-item:hover > .sub-menu {
 	left: auto;
 	opacity: 1;
-}*/
+
+}
 
 /*Widget Sub Nav */
 
@@ -297,12 +338,16 @@ textarea {
 
 /* anchor menu offset */
 
+
 h2:before {
   display: block;
   content: " ";
   margin-top: -100px;
   height: 100px;
   visibility: hidden;
+  transition-timing-function: ease-out;
+  transition: 0.25s;
+  transform: translateY(0);
 }
 
 /*front page widget area alterations karl */
@@ -369,11 +414,22 @@ h2:before {
 .front-page-3 {
 	background-color: #232525;
 	padding: 8% 4%;
-	text-align: center;
+	text-align: left;
 }
 
 .front-page-3 .widget-title {
 	color: #ffd007;
+	text-transform: none;
+	text-align: left;
+	padding-bottom: 10px;
+	border-bottom:3px solid #ffd007;
+}
+
+.front-page-3 li{
+    list-style-type: disc;
+    list-style-position: inside;
+    padding-left:30px;
+    text-indent: -2em;
 }
 
 /* Stink foot!  as in the frank zappa classiccc */
