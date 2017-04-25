@@ -402,6 +402,10 @@ h2:before {
 	text-align: center;
 }
 
+#sticky-footer .flex div a {
+	max-width: 200px;
+}
+
 @media only screen and (max-width: 800px) {
 
 }
