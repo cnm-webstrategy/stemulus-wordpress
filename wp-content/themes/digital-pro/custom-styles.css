@@ -119,8 +119,8 @@ body {
 .widget-title {
     color: #2d2d2d;
     letter-spacing: 0px;
-    font-size: 18px;
-	font-size: 1.8rem;
+    font-size: 20px;
+	font-size: 3rem;
 	text-align:center;
 	margin-bottom:20px;
 }
@@ -277,12 +277,12 @@ textarea {
 
 #front-page-2 .flexible-widgets {
 	display: flex;
-	flex-flow: row wrap;
+	flex-flow: column;
+	align-items: center;
 }
 #front-page-2 .widget {
 	flex: 1;
-	flex-wrap: wrap;
-	width: 33%;
+	width: 66%;
 	clear: none;
 	padding: 40px;
 	min-width: 306px;
@@ -293,9 +293,8 @@ textarea {
 	/*height: 46em;*/
 }
 #front-page-2 .widget-wrap .widget-title {
-	/*max-height: 70px;
-	min-height: 70px;
-	overflow: hidden;*/
+
+
 }
 #front-page-2 .textwidget > img {
 	min-width: 90%;
@@ -303,11 +302,7 @@ textarea {
 	text-align:center;
 	margin-bottom:20px;
 }
-/*#front-page-2 .textwidget > h4 {
-	padding-top: 40px;
-	min-height: 120px;
-	max-height: 120px;
-}*/
+
 
 #front-page-2 .textwidget {
 	display: flex;
@@ -319,9 +314,16 @@ textarea {
 	flex: 1;
 	text-align:center;
 }
+.front-page-2 .flexible-widgets.widget-halves .widget:nth-child(odd) {
+	border-right: none;
+}
+.front-page-2 .flexible-widgets.widget-halves .widget:nth-child(n+3) {
+	border-top: none;
+}
 
 #front-page-3 .flexible-widgets {
 	display: flex;
+	flex-direction: column;
 }
 #front-page-3 .widget {
 	flex: 1;
@@ -330,7 +332,14 @@ textarea {
 .front-page-2 .flexible-widgets.widget-full .widget-wrap, .front-page-2 .flexible-widgets.widget-halves.uneven .widget:last-of-type .widget-wrap {
 	padding-bottom: 21%;
 }
-
+.front-page-2 .flexible-widgets .widget:nth-child(even) {
+	clear: none;
+	padding-left: 8%;
+	border-right: 1px solid #eee;
+}
+.front-page-2 .flexible-widgets .widget:nth-child(even) {
+	border-right: none;
+}
 
 .sidebar.sidebar-primary.widget-area {
 	position: inherit;
@@ -405,11 +414,7 @@ h2:before {
 }
 
 
-.front-page-2 .flexible-widgets .widget:nth-child(even) {
-	clear: none;
-	padding-left: 8%;
-	border-right: 1px solid #eee;
-}
+
 
 .front-page-3 {
 	background-color: #232525;
@@ -462,6 +467,30 @@ h2:before {
 	max-width: 200px;
 }
 
-@media only screen and (max-width: 800px) {
-
+@media only screen and (min-width: 1200px) {
+	#front-page-2 .flexible-widgets {
+		flex-flow: row;
+		align-content: center;
+		align-items: flex-start;
+	}
+	#front-page-2 .widget {
+		width: 33%;
+	}
+	.widget-title {
+		font-size: 18px;
+		font-size: 1.8rem;
+	}
+	.front-page-2 .flexible-widgets.widget-halves .widget:nth-child(odd) {
+		border-right: 1px solid #eee;
+		clear: left;
+		padding-right: 8%;
+	}
+	.front-page-2 .flexible-widgets .widget:nth-child(even) {
+		clear: none;
+		padding-left: 8%;
+		border-right: 1px solid #eee;
+	}
+	#front-page-3 .flexible-widgets {
+		flex-direction: row;
+	}
 }
