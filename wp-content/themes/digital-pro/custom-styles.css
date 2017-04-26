@@ -35,7 +35,6 @@ button, input[type="button"], input[type="reset"], input[type="submit"], .archiv
 	height: auto;
 	text-align:center;
 	float:left;
-	border: 3px solid #eee;
 	margin: 0 0 30px 0;
 }
 
