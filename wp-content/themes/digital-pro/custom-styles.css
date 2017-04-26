@@ -36,7 +36,11 @@ button, input[type="button"], input[type="reset"], input[type="submit"], .archiv
 	text-align:center;
 	float:left;
 	border: 3px solid #eee;
-	margin: 0 30px 0 0;
+	margin: 0 0 30px 0;
+}
+
+.one-fourth {
+    text-align:center;
 }
 
 /* instructors */
