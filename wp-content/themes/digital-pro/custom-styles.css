@@ -20,7 +20,7 @@ button, input[type="button"], input[type="reset"], input[type="submit"], .archiv
 /* coding language div */
 
 .codingDiv {
-	padding: 10px 10px;
+	padding: 20px 10px 10px 10px;
 	background-color: #f8f8f8;
 	border-top: 3px solid #eee;
 	border-bottom: 3px solid #eee;
