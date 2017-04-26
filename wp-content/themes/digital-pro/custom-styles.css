@@ -39,13 +39,6 @@ button, input[type="button"], input[type="reset"], input[type="submit"], .archiv
 	margin: 0 30px 0 0;
 }
 
-.codingDiv p ul {
-	clear: all;
-	float:right;
-	width:300px;
-}
-
-
 /* instructors */
 
 .instructors-container {
