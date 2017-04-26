@@ -17,6 +17,18 @@ button, input[type="button"], input[type="reset"], input[type="submit"], .archiv
 	color: #000000;
 }
 
+/* homepage entry image */
+
+.featured-content img.entry-image {
+    max-width: 100%;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
 /* coding language div */
 
 .codingDiv {
