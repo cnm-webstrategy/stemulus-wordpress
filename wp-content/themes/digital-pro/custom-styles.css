@@ -17,6 +17,7 @@ button, input[type="button"], input[type="reset"], input[type="submit"], .archiv
 	color: #000000;
 }
 
+
 /* homepage entry image */
 
 .featured-content img.entry-image {
@@ -33,16 +34,10 @@ button, input[type="button"], input[type="reset"], input[type="submit"], .archiv
 
 .featured-content .more-link {
     border-width: 2px;
+    color:#0c72b7;
+    font-size: 1.4rem;
 }
 
-.more-link a {
-	font-size: 1.4rem;
-	color:#5db6e8;
-}
-
-.more-link a: hover {
-	color:#fff;
-}
 
 /* coding language div */
 
@@ -555,6 +550,12 @@ h2:before {
 }
 
 @media only screen and (min-width: 1200px) {
+
+	/* custom background image - not working yet 
+	.bgArt {
+		background-image: url("../images/art-bg-left.png") left center no-repeat fixed;
+	}*/
+
 	.front-page-1 .widget_text .widget-title {
 		font-size: 84px;
 		font-size: 8.4rem;
