@@ -1,9 +1,23 @@
 /**
  * Created by ehigginsiii on 4/18/17.
  */
-jQuery(document).ready(function($) {
 
+function fixJqmScrollBug() {
+	window.scrollTo(0, 1);
+	setTimeout(function() {
+		window.scrollTo(0, 0);
+	}, 500);
+}
+
+jQuery(document).ready(function($) {
+	fixJqmScrollBug();
 		//create sticky footer element on non-front-page pages
+
+	function isIOS(){
+		if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
+			return true;
+		}
+	};
 
 	if($('body').hasClass("needs-sticky-footer")) {
 		$('body').append('<div id="sticky-footer"><div class="flex"><h5>Ready to reboot your career?</h5>  <div><a href="/deepdive/apply-now/" class="button entry-content text-widget"  >Apply Now</a></div> </div> </div>');
@@ -19,6 +33,7 @@ jQuery(document).ready(function($) {
 		var dontShowBeforePx = 1000;
 
 		var showStickyFooter = function(footerTop) {
+			$stickyFooter.css({position: 'absolute', top: footerTop})
 			if (footerTop < $footerWidgetsTop && $(window).scrollTop() > dontShowBeforePx) {
 				$stickyFooter.fadeIn();
 			} else {
@@ -29,13 +44,25 @@ jQuery(document).ready(function($) {
 		//sticky footer initial position
 		showStickyFooter(footerTopInitial);
 
-		$(document).scroll(function () {
-			// temporarily show sticky footer at bottom of window
-			var footerTopNow = ($(window).scrollTop() + $(window).height() - footerHeight);
-			$stickyFooter.css({position: 'absolute', top: footerTopNow})
+		if (isIOS()){
+			$('body').css({ position: 'absolute', top: footerTop})
+			$(document).on({
+				'touchmove': function(e) {
+					var footerTopNow = ($(window).scrollTop() + screen.availHeight  - footerHeight + 28);
+					showStickyFooter(footerTopNow);
+				}
+			})
 
-			showStickyFooter(footerTopNow);
-		})
+		} else {
+			$(document).scroll(function () {
+
+					var footerTopNow = ($(window).scrollTop() + $(window).height() - footerHeight);
+					showStickyFooter(footerTopNow);
+
+			})
+		}
+
+
 	}
 
 	/*********
