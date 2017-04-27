@@ -2,15 +2,9 @@
  * Created by ehigginsiii on 4/18/17.
  */
 
-function fixJqmScrollBug() {
-	window.scrollTo(0, 1);
-	setTimeout(function() {
-		window.scrollTo(0, 0);
-	}, 500);
-}
 
 jQuery(document).ready(function($) {
-	fixJqmScrollBug();
+	//fixJqmScrollBug();
 		//create sticky footer element on non-front-page pages
 
 	function isIOS(){
@@ -87,8 +81,10 @@ jQuery(document).ready(function($) {
 			$('#genesis-footer-widgets').before('<div class="sticky-stopper"></div>');
 		}
 		var $stickyStopper = $('.sticky-stopper');
+
 		// get the sticky-stopper's position, taking into account the height of the sidebar
 		var stopPoint = $stickyStopper.offset().top - $sidebar.innerHeight() ;
+//console.log('howdy',$('.sticky-stopper').offset().top,$('#genesis-footer-widgets').offset().top )
 
 		var positionSidebar = function() {
 			var padding = 10;
@@ -100,8 +96,9 @@ jQuery(document).ready(function($) {
 
 			// add the header's height to padding
 			padding += $header.outerHeight();
-console.log(stopPoint, $(window).scrollTop() + padding)
-			if( stopPoint < $(window).scrollTop() + padding ){
+console.log($stickyStopper.offset().top - $sidebar.innerHeight(),$(window).scrollTop() + padding )
+//console.log(stopPoint, $(window).scrollTop() + padding, $sidebar.offset().top)
+			if( $stickyStopper.offset().top - $sidebar.innerHeight() < $(window).scrollTop() + padding ){
 				// check if the stopPoint has hit the top of the page
 				// this is the bottom of the scroll
 				if( $(window).width() > 800) {
