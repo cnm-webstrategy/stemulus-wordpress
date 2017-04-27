@@ -17,6 +17,10 @@ button, input[type="button"], input[type="reset"], input[type="submit"], .archiv
 	color: #000000;
 }
 
+p.entry-meta {
+    display: none;
+}
+
 
 /* homepage entry image */
 
