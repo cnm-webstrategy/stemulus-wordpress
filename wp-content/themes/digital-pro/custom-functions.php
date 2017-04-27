@@ -60,7 +60,7 @@ add_action('wp_head', 'GTM_script', 0);
 
 function add_GTM_code_to_body()
 {
-	$GTM_code = <<<EOT
+$GTM_code = <<<EOT
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src=“https://www.googletagmanager.com/ns.html?id=GTM-5JW9WBL”
 height=“0" width=“0” style=“display:none;visibility:hidden”></iframe></noscript>

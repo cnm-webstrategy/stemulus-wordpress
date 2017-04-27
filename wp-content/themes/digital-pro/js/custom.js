@@ -45,14 +45,9 @@ jQuery(document).ready(function($) {
 
 		var showStickyFooter = function(footerTop) {
 			$stickyFooter.css({position: 'absolute', top: footerTop})
-			// if( $stickyStopper.offset().top - $sidebar.innerHeight() < $(window).scrollTop() + padding ){
-			// if (footerTop < $footerWidgetsTop && $(window).scrollTop() > dontShowBeforePx) {
-// console.log($stickyStopper.offset().top - $('#genesis-sidebar-primary').innerHeight(),$(window).scrollTop() + padding, $(window).scrollTop() , dontShowBeforePx)
 			if ($stickyStopper.offset().top - $('#genesis-sidebar-primary').innerHeight() > $(window).scrollTop() + padding && $(window).scrollTop() > dontShowBeforePx) {
-				console.log('fadein')
 				$stickyFooter.fadeIn();
 			} else {
-				console.log('fadeout')
 				$stickyFooter.fadeOut(200);
 			}
 		}
@@ -105,7 +100,6 @@ jQuery(document).ready(function($) {
 
 		// get the sticky-stopper's position, taking into account the height of the sidebar
 		var stopPoint = $stickyStopper.offset().top - $sidebar.innerHeight() ;
-//console.log('howdy',$('.sticky-stopper').offset().top,$('#genesis-footer-widgets').offset().top )
 
 		var positionSidebar = function() {
 			var padding = 10;
@@ -117,8 +111,6 @@ jQuery(document).ready(function($) {
 
 			// add the header's height to padding
 			padding += $header.outerHeight();
-// console.log($stickyStopper.offset().top - $sidebar.innerHeight(),$(window).scrollTop() + padding )
-//console.log(stopPoint, $(window).scrollTop() + padding, $sidebar.offset().top)
 			if( $stickyStopper.offset().top - $sidebar.innerHeight() < $(window).scrollTop() + padding ){
 				// check if the stopPoint has hit the top of the page
 				// this is the bottom of the scroll
