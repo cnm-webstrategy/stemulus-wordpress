@@ -15,6 +15,22 @@ jQuery(document).ready(function($) {
 
 	if($('body').hasClass("needs-sticky-footer")) {
 
+
+		// create an element after the sidebar and before the footer
+		// that will detect a collision with the top of the page
+		// if it doesn't already exist
+		if (!$('.sticky-stopper').offset()) {
+			$('#genesis-footer-widgets').before('<div class="sticky-stopper"></div>');
+		}
+		var $stickyStopper = $('.sticky-stopper');
+
+		var padding = 150;
+
+		// determine if wpadminbar is visible, if so add its height to padding
+		if (!!$('#wpadminbar').offset()) {
+			padding += $('#wpadminbar').height();
+		}
+
 		$('body').append('<div id="sticky-footer"><div class="flex"><h5>Ready to reboot your career?</h5>  <div><a href="/deepdive/apply-now/" class="button entry-content text-widget"  >Apply Now</a></div> </div> </div>');
 		//$('body').append('<div id="sticky-footer"><div style="float:left;padding: 20px 0 0 400px;"><h5>Ready to reboot your career?</h5></div>  <a href="/apply-now/" class="button entry-content text-widget" style="float:right;text-align:center;width:200px;margin-right:150px;" >Apply Now</a>  </div>');
 		var $stickyFooter = $('#sticky-footer');
@@ -29,9 +45,14 @@ jQuery(document).ready(function($) {
 
 		var showStickyFooter = function(footerTop) {
 			$stickyFooter.css({position: 'absolute', top: footerTop})
-			if (footerTop < $footerWidgetsTop && $(window).scrollTop() > dontShowBeforePx) {
+			// if( $stickyStopper.offset().top - $sidebar.innerHeight() < $(window).scrollTop() + padding ){
+			// if (footerTop < $footerWidgetsTop && $(window).scrollTop() > dontShowBeforePx) {
+console.log($stickyStopper.offset().top - $('#genesis-sidebar-primary').innerHeight(),$(window).scrollTop() + padding, $(window).scrollTop() , dontShowBeforePx)
+			if ($stickyStopper.offset().top - $('#genesis-sidebar-primary').innerHeight() > $(window).scrollTop() + padding && $(window).scrollTop() > dontShowBeforePx) {
+				console.log('fadein')
 				$stickyFooter.fadeIn();
 			} else {
+				console.log('fadeout')
 				$stickyFooter.fadeOut();
 			}
 		}
@@ -96,13 +117,13 @@ jQuery(document).ready(function($) {
 
 			// add the header's height to padding
 			padding += $header.outerHeight();
-console.log($stickyStopper.offset().top - $sidebar.innerHeight(),$(window).scrollTop() + padding )
+// console.log($stickyStopper.offset().top - $sidebar.innerHeight(),$(window).scrollTop() + padding )
 //console.log(stopPoint, $(window).scrollTop() + padding, $sidebar.offset().top)
 			if( $stickyStopper.offset().top - $sidebar.innerHeight() < $(window).scrollTop() + padding ){
 				// check if the stopPoint has hit the top of the page
 				// this is the bottom of the scroll
 				if( $(window).width() > 800) {
-					$sidebar.css({ position: 'absolute', top: stopPoint })
+					$sidebar.css({ position: 'absolute', top: $stickyStopper.offset().top - $sidebar.innerHeight() })
 				} else {
 					$sidebar.css({ position: 'static', top: 'initial' });
 				}
