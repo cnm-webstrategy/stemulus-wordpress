@@ -8,10 +8,66 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 
+hr {
+    margin: 0 0 20px;
+    padding-top: 20px;
+}
+
 button, input[type="button"], input[type="reset"], input[type="submit"], .archive-pagination li a:focus, .archive-pagination li a:hover, .archive-pagination .active a, .button, .entry-content a.button, .footer-widgets-1, .textwidget a.button {
 	background-color: #ffd007;
 	border-color: #ffd007;
 	color: #000000;
+}
+
+p.entry-meta {
+    display: none;
+}
+
+
+/* homepage entry image */
+
+.featured-content img.entry-image {
+    max-width: 100%;
+    position: relative;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* homepage More link */
+
+.featured-content .more-link {
+    border-width: 2px;
+    color:#0c72b7;
+    font-size: 1.4rem;
+}
+
+
+/* coding language div */
+
+.codingDiv {
+	padding: 20px 10px 10px 10px;
+	background-color: #f8f8f8;
+	border-top: 3px solid #eee;
+	border-bottom: 3px solid #eee;
+	margin: 0 0 30px 0;
+	width: 100%;
+	float:left;
+}
+
+.codingDiv img {
+
+	max-width: 150px;
+	height: auto;
+	text-align:center;
+	float:left;
+	margin: 0 0 30px 0;
+}
+
+.one-fourth {
+    text-align:center;
 }
 
 /* instructors */
@@ -85,6 +141,13 @@ body {
 	width: 100%;
 	z-index: 999;
 }
+
+/*background image 
+
+.page .content, .single .content {
+    overflow: hidden;
+    background-image: url() repeat:none;
+}*/
 
 /*good for now max-width fix*/
 .page .entry-content,
@@ -231,7 +294,7 @@ textarea {
 }
 
 .sidebar .widget {
-	margin-bottom: 80px;
+	margin-bottom: 20px;
 	padding: 20px;
 	font-size: 16px;
 	font-weight: bold;
@@ -493,6 +556,12 @@ h2:before {
 }
 
 @media only screen and (min-width: 1200px) {
+
+	/* custom background image - not working yet 
+	.bgArt {
+		background-image: url("../images/art-bg-left.png") left center no-repeat fixed;
+	}*/
+
 	.front-page-1 .widget_text .widget-title {
 		font-size: 84px;
 		font-size: 8.4rem;
