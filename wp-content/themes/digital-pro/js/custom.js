@@ -47,13 +47,13 @@ jQuery(document).ready(function($) {
 			$stickyFooter.css({position: 'absolute', top: footerTop})
 			// if( $stickyStopper.offset().top - $sidebar.innerHeight() < $(window).scrollTop() + padding ){
 			// if (footerTop < $footerWidgetsTop && $(window).scrollTop() > dontShowBeforePx) {
-console.log($stickyStopper.offset().top - $('#genesis-sidebar-primary').innerHeight(),$(window).scrollTop() + padding, $(window).scrollTop() , dontShowBeforePx)
+// console.log($stickyStopper.offset().top - $('#genesis-sidebar-primary').innerHeight(),$(window).scrollTop() + padding, $(window).scrollTop() , dontShowBeforePx)
 			if ($stickyStopper.offset().top - $('#genesis-sidebar-primary').innerHeight() > $(window).scrollTop() + padding && $(window).scrollTop() > dontShowBeforePx) {
 				console.log('fadein')
 				$stickyFooter.fadeIn();
 			} else {
 				console.log('fadeout')
-				$stickyFooter.fadeOut();
+				$stickyFooter.fadeOut(200);
 			}
 		}
 
