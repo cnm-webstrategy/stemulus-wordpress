@@ -100,7 +100,7 @@ jQuery(document).ready(function($) {
 
 			// add the header's height to padding
 			padding += $header.outerHeight();
-
+console.log(stopPoint, $(window).scrollTop() + padding)
 			if( stopPoint < $(window).scrollTop() + padding ){
 				// check if the stopPoint has hit the top of the page
 				// this is the bottom of the scroll
