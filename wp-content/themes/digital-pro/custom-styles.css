@@ -142,7 +142,7 @@ body {
 	z-index: 999;
 }
 
-/*background image 
+/*background image
 
 .page .content, .single .content {
     overflow: hidden;
@@ -557,7 +557,7 @@ h2:before {
 
 @media only screen and (min-width: 1200px) {
 
-	/* custom background image - not working yet 
+	/* custom background image - not working yet
 	.bgArt {
 		background-image: url("../images/art-bg-left.png") left center no-repeat fixed;
 	}*/

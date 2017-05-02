@@ -52,19 +52,26 @@ jQuery(document).ready(function($) {
 			}
 		}
 
-		//sticky footer initial position
-		showStickyFooter(footerTopInitial);
+
 
 		if (isIOS()){
-			$('body').css({ position: 'absolute', top: footerTop})
+			$stickyFooter.css({
+				position: 'fixed',
+				top: $(window).height(),
+				display: 'block'
+			})
+			 console.log($(window).height(), footerHeight)
 			$(document).on({
-				'touchmove': function(e) {
-					var footerTopNow = ($(window).scrollTop() + screen.availHeight  - footerHeight + 28);
-					showStickyFooter(footerTopNow);
-				}
+				// 'touchmove': function(e) {
+				// 	var footerTopNow = ($(window).scrollTop() + screen.availHeight  - footerHeight + 28);
+				// 	showStickyFooter(footerTopNow);
+				// }
 			})
 
 		} else {
+			//sticky footer initial position
+			showStickyFooter(footerTopInitial);
+
 			$(document).scroll(function () {
 
 					var footerTopNow = ($(window).scrollTop() + $(window).height() - footerHeight);
