@@ -409,6 +409,7 @@ textarea {
 
 .sidebar.sidebar-primary.widget-area {
 	position: inherit;
+	display: none;
 }
 
 /* anchor menu offset */
@@ -533,6 +534,27 @@ h2:before {
 	max-width: 200px;
 }
 
+#sticky-footer a.button {
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 1rem;
+}
+
+/* everything except small mobile */
+@media only screen and (min-width: 600px) {
+
+	.sidebar.sidebar-primary.widget-area {
+		display: block;
+	}
+
+	#sticky-footer a.button {
+		display: table-cell;
+		vertical-align: middle;
+		font-size: 1rem;
+	}
+}
+
+/* small tablet */
 @media only screen and (min-width: 600px) and (max-width: 800px) {
 	.front-page-1 .widget_text .widget-title {
 		font-size: 52px;
@@ -546,6 +568,7 @@ h2:before {
 
 }
 
+/* large tablet */
 @media only screen and (min-width: 800px) and (max-width: 1200px) {
 
 		.front-page-1 .widget_text .widget-title {
@@ -555,6 +578,7 @@ h2:before {
 	}
 }
 
+/* desktop */
 @media only screen and (min-width: 1200px) {
 
 	/* custom background image - not working yet
