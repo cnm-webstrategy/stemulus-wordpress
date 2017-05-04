@@ -596,8 +596,13 @@ will work up 800px, and then this will will do pretty much the same thing betwee
 
 	.menu-toggle:hover {
 		background: transparent;
-		color: #e85555;
+		color: #0b72b7;
 		border-width: 0;
+	}
+
+	.menu-toggle:focus {
+		background: transparent;
+	
 	}
 
 	nav.genesis-responsive-menu {
