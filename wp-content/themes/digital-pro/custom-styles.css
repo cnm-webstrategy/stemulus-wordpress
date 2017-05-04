@@ -594,6 +594,12 @@ will work up 800px, and then this will will do pretty much the same thing betwee
 		width: 100%;
 	}
 
+	.menu-toggle:hover {
+		background: transparent;
+		color: #e85555;
+		border-width: 0;
+	}
+
 	nav.genesis-responsive-menu {
 		display: none;
 		position: relative;
