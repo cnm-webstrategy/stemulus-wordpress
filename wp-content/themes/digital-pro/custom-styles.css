@@ -621,3 +621,24 @@ h2:before {
 		flex-direction: row;
 	}
 }
+
+/* Print Styles */
+
+@media print {
+
+	.site-header {
+     display: none;
+}
+
+	.sidebar.sidebar-primary.widget-area {
+     display: none;
+}
+
+	#sticky-footer{
+	display: none;
+        }
+
+     .footer-widgets{
+     display: none;
+     }
+}
