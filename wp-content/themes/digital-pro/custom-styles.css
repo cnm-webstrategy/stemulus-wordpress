@@ -568,6 +568,46 @@ h2:before {
 
 }
 
+/*
+this hack is due to the fact that the main nav has too many items in it,
+so to accommodate the menu that has too many items, and runs into the logo,
+the media query needs to be changed from `max-width: 800px` to `max-width: 1000px`.
+But since it's hard to override a whole breakpoint, the original styles (in the parent)
+will work up 800px, and then this will will do pretty much the same thing between 800 & 1000.
+*/
+@media only screen and (min-width: 800px) and (max-width: 1000px) {
+	.menu-toggle {
+		border-width: 0;
+		background: transparent;
+		color: #232525;
+		display: block;
+		margin: 0 auto;
+		outline-offset: -1px;
+		overflow: hidden;
+		text-align: center;
+		visibility: visible;
+		line-height: 20px;
+		margin-top: 10px;
+		padding: 10px 30px;
+		position: relative;
+		z-index: 1000;
+		width: 100%;
+	}
+
+	nav.genesis-responsive-menu {
+		display: none;
+		position: relative;
+	}
+
+	.title-area {
+		float: none;
+	}
+
+	.header-image .site-title > a{
+		width: 100%;
+	}
+}
+
 /* large tablet */
 @media only screen and (min-width: 800px) and (max-width: 1200px) {
 
