@@ -23,6 +23,15 @@ p.entry-meta {
     display: none;
 }
 
+/* Block Quote Tweak
+
+.su-quote-style-default {
+    position: relative;
+    margin-bottom: 1.5em;
+    padding: 0.5em 2em;
+    font-style: italic;
+} */
+
 
 /* homepage entry image */
 
