@@ -554,6 +554,13 @@ h2:before {
 	}
 }
 
+@media only screen and (max-width: 800px)
+{
+	.sidebar-content .content {
+		margin-top: 85px
+	}
+}
+
 /* small tablet */
 @media only screen and (min-width: 600px) and (max-width: 800px) {
 	.front-page-1 .widget_text .widget-title {
@@ -602,7 +609,7 @@ will work up 800px, and then this will will do pretty much the same thing betwee
 
 	.menu-toggle:focus {
 		background: transparent;
-	
+
 	}
 
 	nav.genesis-responsive-menu {
