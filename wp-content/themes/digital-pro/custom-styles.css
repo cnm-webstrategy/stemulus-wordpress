@@ -519,7 +519,7 @@ h2:before {
 	height: 110px;
 	background-color: #f8f8f8;
 	border-top: 3px solid #eee;
-	padding: 20px;
+	padding: 8px 20px;
 	color: #2d2d2d;
 	vertical-align: middle;
 }
@@ -547,6 +547,7 @@ h2:before {
 	display: table-cell;
 	vertical-align: middle;
 	font-size: 1rem;
+	padding: 10px 20px;
 }
 
 /* everything except small mobile */
@@ -556,10 +557,15 @@ h2:before {
 		display: block;
 	}
 
+	#sticky-footer {
+		padding: 20px;
+	}
+
 	#sticky-footer a.button {
 		display: table-cell;
 		vertical-align: middle;
 		font-size: 1rem;
+		padding: 20px 30px;
 	}
 }
 

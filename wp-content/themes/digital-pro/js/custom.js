@@ -52,55 +52,46 @@ jQuery(document).ready(function($) {
 
 		$stickyFooter.css({
 			position: 'fixed',
-			top: $(window).height() - $stickyFooter.height() - 20
 		});
 
 		hideStickyFooter();
 
+		var positionStickyFooter = function(){
+			var hidePosition = $('body').scrollTop() + $(window).height() - $stickyFooter.height();
+			var stickyStopperTop = $stickyStopper.offset().top;
+
+			if ( hidePosition > stickyStopperTop || $('body').scrollTop() < dontShowBeforePx ) {
+				hideStickyFooter();
+			} else {
+				showStickyFooter();
+			}
+		}
+
 		if (isIOS()){
 			$stickyFooter.css({
-				top: $(window).height() - 35
+				top: $(window).height() - $stickyFooter.height() - 5
 			})
 
-
-
 			$(document).on({
-				'touchmove': function(e) {
-					var hidePosition = $('body').scrollTop() + $(window).height() - $stickyFooter.height();
-					var stickyStopperTop = $stickyStopper.offset().top;
+				'touchmove': positionStickyFooter,
+				'scroll': positionStickyFooter
 
-					if ( hidePosition > stickyStopperTop || $('body').scrollTop() < dontShowBeforePx ) {
-						hideStickyFooter();
-					} else {
-						showStickyFooter();
-					}
-				}
 			})
 
 		} else {
-			//sticky footer initial position
-			// showStickyFooter(footerTopInitial);
-            //
+			$stickyFooter.css({
+				top: $(window).height() - $stickyFooter.height()
+			})
+
 			$(window).resize(function () {
 
 				$stickyFooter.css({
-					top: $(window).height() - $stickyFooter.height() - 20
+					top: $(window).height() - $stickyFooter.height()
 				})
 
 			})
 
-			$(document).scroll(function(){
-
-				var hidePosition = $('body').scrollTop() + $(window).height() - $stickyFooter.height();
-				var stickyStopperTop = $stickyStopper.offset().top;
-
-
-				if ( hidePosition > stickyStopperTop || $('body').scrollTop() < 1000 ) {
-					hideStickyFooter();
-				} else {
-					showStickyFooter();
-				}
-			})
+			$(document).scroll(positionStickyFooter);
 		}
 
 
