@@ -59,6 +59,7 @@ jQuery(document).ready(function($) {
 		var positionStickyFooter = function(){
 			var hidePosition = $('body').scrollTop() + $(window).height() - $stickyFooter.height();
 			var stickyStopperTop = $stickyStopper.offset().top;
+			console.log('height',$(window).height() - $stickyFooter.height())
 
 			if ( hidePosition > stickyStopperTop || $('body').scrollTop() < dontShowBeforePx ) {
 				hideStickyFooter();
@@ -69,7 +70,7 @@ jQuery(document).ready(function($) {
 
 		if (isIOS()){
 			$stickyFooter.css({
-				top: $(window).height() - $stickyFooter.height() - 5
+				top: $(window).height() - $stickyFooter.height() + 50
 			})
 
 			$(document).on({
@@ -79,9 +80,16 @@ jQuery(document).ready(function($) {
 			})
 
 		} else {
-			$stickyFooter.css({
-				top: $(window).height() - $stickyFooter.height()
-			})
+			if(window.innerWidth <= 320) {
+				$stickyFooter.css({
+					top: $(window).height() - $stickyFooter.height()
+				})
+			} else {
+				$stickyFooter.css({
+					top: $(window).height() - $stickyFooter.height() - 20
+				})
+			}
+
 
 			$(window).resize(function () {
 
