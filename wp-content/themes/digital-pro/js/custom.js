@@ -51,7 +51,7 @@ jQuery(document).ready(function($) {
 
 
 		$stickyFooter.css({
-			position: 'fixed',
+
 		});
 
 		hideStickyFooter();
@@ -70,7 +70,8 @@ jQuery(document).ready(function($) {
 
 		if (isIOS()){
 			$stickyFooter.css({
-				top: $(window).height() - $stickyFooter.height() + 50
+				//top: $(window).height() - $stickyFooter.height() + 50
+				// bottom: 0
 			})
 
 			$(document).on({
@@ -82,11 +83,11 @@ jQuery(document).ready(function($) {
 		} else {
 			if(window.innerWidth <= 320) {
 				$stickyFooter.css({
-					top: $(window).height() - $stickyFooter.height()
+					//top: $(window).height() - $stickyFooter.height()
 				})
 			} else {
 				$stickyFooter.css({
-					top: $(window).height() - $stickyFooter.height() - 20
+					//top: $(window).height() - $stickyFooter.height() - 20
 				})
 			}
 
@@ -94,7 +95,7 @@ jQuery(document).ready(function($) {
 			$(window).resize(function () {
 
 				$stickyFooter.css({
-					top: $(window).height() - $stickyFooter.height()
+					//top: $(window).height() - $stickyFooter.height()
 				})
 
 			})

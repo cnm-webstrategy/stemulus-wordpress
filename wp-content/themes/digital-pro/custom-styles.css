@@ -516,12 +516,15 @@ h2:before {
 #sticky-footer {
 
 	width: 100%;
-	height: 110px;
+	/*height: 110px;*/
+	height: 10vh;
 	background-color: #f8f8f8;
 	border-top: 3px solid #eee;
 	padding: 8px 20px;
 	color: #2d2d2d;
 	vertical-align: middle;
+	position: fixed;
+	bottom: 0;
 }
 
 #sticky-footer .flex {
@@ -550,8 +553,12 @@ h2:before {
 	padding: 10px 20px;
 }
 
+#sticky-footer h5 {
+	font-size: 3.5vw;
+}
+
 /* everything except small mobile */
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 400px) {
 
 	.sidebar.sidebar-primary.widget-area {
 		display: block;
@@ -561,11 +568,15 @@ h2:before {
 		padding: 20px;
 	}
 
+	#sticky-footer h5 {
+		font-size: 2vw;
+	}
+
 	#sticky-footer a.button {
 		display: table-cell;
 		vertical-align: middle;
 		font-size: 1rem;
-		padding: 20px 30px;
+		/*padding: 20px 30px;*/
 	}
 }
 
