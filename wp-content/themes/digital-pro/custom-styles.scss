@@ -571,13 +571,16 @@ h2:before {
 }
 
 @media only screen and (max-width: 800px) {
-  .sidebar-content .content {
-	margin-top: 85px;
-  }
+	.site-container {
+	  .site-inner {
+		margin-top: 85px;
+	  }
+	}
 }
 
 /* small tablet */
 @media only screen and (min-width: 600px) and (max-width: 800px) {
+
   .front-page-1 {
 	.widget_text .widget-title {
 	  font-size: 52px;

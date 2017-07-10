@@ -18,6 +18,11 @@ function deep_dive_styles()
 		wp_enqueue_style('typography-font', 'https://cloud.typography.com/6007112/785104/css/fonts.css');
 	}
 
+	// jquery mobile
+//	wp_enqueue_style('jquery-mobile', 'https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css');
+//	wp_register_script('jquery-mobile', 'https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js');
+//	wp_enqueue_script('jquery-mobile');
+
 }
 
 add_action('wp_enqueue_scripts', 'deep_dive_styles', 100);

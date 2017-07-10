@@ -17,10 +17,16 @@
   },
   "homepage": "https://github.com/cnm-webstrategy/stemulus-wordpress#readme",
   "devDependencies": {
+    "autoprefixer": "^7.1.1",
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.0",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-postcss": "^7.0.0",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.2.0",
+    "gulp-sass": "^2.3.2",
     "gulp-uglify": "^1.5.3"
-  }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 6 versions"
+  ]
 }
