@@ -179,13 +179,8 @@ body {
 
 /* landing page template logo style */
 
-	.page-template-page_landing .page-template-page_landing-php .digital-landing .header-image .site-title > a {
-	background-position: center center !important;
-	background-size: contain !important;
-	float: left;
+	#page-template-page_landing #page-template-page_landing-php #digital-landing .header-image .site-title > a {
 	margin-left: 179px;
-	min-height: 70px;
-	width: 300px;
 	opacity: 0.5;
 }
 
