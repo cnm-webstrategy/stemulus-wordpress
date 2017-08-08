@@ -34,9 +34,9 @@ function digital_dequeue_skip_links() {
 }
 
 // Remove site header elements.
-remove_action( 'genesis_header', 'genesis_header_markup_open', 5 );
-remove_action( 'genesis_header', 'genesis_do_header' );
-remove_action( 'genesis_header', 'genesis_header_markup_close', 15 );
+// remove_action( 'genesis_header', 'genesis_header_markup_open', 5 );
+// remove_action( 'genesis_header', 'genesis_do_header' );
+// remove_action( 'genesis_header', 'genesis_header_markup_close', 15 );
 
 // Remove navigation.
 remove_theme_support( 'genesis-menus' );
