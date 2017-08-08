@@ -143,15 +143,14 @@ body {
   width: 100%;
   z-index: 999; }
 
-/* landing page template logo style */
-#page-template-page_landing .header-image .site-title > a {
-  background-position: center center !important;
-  background-size: contain !important;
-  float: left;
-  margin-left: 179px;
-  min-height: 70px;
-  width: 300px; }
+/* landing page template logo style 
 
+	.page-template-page_landing {
+	.header-image .site-title > {
+	
+}
+	}
+*/
 /*background image
 
 .page .content, .single .content {
