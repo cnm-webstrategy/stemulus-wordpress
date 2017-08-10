@@ -177,14 +177,23 @@ body {
   z-index: 999;
 }
 
-/* landing page template logo style 
+/* landing page template logo style */
 
-	.page-template-page_landing {
-	.header-image .site-title > {
+	@media only screen and (min-width: 1200px) {
 	
+	.page-template-page_landing .site-header,
+	.page-template-page_landing .site-header.shrink {
+    	text-align: center;
+    	max-width: 800px;
+  }            
+  	.page-template-page_landing .title-area {
+      float: none;
+  }
+  	.page-template-page_landing .header-image .site-title > a {
+      width: 100%;  
+  }
 }
-	}
-*/	
+	
 
 /*background image
 
