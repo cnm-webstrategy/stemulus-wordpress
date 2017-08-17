@@ -1,13 +1,27 @@
-*~
-.DS_Store
+
+**/*_Store
 .svn
 .cvs
 *.bak
 *.swp
 Thumbs.db
-.htaccess
-*_log
+.idea
+*.sql
+*.old
+*.zip
+**/node_modules/
+**/*_log
+.ftpquota
+.ftpquota
+.git_bak
+node_modules/
+**/.git
+*_bak
+phpMyAdmin
 phpinfo.php
+apple*.png
+**/error_log
+
 
 # wordpress specific
 wp-config.php
