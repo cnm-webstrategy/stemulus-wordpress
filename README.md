@@ -1,15 +1,18 @@
 # stemulus-wordpress
 
-git checkout -b branch-name
+## Update Instructions
 
-_do work in branch_
+1. git checkout -b branch-name
 
-`git checkout master`
+1. _do work in branch_
 
-`git merge branch-name`
+1. `git checkout master`
 
-`git push ...` to wherever
+1. `git merge branch-name`
 
+1. `git push ...` to wherever
+
+## Other Commands
 `git branch -d branch-name` to delete branch locally
 
 to push a branch other than master it’s `git push origin branch-name`
