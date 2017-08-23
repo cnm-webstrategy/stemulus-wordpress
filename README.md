@@ -1,4 +1,4 @@
-# Stemulus Websites // WordPress Multisite
+# Stemulus Websites // WordPress Multisite :checkered_flag:
 
 ## Update Instructions
 
