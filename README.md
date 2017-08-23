@@ -1,4 +1,4 @@
-# stemulus-wordpress
+# Stemulus Websites // WordPress Multisite
 
 ## Update Instructions
 
